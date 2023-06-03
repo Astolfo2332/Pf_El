@@ -137,6 +137,43 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Driver_DMA_Com_dma.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Driver_DMA_Seg_dma.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Driver_DMA_Seg_dma.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_3.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\motor_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\motor.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\motor.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\aum.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\aum.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\dism.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\dism.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\bt_aum_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\bt_aum.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\bt_aum.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\bt_dis_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\bt_dis.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\bt_dis.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\aviso_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\aviso.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\aviso.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\tem_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\tem.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\tem.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_IRQ.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_theACLK.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_theACLK.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_Bypass_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_Bypass.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_Bypass.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\Export\ARM_GCC_Generic">

@@ -1,5 +1,5 @@
 # Desing_pf
-# 2023-06-03 02:36:13Z
+# 2023-06-03 05:55:32Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -28,3 +28,13 @@ set_io "\LCD:LCDPort(4)\" iocell 2 4
 set_io "\LCD:LCDPort(5)\" iocell 2 5
 set_io "\LCD:LCDPort(6)\" iocell 2 6
 set_io "tilt(0)" iocell 15 0
+set_io "motor(0)" iocell 1 2
+set_io "bt_aum(0)" iocell 0 5
+set_io "bt_dis(0)" iocell 0 6
+set_io "aviso(0)" iocell 12 0
+set_io "aviso(1)" iocell 12 1
+set_io "aviso(2)" iocell 12 2
+set_io "aviso(3)" iocell 12 3
+set_io "\ADC:Bypass(0)\" iocell 0 4
+set_io "tem(0)" iocell 0 7
+set_location "\ADC:ADC_SAR\" sarcell -1 -1 0

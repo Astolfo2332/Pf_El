@@ -1,6 +1,0 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f29b7e97-76ae-4ef6-9c47-3b777048fd17
-C:\Users\Tatiana Cordoba\OneDrive - Universidad de Antioquia\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|0906b5ca-0190-4c85-8356-bf202f81485a
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1aa01c90-ab0c-4ac8-bdb8-03c49ac071b5
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e1dc5360-84d7-45a9-81b1-6b9593a87602
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|b86bcc31-ba78-44a3-a87b-d8e59d64b4de
-C:\Users\Tatiana Cordoba\OneDrive - Universidad de Antioquia\Documentos\PSoC Creator\Calibrar\Design01.cydsn\Design01.cyprj|e6162de3-7b8d-432e-ac03-583de3633abc

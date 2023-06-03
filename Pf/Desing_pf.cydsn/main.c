@@ -15,8 +15,8 @@
 
 uint8_t lectura=0;
 uint8_t bandera=0;
-int fl=50;
-int tem=26;
+int fl=0;
+uint8 tem=26;
 uint8 seg=0;
 uint8 h=0;
 uint8 min=0;
@@ -32,7 +32,13 @@ char time[4]="0000";
 char seg_7[4];
 uint8_t lectura_p='b';
 char seggs[50];
-
+uint16 compare=999;
+uint8 band_aumento=0;
+uint8 band_dismi=0;
+uint8 seg10=0;
+uint8 band_10seg=0;
+uint8 a_seg10=0;
+uint8 degree=0;
 
 CY_ISR_PROTO(contar);
 CY_ISR(contar){
@@ -44,7 +50,13 @@ CY_ISR(datos){
     bandera=1;
 }
 
+CY_ISR(aumento){
+    band_aumento=1;
+}
 
+CY_ISR(disminu){
+    band_dismi=1;
+}
 
 void EncenderLCD(int fl,int tem,int h,int min, int sec){
     LCD_ClearDisplay();
@@ -116,19 +128,43 @@ void apagado(){
     }
     }
 
+void con_mot(void){
+switch(fl){
+    case 0:
+    compare=999;
+    break;
+    case 100:
+    compare=2000;
+    break;
+    default:
+    compare=999+(fl*10);
+    break;
+    
+    
+}
 
-
+}
+void print_f(){
+    
+    band_7seg=0;
+    LCD_Stop();
+    sprintf(seg_7,"F%03d",fl);
+    LED_Driver_WriteString7Seg(seg_7,0);
+}
 int main(void)
 
 
 {
-    CyGlobalIntEnable; /* Enable global interrupts. */
+    CyGlobalIntEnable; 
 LED_Driver_Start();
 Counter_1_Start();
 isr_contador_StartEx(contar);
 data_StartEx(datos);
 UART_1_Start();
 LCD_Start();
+PWM_Start();
+aum_StartEx(aumento);
+dism_StartEx(disminu);
     for(;;)
     {
     if (bandera==1){
@@ -136,7 +172,7 @@ LCD_Start();
         case 'a':
             lectura_p=lectura;
             break; 
-            case 'b':
+        case 'b':
             lectura_p=lectura;
             break;
         }
@@ -144,39 +180,35 @@ LCD_Start();
         case 'a':
             switch(lectura){
                 case 'F':
-                a_seg5=0;
-                band_7seg=0;
-                LCD_Stop();
-                sprintf(seg_7,"F%03d",fl);
-                LED_Driver_WriteString7Seg(seg_7,0);
-                reloj();
-                break;
+                    a_seg5=0;
+                    print_f();
+                    reloj();
+                    break;
                 case 'T':
-                a_seg5=0;
-                band_7seg=0;
-                LCD_Stop();
-                sprintf(seg_7,"%02d",tem);
-                LED_Driver_WriteString7Seg(seg_7,0);
-                LED_Driver_PutChar7Seg('o',2);
-                LED_Driver_Write7SegDigitHex(0xC,3);
-                reloj();
-                break;
+                    a_seg5=0;
+                    band_7seg=0;
+                    LCD_Stop();
+                    sprintf(seg_7,"%02d",tem);
+                    LED_Driver_WriteString7Seg(seg_7,0);
+                    LED_Driver_PutChar7Seg('o',2);
+                    LED_Driver_Write7SegDigitHex(0xC,3);
+                    reloj();
+                    break;
                 case 'A':
-                a_seg5=1;
-                band_7seg=0;
-                LCD_Stop();
-                if(band_5seg==1){          
-                sprintf(seg_7,"%02d",tem);
-                LED_Driver_WriteString7Seg(seg_7,0);
-                LED_Driver_PutChar7Seg('o',2);
-                LED_Driver_Write7SegDigitHex(0xC,3);
-                reloj();
-                }
-                else if (band_5seg==0){           
-                sprintf(seg_7,"F%03d",fl);
-                LED_Driver_WriteString7Seg(seg_7,0);
-                reloj();
-                }
+                    a_seg5=1;
+                    band_7seg=0;
+                    LCD_Stop();
+                    if(band_5seg==1){          
+                    sprintf(seg_7,"%02d",tem);
+                    LED_Driver_WriteString7Seg(seg_7,0);
+                    LED_Driver_PutChar7Seg('o',2);
+                    LED_Driver_Write7SegDigitHex(0xC,3);
+                    reloj();
+                    }
+                    else if (band_5seg==0){           
+                    print_f();
+                    reloj();
+                    }
                 
                 default:
                     a_seg5=0;
@@ -185,7 +217,29 @@ LCD_Start();
                     reloj();
                     break;                 
             }
+            if ((band_aumento==1)|(band_dismi==1)){
+                if (band_aumento==1&&fl<=100){
+                    fl=fl+5;
+                    if(fl>100){
+                        fl=0;
+                    }
+                }
+                if (band_dismi==1&&fl>=0){
+                    fl=fl-5;
+                    if(fl<0){
+                        fl=100;
+                    }
+                }
+                con_mot();
+                PWM_WriteCompare(compare);
+                print_f();
+                reloj();
+                band_aumento=0;
+                band_dismi=0;
+            
+            }
             break;
+            
         case 'b':
             LCD_Start();
             apagado();
