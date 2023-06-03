@@ -1,0 +1,64 @@
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Clock_1.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Clock_2.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyLib.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CySpc.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/LCD.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/PWM_1.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Pin_1.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Pin_1_aliases.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyPm.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevice.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cypins.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cytypes.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/motor.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/motor_aliases.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/paso.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/project.h D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/main.c 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Clock_1.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Clock_2.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/LCD.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/PWM_1.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Pin_1.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/Pin_1_aliases.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/motor.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/motor_aliases.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/paso.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/project.h : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/main.c : 
+

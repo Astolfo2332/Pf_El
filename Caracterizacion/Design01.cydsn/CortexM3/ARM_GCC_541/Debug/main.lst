@@ -1,0 +1,922 @@
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.dar_paso,"ax",%progbits
+  20              		.align	2
+  21              		.global	dar_paso
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	dar_paso, %function
+  25              	dar_paso:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** uint8 pasito=0;
+  14:main.c        **** uint16 compare=999;
+  15:main.c        **** uint8 pasos=0;
+  16:main.c        **** CY_ISR(dar_paso){
+  28              		.loc 1 16 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  17:main.c        **** pasito=1;
+  33              		.loc 1 17 0
+  34 0000 0122     		movs	r2, #1
+  35 0002 014B     		ldr	r3, .L2
+  36 0004 1A70     		strb	r2, [r3]
+  37 0006 7047     		bx	lr
+  38              	.L3:
+  39              		.align	2
+  40              	.L2:
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 2
+
+
+  41 0008 00000000 		.word	.LANCHOR0
+  42              		.cfi_endproc
+  43              	.LFE63:
+  44              		.size	dar_paso, .-dar_paso
+  45              		.section	.text.main,"ax",%progbits
+  46              		.align	2
+  47              		.global	main
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	main, %function
+  51              	main:
+  52              	.LFB64:
+  18:main.c        **** 
+  19:main.c        **** }
+  20:main.c        **** int main(void)
+  21:main.c        **** {
+  53              		.loc 1 21 0
+  54              		.cfi_startproc
+  55              		@ Volatile: function does not return.
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58 0000 08B5     		push	{r3, lr}
+  59              		.cfi_def_cfa_offset 8
+  60              		.cfi_offset 3, -8
+  61              		.cfi_offset 14, -4
+  22:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  62              		.loc 1 22 0
+  63              		.syntax unified
+  64              	@ 22 "main.c" 1
+  65 0002 62B6     		CPSIE   i
+  66              	@ 0 "" 2
+  23:main.c        **** paso_StartEx(dar_paso);
+  67              		.loc 1 23 0
+  68              		.thumb
+  69              		.syntax unified
+  70 0004 1A48     		ldr	r0, .L9
+  71 0006 FFF7FEFF 		bl	paso_StartEx
+  72              	.LVL0:
+  24:main.c        **** PWM_1_Start();
+  73              		.loc 1 24 0
+  74 000a FFF7FEFF 		bl	PWM_1_Start
+  75              	.LVL1:
+  25:main.c        **** LCD_Start();
+  76              		.loc 1 25 0
+  77 000e FFF7FEFF 		bl	LCD_Start
+  78              	.LVL2:
+  79              	.L5:
+  26:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  27:main.c        **** 
+  28:main.c        ****     for(;;)
+  29:main.c        ****     {
+  30:main.c        ****         if (pasito==1){
+  80              		.loc 1 30 0
+  81 0012 184B     		ldr	r3, .L9+4
+  82 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  83 0016 012B     		cmp	r3, #1
+  84 0018 FBD1     		bne	.L5
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 3
+
+
+  31:main.c        ****         if (compare>2000){
+  85              		.loc 1 31 0
+  86 001a 174B     		ldr	r3, .L9+8
+  87 001c 1B88     		ldrh	r3, [r3]
+  88 001e B3F5FA6F 		cmp	r3, #2000
+  89 0022 06D9     		bls	.L6
+  32:main.c        ****         compare=999;
+  90              		.loc 1 32 0
+  91 0024 40F2E732 		movw	r2, #999
+  92 0028 134B     		ldr	r3, .L9+8
+  93 002a 1A80     		strh	r2, [r3]	@ movhi
+  33:main.c        ****         pasos=0;
+  94              		.loc 1 33 0
+  95 002c 0022     		movs	r2, #0
+  96 002e 114B     		ldr	r3, .L9+4
+  97 0030 5A70     		strb	r2, [r3, #1]
+  98              	.L6:
+  34:main.c        ****         }
+  35:main.c        ****         pasito=0;
+  99              		.loc 1 35 0
+ 100 0032 104C     		ldr	r4, .L9+4
+ 101 0034 0025     		movs	r5, #0
+ 102 0036 2570     		strb	r5, [r4]
+  36:main.c        ****         pasos++;
+ 103              		.loc 1 36 0
+ 104 0038 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 105 003a 0133     		adds	r3, r3, #1
+ 106 003c 6370     		strb	r3, [r4, #1]
+  37:main.c        ****         compare=compare+56;
+ 107              		.loc 1 37 0
+ 108 003e 0E4E     		ldr	r6, .L9+8
+ 109 0040 3088     		ldrh	r0, [r6]
+ 110 0042 3830     		adds	r0, r0, #56
+ 111 0044 80B2     		uxth	r0, r0
+ 112 0046 3080     		strh	r0, [r6]	@ movhi
+  38:main.c        ****         PWM_1_WriteCompare(compare);
+ 113              		.loc 1 38 0
+ 114 0048 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 115              	.LVL3:
+  39:main.c        ****         LCD_ClearDisplay();
+ 116              		.loc 1 39 0
+ 117 004c 0120     		movs	r0, #1
+ 118 004e FFF7FEFF 		bl	LCD_WriteControl
+ 119              	.LVL4:
+  40:main.c        ****         LCD_Position(0,0);
+ 120              		.loc 1 40 0
+ 121 0052 2946     		mov	r1, r5
+ 122 0054 2846     		mov	r0, r5
+ 123 0056 FFF7FEFF 		bl	LCD_Position
+ 124              	.LVL5:
+  41:main.c        ****         LCD_PrintNumber(compare);
+ 125              		.loc 1 41 0
+ 126 005a 3088     		ldrh	r0, [r6]
+ 127 005c FFF7FEFF 		bl	LCD_PrintU32Number
+ 128              	.LVL6:
+  42:main.c        ****         LCD_Position(1,0);
+ 129              		.loc 1 42 0
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 4
+
+
+ 130 0060 2946     		mov	r1, r5
+ 131 0062 0120     		movs	r0, #1
+ 132 0064 FFF7FEFF 		bl	LCD_Position
+ 133              	.LVL7:
+  43:main.c        ****         LCD_PrintNumber(pasos);
+ 134              		.loc 1 43 0
+ 135 0068 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+ 136 006a FFF7FEFF 		bl	LCD_PrintU32Number
+ 137              	.LVL8:
+ 138 006e D0E7     		b	.L5
+ 139              	.L10:
+ 140              		.align	2
+ 141              	.L9:
+ 142 0070 00000000 		.word	dar_paso
+ 143 0074 00000000 		.word	.LANCHOR0
+ 144 0078 00000000 		.word	.LANCHOR1
+ 145              		.cfi_endproc
+ 146              	.LFE64:
+ 147              		.size	main, .-main
+ 148              		.global	pasos
+ 149              		.global	compare
+ 150              		.global	pasito
+ 151              		.data
+ 152              		.align	1
+ 153              		.set	.LANCHOR1,. + 0
+ 154              		.type	compare, %object
+ 155              		.size	compare, 2
+ 156              	compare:
+ 157 0000 E703     		.short	999
+ 158              		.bss
+ 159              		.set	.LANCHOR0,. + 0
+ 160              		.type	pasito, %object
+ 161              		.size	pasito, 1
+ 162              	pasito:
+ 163 0000 00       		.space	1
+ 164              		.type	pasos, %object
+ 165              		.size	pasos, 1
+ 166              	pasos:
+ 167 0001 00       		.space	1
+ 168              		.text
+ 169              	.Letext0:
+ 170              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 171              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 172              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 173              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 174              		.file 6 "Generated_Source\\PSoC5/paso.h"
+ 175              		.file 7 "Generated_Source\\PSoC5/PWM_1.h"
+ 176              		.file 8 "Generated_Source\\PSoC5/LCD.h"
+ 177              		.section	.debug_info,"",%progbits
+ 178              	.Ldebug_info0:
+ 179 0000 FF010000 		.4byte	0x1ff
+ 180 0004 0400     		.2byte	0x4
+ 181 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 182 000a 04       		.byte	0x4
+ 183 000b 01       		.uleb128 0x1
+ 184 000c 59000000 		.4byte	.LASF29
+ 185 0010 0C       		.byte	0xc
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 5
+
+
+ 186 0011 3B020000 		.4byte	.LASF30
+ 187 0015 2F010000 		.4byte	.LASF31
+ 188 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 189 001d 00000000 		.4byte	0
+ 190 0021 00000000 		.4byte	.Ldebug_line0
+ 191 0025 02       		.uleb128 0x2
+ 192 0026 01       		.byte	0x1
+ 193 0027 06       		.byte	0x6
+ 194 0028 6C020000 		.4byte	.LASF0
+ 195 002c 02       		.uleb128 0x2
+ 196 002d 01       		.byte	0x1
+ 197 002e 08       		.byte	0x8
+ 198 002f 4B000000 		.4byte	.LASF1
+ 199 0033 02       		.uleb128 0x2
+ 200 0034 02       		.byte	0x2
+ 201 0035 05       		.byte	0x5
+ 202 0036 47020000 		.4byte	.LASF2
+ 203 003a 02       		.uleb128 0x2
+ 204 003b 02       		.byte	0x2
+ 205 003c 07       		.byte	0x7
+ 206 003d 28000000 		.4byte	.LASF3
+ 207 0041 03       		.uleb128 0x3
+ 208 0042 18000000 		.4byte	.LASF9
+ 209 0046 02       		.byte	0x2
+ 210 0047 3F       		.byte	0x3f
+ 211 0048 4C000000 		.4byte	0x4c
+ 212 004c 02       		.uleb128 0x2
+ 213 004d 04       		.byte	0x4
+ 214 004e 05       		.byte	0x5
+ 215 004f 57020000 		.4byte	.LASF4
+ 216 0053 02       		.uleb128 0x2
+ 217 0054 04       		.byte	0x4
+ 218 0055 07       		.byte	0x7
+ 219 0056 E7000000 		.4byte	.LASF5
+ 220 005a 02       		.uleb128 0x2
+ 221 005b 08       		.byte	0x8
+ 222 005c 05       		.byte	0x5
+ 223 005d 2D020000 		.4byte	.LASF6
+ 224 0061 02       		.uleb128 0x2
+ 225 0062 08       		.byte	0x8
+ 226 0063 07       		.byte	0x7
+ 227 0064 D2010000 		.4byte	.LASF7
+ 228 0068 04       		.uleb128 0x4
+ 229 0069 04       		.byte	0x4
+ 230 006a 05       		.byte	0x5
+ 231 006b 696E7400 		.ascii	"int\000"
+ 232 006f 02       		.uleb128 0x2
+ 233 0070 04       		.byte	0x4
+ 234 0071 07       		.byte	0x7
+ 235 0072 C5010000 		.4byte	.LASF8
+ 236 0076 03       		.uleb128 0x3
+ 237 0077 09020000 		.4byte	.LASF10
+ 238 007b 03       		.byte	0x3
+ 239 007c 2C       		.byte	0x2c
+ 240 007d 41000000 		.4byte	0x41
+ 241 0081 05       		.uleb128 0x5
+ 242 0082 51020000 		.4byte	.LASF11
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 6
+
+
+ 243 0086 04       		.byte	0x4
+ 244 0087 E801     		.2byte	0x1e8
+ 245 0089 2C000000 		.4byte	0x2c
+ 246 008d 05       		.uleb128 0x5
+ 247 008e BE010000 		.4byte	.LASF12
+ 248 0092 04       		.byte	0x4
+ 249 0093 E901     		.2byte	0x1e9
+ 250 0095 3A000000 		.4byte	0x3a
+ 251 0099 02       		.uleb128 0x2
+ 252 009a 04       		.byte	0x4
+ 253 009b 04       		.byte	0x4
+ 254 009c 3B000000 		.4byte	.LASF13
+ 255 00a0 02       		.uleb128 0x2
+ 256 00a1 08       		.byte	0x8
+ 257 00a2 04       		.byte	0x4
+ 258 00a3 1B010000 		.4byte	.LASF14
+ 259 00a7 02       		.uleb128 0x2
+ 260 00a8 01       		.byte	0x1
+ 261 00a9 08       		.byte	0x8
+ 262 00aa 42020000 		.4byte	.LASF15
+ 263 00ae 02       		.uleb128 0x2
+ 264 00af 08       		.byte	0x8
+ 265 00b0 04       		.byte	0x4
+ 266 00b1 60020000 		.4byte	.LASF16
+ 267 00b5 02       		.uleb128 0x2
+ 268 00b6 04       		.byte	0x4
+ 269 00b7 07       		.byte	0x7
+ 270 00b8 11020000 		.4byte	.LASF17
+ 271 00bc 06       		.uleb128 0x6
+ 272 00bd F9000000 		.4byte	.LASF32
+ 273 00c1 01       		.byte	0x1
+ 274 00c2 10       		.byte	0x10
+ 275 00c3 00000000 		.4byte	.LFB63
+ 276 00c7 0C000000 		.4byte	.LFE63-.LFB63
+ 277 00cb 01       		.uleb128 0x1
+ 278 00cc 9C       		.byte	0x9c
+ 279 00cd 07       		.uleb128 0x7
+ 280 00ce B9010000 		.4byte	.LASF33
+ 281 00d2 01       		.byte	0x1
+ 282 00d3 14       		.byte	0x14
+ 283 00d4 68000000 		.4byte	0x68
+ 284 00d8 00000000 		.4byte	.LFB64
+ 285 00dc 7C000000 		.4byte	.LFE64-.LFB64
+ 286 00e0 01       		.uleb128 0x1
+ 287 00e1 9C       		.byte	0x9c
+ 288 00e2 71010000 		.4byte	0x171
+ 289 00e6 08       		.uleb128 0x8
+ 290 00e7 0A000000 		.4byte	.LVL0
+ 291 00eb B5010000 		.4byte	0x1b5
+ 292 00ef FD000000 		.4byte	0xfd
+ 293 00f3 09       		.uleb128 0x9
+ 294 00f4 01       		.uleb128 0x1
+ 295 00f5 50       		.byte	0x50
+ 296 00f6 05       		.uleb128 0x5
+ 297 00f7 03       		.byte	0x3
+ 298 00f8 00000000 		.4byte	dar_paso
+ 299 00fc 00       		.byte	0
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 7
+
+
+ 300 00fd 0A       		.uleb128 0xa
+ 301 00fe 0E000000 		.4byte	.LVL1
+ 302 0102 C0010000 		.4byte	0x1c0
+ 303 0106 0A       		.uleb128 0xa
+ 304 0107 12000000 		.4byte	.LVL2
+ 305 010b CB010000 		.4byte	0x1cb
+ 306 010f 0A       		.uleb128 0xa
+ 307 0110 4C000000 		.4byte	.LVL3
+ 308 0114 D6010000 		.4byte	0x1d6
+ 309 0118 08       		.uleb128 0x8
+ 310 0119 52000000 		.4byte	.LVL4
+ 311 011d E1010000 		.4byte	0x1e1
+ 312 0121 2B010000 		.4byte	0x12b
+ 313 0125 09       		.uleb128 0x9
+ 314 0126 01       		.uleb128 0x1
+ 315 0127 50       		.byte	0x50
+ 316 0128 01       		.uleb128 0x1
+ 317 0129 31       		.byte	0x31
+ 318 012a 00       		.byte	0
+ 319 012b 08       		.uleb128 0x8
+ 320 012c 5A000000 		.4byte	.LVL5
+ 321 0130 EC010000 		.4byte	0x1ec
+ 322 0134 45010000 		.4byte	0x145
+ 323 0138 09       		.uleb128 0x9
+ 324 0139 01       		.uleb128 0x1
+ 325 013a 50       		.byte	0x50
+ 326 013b 02       		.uleb128 0x2
+ 327 013c 75       		.byte	0x75
+ 328 013d 00       		.sleb128 0
+ 329 013e 09       		.uleb128 0x9
+ 330 013f 01       		.uleb128 0x1
+ 331 0140 51       		.byte	0x51
+ 332 0141 02       		.uleb128 0x2
+ 333 0142 75       		.byte	0x75
+ 334 0143 00       		.sleb128 0
+ 335 0144 00       		.byte	0
+ 336 0145 0A       		.uleb128 0xa
+ 337 0146 60000000 		.4byte	.LVL6
+ 338 014a F7010000 		.4byte	0x1f7
+ 339 014e 08       		.uleb128 0x8
+ 340 014f 68000000 		.4byte	.LVL7
+ 341 0153 EC010000 		.4byte	0x1ec
+ 342 0157 67010000 		.4byte	0x167
+ 343 015b 09       		.uleb128 0x9
+ 344 015c 01       		.uleb128 0x1
+ 345 015d 50       		.byte	0x50
+ 346 015e 01       		.uleb128 0x1
+ 347 015f 31       		.byte	0x31
+ 348 0160 09       		.uleb128 0x9
+ 349 0161 01       		.uleb128 0x1
+ 350 0162 51       		.byte	0x51
+ 351 0163 02       		.uleb128 0x2
+ 352 0164 75       		.byte	0x75
+ 353 0165 00       		.sleb128 0
+ 354 0166 00       		.byte	0
+ 355 0167 0A       		.uleb128 0xa
+ 356 0168 6E000000 		.4byte	.LVL8
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 8
+
+
+ 357 016c F7010000 		.4byte	0x1f7
+ 358 0170 00       		.byte	0
+ 359 0171 0B       		.uleb128 0xb
+ 360 0172 0E010000 		.4byte	.LASF18
+ 361 0176 05       		.byte	0x5
+ 362 0177 1207     		.2byte	0x712
+ 363 0179 7D010000 		.4byte	0x17d
+ 364 017d 0C       		.uleb128 0xc
+ 365 017e 76000000 		.4byte	0x76
+ 366 0182 0D       		.uleb128 0xd
+ 367 0183 11000000 		.4byte	.LASF19
+ 368 0187 01       		.byte	0x1
+ 369 0188 0D       		.byte	0xd
+ 370 0189 81000000 		.4byte	0x81
+ 371 018d 05       		.uleb128 0x5
+ 372 018e 03       		.byte	0x3
+ 373 018f 00000000 		.4byte	pasito
+ 374 0193 0D       		.uleb128 0xd
+ 375 0194 78020000 		.4byte	.LASF20
+ 376 0198 01       		.byte	0x1
+ 377 0199 0E       		.byte	0xe
+ 378 019a 8D000000 		.4byte	0x8d
+ 379 019e 05       		.uleb128 0x5
+ 380 019f 03       		.byte	0x3
+ 381 01a0 00000000 		.4byte	compare
+ 382 01a4 0D       		.uleb128 0xd
+ 383 01a5 22000000 		.4byte	.LASF21
+ 384 01a9 01       		.byte	0x1
+ 385 01aa 0F       		.byte	0xf
+ 386 01ab 81000000 		.4byte	0x81
+ 387 01af 05       		.uleb128 0x5
+ 388 01b0 03       		.byte	0x3
+ 389 01b1 00000000 		.4byte	pasos
+ 390 01b5 0E       		.uleb128 0xe
+ 391 01b6 22010000 		.4byte	.LASF22
+ 392 01ba 22010000 		.4byte	.LASF22
+ 393 01be 06       		.byte	0x6
+ 394 01bf 18       		.byte	0x18
+ 395 01c0 0E       		.uleb128 0xe
+ 396 01c1 02010000 		.4byte	.LASF23
+ 397 01c5 02010000 		.4byte	.LASF23
+ 398 01c9 07       		.byte	0x7
+ 399 01ca 92       		.byte	0x92
+ 400 01cb 0E       		.uleb128 0xe
+ 401 01cc 41000000 		.4byte	.LASF24
+ 402 01d0 41000000 		.4byte	.LASF24
+ 403 01d4 08       		.byte	0x8
+ 404 01d5 38       		.byte	0x38
+ 405 01d6 0E       		.uleb128 0xe
+ 406 01d7 1A020000 		.4byte	.LASF25
+ 407 01db 1A020000 		.4byte	.LASF25
+ 408 01df 07       		.byte	0x7
+ 409 01e0 C3       		.byte	0xc3
+ 410 01e1 0E       		.uleb128 0xe
+ 411 01e2 00000000 		.4byte	.LASF26
+ 412 01e6 00000000 		.4byte	.LASF26
+ 413 01ea 08       		.byte	0x8
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 9
+
+
+ 414 01eb 3A       		.byte	0x3a
+ 415 01ec 0E       		.uleb128 0xe
+ 416 01ed E9010000 		.4byte	.LASF27
+ 417 01f1 E9010000 		.4byte	.LASF27
+ 418 01f5 08       		.byte	0x8
+ 419 01f6 3D       		.byte	0x3d
+ 420 01f7 0E       		.uleb128 0xe
+ 421 01f8 F6010000 		.4byte	.LASF28
+ 422 01fc F6010000 		.4byte	.LASF28
+ 423 0200 08       		.byte	0x8
+ 424 0201 61       		.byte	0x61
+ 425 0202 00       		.byte	0
+ 426              		.section	.debug_abbrev,"",%progbits
+ 427              	.Ldebug_abbrev0:
+ 428 0000 01       		.uleb128 0x1
+ 429 0001 11       		.uleb128 0x11
+ 430 0002 01       		.byte	0x1
+ 431 0003 25       		.uleb128 0x25
+ 432 0004 0E       		.uleb128 0xe
+ 433 0005 13       		.uleb128 0x13
+ 434 0006 0B       		.uleb128 0xb
+ 435 0007 03       		.uleb128 0x3
+ 436 0008 0E       		.uleb128 0xe
+ 437 0009 1B       		.uleb128 0x1b
+ 438 000a 0E       		.uleb128 0xe
+ 439 000b 55       		.uleb128 0x55
+ 440 000c 17       		.uleb128 0x17
+ 441 000d 11       		.uleb128 0x11
+ 442 000e 01       		.uleb128 0x1
+ 443 000f 10       		.uleb128 0x10
+ 444 0010 17       		.uleb128 0x17
+ 445 0011 00       		.byte	0
+ 446 0012 00       		.byte	0
+ 447 0013 02       		.uleb128 0x2
+ 448 0014 24       		.uleb128 0x24
+ 449 0015 00       		.byte	0
+ 450 0016 0B       		.uleb128 0xb
+ 451 0017 0B       		.uleb128 0xb
+ 452 0018 3E       		.uleb128 0x3e
+ 453 0019 0B       		.uleb128 0xb
+ 454 001a 03       		.uleb128 0x3
+ 455 001b 0E       		.uleb128 0xe
+ 456 001c 00       		.byte	0
+ 457 001d 00       		.byte	0
+ 458 001e 03       		.uleb128 0x3
+ 459 001f 16       		.uleb128 0x16
+ 460 0020 00       		.byte	0
+ 461 0021 03       		.uleb128 0x3
+ 462 0022 0E       		.uleb128 0xe
+ 463 0023 3A       		.uleb128 0x3a
+ 464 0024 0B       		.uleb128 0xb
+ 465 0025 3B       		.uleb128 0x3b
+ 466 0026 0B       		.uleb128 0xb
+ 467 0027 49       		.uleb128 0x49
+ 468 0028 13       		.uleb128 0x13
+ 469 0029 00       		.byte	0
+ 470 002a 00       		.byte	0
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 10
+
+
+ 471 002b 04       		.uleb128 0x4
+ 472 002c 24       		.uleb128 0x24
+ 473 002d 00       		.byte	0
+ 474 002e 0B       		.uleb128 0xb
+ 475 002f 0B       		.uleb128 0xb
+ 476 0030 3E       		.uleb128 0x3e
+ 477 0031 0B       		.uleb128 0xb
+ 478 0032 03       		.uleb128 0x3
+ 479 0033 08       		.uleb128 0x8
+ 480 0034 00       		.byte	0
+ 481 0035 00       		.byte	0
+ 482 0036 05       		.uleb128 0x5
+ 483 0037 16       		.uleb128 0x16
+ 484 0038 00       		.byte	0
+ 485 0039 03       		.uleb128 0x3
+ 486 003a 0E       		.uleb128 0xe
+ 487 003b 3A       		.uleb128 0x3a
+ 488 003c 0B       		.uleb128 0xb
+ 489 003d 3B       		.uleb128 0x3b
+ 490 003e 05       		.uleb128 0x5
+ 491 003f 49       		.uleb128 0x49
+ 492 0040 13       		.uleb128 0x13
+ 493 0041 00       		.byte	0
+ 494 0042 00       		.byte	0
+ 495 0043 06       		.uleb128 0x6
+ 496 0044 2E       		.uleb128 0x2e
+ 497 0045 00       		.byte	0
+ 498 0046 3F       		.uleb128 0x3f
+ 499 0047 19       		.uleb128 0x19
+ 500 0048 03       		.uleb128 0x3
+ 501 0049 0E       		.uleb128 0xe
+ 502 004a 3A       		.uleb128 0x3a
+ 503 004b 0B       		.uleb128 0xb
+ 504 004c 3B       		.uleb128 0x3b
+ 505 004d 0B       		.uleb128 0xb
+ 506 004e 27       		.uleb128 0x27
+ 507 004f 19       		.uleb128 0x19
+ 508 0050 11       		.uleb128 0x11
+ 509 0051 01       		.uleb128 0x1
+ 510 0052 12       		.uleb128 0x12
+ 511 0053 06       		.uleb128 0x6
+ 512 0054 40       		.uleb128 0x40
+ 513 0055 18       		.uleb128 0x18
+ 514 0056 9742     		.uleb128 0x2117
+ 515 0058 19       		.uleb128 0x19
+ 516 0059 00       		.byte	0
+ 517 005a 00       		.byte	0
+ 518 005b 07       		.uleb128 0x7
+ 519 005c 2E       		.uleb128 0x2e
+ 520 005d 01       		.byte	0x1
+ 521 005e 3F       		.uleb128 0x3f
+ 522 005f 19       		.uleb128 0x19
+ 523 0060 03       		.uleb128 0x3
+ 524 0061 0E       		.uleb128 0xe
+ 525 0062 3A       		.uleb128 0x3a
+ 526 0063 0B       		.uleb128 0xb
+ 527 0064 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 11
+
+
+ 528 0065 0B       		.uleb128 0xb
+ 529 0066 27       		.uleb128 0x27
+ 530 0067 19       		.uleb128 0x19
+ 531 0068 49       		.uleb128 0x49
+ 532 0069 13       		.uleb128 0x13
+ 533 006a 8701     		.uleb128 0x87
+ 534 006c 19       		.uleb128 0x19
+ 535 006d 11       		.uleb128 0x11
+ 536 006e 01       		.uleb128 0x1
+ 537 006f 12       		.uleb128 0x12
+ 538 0070 06       		.uleb128 0x6
+ 539 0071 40       		.uleb128 0x40
+ 540 0072 18       		.uleb128 0x18
+ 541 0073 9742     		.uleb128 0x2117
+ 542 0075 19       		.uleb128 0x19
+ 543 0076 01       		.uleb128 0x1
+ 544 0077 13       		.uleb128 0x13
+ 545 0078 00       		.byte	0
+ 546 0079 00       		.byte	0
+ 547 007a 08       		.uleb128 0x8
+ 548 007b 898201   		.uleb128 0x4109
+ 549 007e 01       		.byte	0x1
+ 550 007f 11       		.uleb128 0x11
+ 551 0080 01       		.uleb128 0x1
+ 552 0081 31       		.uleb128 0x31
+ 553 0082 13       		.uleb128 0x13
+ 554 0083 01       		.uleb128 0x1
+ 555 0084 13       		.uleb128 0x13
+ 556 0085 00       		.byte	0
+ 557 0086 00       		.byte	0
+ 558 0087 09       		.uleb128 0x9
+ 559 0088 8A8201   		.uleb128 0x410a
+ 560 008b 00       		.byte	0
+ 561 008c 02       		.uleb128 0x2
+ 562 008d 18       		.uleb128 0x18
+ 563 008e 9142     		.uleb128 0x2111
+ 564 0090 18       		.uleb128 0x18
+ 565 0091 00       		.byte	0
+ 566 0092 00       		.byte	0
+ 567 0093 0A       		.uleb128 0xa
+ 568 0094 898201   		.uleb128 0x4109
+ 569 0097 00       		.byte	0
+ 570 0098 11       		.uleb128 0x11
+ 571 0099 01       		.uleb128 0x1
+ 572 009a 31       		.uleb128 0x31
+ 573 009b 13       		.uleb128 0x13
+ 574 009c 00       		.byte	0
+ 575 009d 00       		.byte	0
+ 576 009e 0B       		.uleb128 0xb
+ 577 009f 34       		.uleb128 0x34
+ 578 00a0 00       		.byte	0
+ 579 00a1 03       		.uleb128 0x3
+ 580 00a2 0E       		.uleb128 0xe
+ 581 00a3 3A       		.uleb128 0x3a
+ 582 00a4 0B       		.uleb128 0xb
+ 583 00a5 3B       		.uleb128 0x3b
+ 584 00a6 05       		.uleb128 0x5
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 12
+
+
+ 585 00a7 49       		.uleb128 0x49
+ 586 00a8 13       		.uleb128 0x13
+ 587 00a9 3F       		.uleb128 0x3f
+ 588 00aa 19       		.uleb128 0x19
+ 589 00ab 3C       		.uleb128 0x3c
+ 590 00ac 19       		.uleb128 0x19
+ 591 00ad 00       		.byte	0
+ 592 00ae 00       		.byte	0
+ 593 00af 0C       		.uleb128 0xc
+ 594 00b0 35       		.uleb128 0x35
+ 595 00b1 00       		.byte	0
+ 596 00b2 49       		.uleb128 0x49
+ 597 00b3 13       		.uleb128 0x13
+ 598 00b4 00       		.byte	0
+ 599 00b5 00       		.byte	0
+ 600 00b6 0D       		.uleb128 0xd
+ 601 00b7 34       		.uleb128 0x34
+ 602 00b8 00       		.byte	0
+ 603 00b9 03       		.uleb128 0x3
+ 604 00ba 0E       		.uleb128 0xe
+ 605 00bb 3A       		.uleb128 0x3a
+ 606 00bc 0B       		.uleb128 0xb
+ 607 00bd 3B       		.uleb128 0x3b
+ 608 00be 0B       		.uleb128 0xb
+ 609 00bf 49       		.uleb128 0x49
+ 610 00c0 13       		.uleb128 0x13
+ 611 00c1 3F       		.uleb128 0x3f
+ 612 00c2 19       		.uleb128 0x19
+ 613 00c3 02       		.uleb128 0x2
+ 614 00c4 18       		.uleb128 0x18
+ 615 00c5 00       		.byte	0
+ 616 00c6 00       		.byte	0
+ 617 00c7 0E       		.uleb128 0xe
+ 618 00c8 2E       		.uleb128 0x2e
+ 619 00c9 00       		.byte	0
+ 620 00ca 3F       		.uleb128 0x3f
+ 621 00cb 19       		.uleb128 0x19
+ 622 00cc 3C       		.uleb128 0x3c
+ 623 00cd 19       		.uleb128 0x19
+ 624 00ce 6E       		.uleb128 0x6e
+ 625 00cf 0E       		.uleb128 0xe
+ 626 00d0 03       		.uleb128 0x3
+ 627 00d1 0E       		.uleb128 0xe
+ 628 00d2 3A       		.uleb128 0x3a
+ 629 00d3 0B       		.uleb128 0xb
+ 630 00d4 3B       		.uleb128 0x3b
+ 631 00d5 0B       		.uleb128 0xb
+ 632 00d6 00       		.byte	0
+ 633 00d7 00       		.byte	0
+ 634 00d8 00       		.byte	0
+ 635              		.section	.debug_aranges,"",%progbits
+ 636 0000 24000000 		.4byte	0x24
+ 637 0004 0200     		.2byte	0x2
+ 638 0006 00000000 		.4byte	.Ldebug_info0
+ 639 000a 04       		.byte	0x4
+ 640 000b 00       		.byte	0
+ 641 000c 0000     		.2byte	0
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 13
+
+
+ 642 000e 0000     		.2byte	0
+ 643 0010 00000000 		.4byte	.LFB63
+ 644 0014 0C000000 		.4byte	.LFE63-.LFB63
+ 645 0018 00000000 		.4byte	.LFB64
+ 646 001c 7C000000 		.4byte	.LFE64-.LFB64
+ 647 0020 00000000 		.4byte	0
+ 648 0024 00000000 		.4byte	0
+ 649              		.section	.debug_ranges,"",%progbits
+ 650              	.Ldebug_ranges0:
+ 651 0000 00000000 		.4byte	.LFB63
+ 652 0004 0C000000 		.4byte	.LFE63
+ 653 0008 00000000 		.4byte	.LFB64
+ 654 000c 7C000000 		.4byte	.LFE64
+ 655 0010 00000000 		.4byte	0
+ 656 0014 00000000 		.4byte	0
+ 657              		.section	.debug_line,"",%progbits
+ 658              	.Ldebug_line0:
+ 659 0000 A0010000 		.section	.debug_str,"MS",%progbits,1
+ 659      02006A01 
+ 659      00000201 
+ 659      FB0E0D00 
+ 659      01010101 
+ 660              	.LASF26:
+ 661 0000 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 661      57726974 
+ 661      65436F6E 
+ 661      74726F6C 
+ 661      00
+ 662              	.LASF19:
+ 663 0011 70617369 		.ascii	"pasito\000"
+ 663      746F00
+ 664              	.LASF9:
+ 665 0018 5F5F696E 		.ascii	"__int32_t\000"
+ 665      7433325F 
+ 665      7400
+ 666              	.LASF21:
+ 667 0022 7061736F 		.ascii	"pasos\000"
+ 667      7300
+ 668              	.LASF3:
+ 669 0028 73686F72 		.ascii	"short unsigned int\000"
+ 669      7420756E 
+ 669      7369676E 
+ 669      65642069 
+ 669      6E7400
+ 670              	.LASF13:
+ 671 003b 666C6F61 		.ascii	"float\000"
+ 671      7400
+ 672              	.LASF24:
+ 673 0041 4C43445F 		.ascii	"LCD_Start\000"
+ 673      53746172 
+ 673      7400
+ 674              	.LASF1:
+ 675 004b 756E7369 		.ascii	"unsigned char\000"
+ 675      676E6564 
+ 675      20636861 
+ 675      7200
+ 676              	.LASF29:
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 14
+
+
+ 677 0059 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 677      43313120 
+ 677      352E342E 
+ 677      31203230 
+ 677      31363036 
+ 678 008c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 678      20726576 
+ 678      6973696F 
+ 678      6E203233 
+ 678      37373135 
+ 679 00bf 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 679      66756E63 
+ 679      74696F6E 
+ 679      2D736563 
+ 679      74696F6E 
+ 680              	.LASF5:
+ 681 00e7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 681      20756E73 
+ 681      69676E65 
+ 681      6420696E 
+ 681      7400
+ 682              	.LASF32:
+ 683 00f9 6461725F 		.ascii	"dar_paso\000"
+ 683      7061736F 
+ 683      00
+ 684              	.LASF23:
+ 685 0102 50574D5F 		.ascii	"PWM_1_Start\000"
+ 685      315F5374 
+ 685      61727400 
+ 686              	.LASF18:
+ 687 010e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 687      52784275 
+ 687      66666572 
+ 687      00
+ 688              	.LASF14:
+ 689 011b 646F7562 		.ascii	"double\000"
+ 689      6C6500
+ 690              	.LASF22:
+ 691 0122 7061736F 		.ascii	"paso_StartEx\000"
+ 691      5F537461 
+ 691      72744578 
+ 691      00
+ 692              	.LASF31:
+ 693 012f 443A5C44 		.ascii	"D:\\Documentos\\Universidad\\OneDrive - Universidad"
+ 693      6F63756D 
+ 693      656E746F 
+ 693      735C556E 
+ 693      69766572 
+ 694 015f 20646520 		.ascii	" de Antioquia\\Trabajos u 2023-1\\Bioinstrumentacio"
+ 694      416E7469 
+ 694      6F717569 
+ 694      615C5472 
+ 694      6162616A 
+ 695 0190 6E5C4C61 		.ascii	"n\\Labs\\Pf\\Caracterizacion\\Design01.cydsn\000"
+ 695      62735C50 
+ 695      665C4361 
+ 695      72616374 
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 15
+
+
+ 695      6572697A 
+ 696              	.LASF33:
+ 697 01b9 6D61696E 		.ascii	"main\000"
+ 697      00
+ 698              	.LASF12:
+ 699 01be 75696E74 		.ascii	"uint16\000"
+ 699      313600
+ 700              	.LASF8:
+ 701 01c5 756E7369 		.ascii	"unsigned int\000"
+ 701      676E6564 
+ 701      20696E74 
+ 701      00
+ 702              	.LASF7:
+ 703 01d2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 703      206C6F6E 
+ 703      6720756E 
+ 703      7369676E 
+ 703      65642069 
+ 704              	.LASF27:
+ 705 01e9 4C43445F 		.ascii	"LCD_Position\000"
+ 705      506F7369 
+ 705      74696F6E 
+ 705      00
+ 706              	.LASF28:
+ 707 01f6 4C43445F 		.ascii	"LCD_PrintU32Number\000"
+ 707      5072696E 
+ 707      74553332 
+ 707      4E756D62 
+ 707      657200
+ 708              	.LASF10:
+ 709 0209 696E7433 		.ascii	"int32_t\000"
+ 709      325F7400 
+ 710              	.LASF17:
+ 711 0211 73697A65 		.ascii	"sizetype\000"
+ 711      74797065 
+ 711      00
+ 712              	.LASF25:
+ 713 021a 50574D5F 		.ascii	"PWM_1_WriteCompare\000"
+ 713      315F5772 
+ 713      69746543 
+ 713      6F6D7061 
+ 713      726500
+ 714              	.LASF6:
+ 715 022d 6C6F6E67 		.ascii	"long long int\000"
+ 715      206C6F6E 
+ 715      6720696E 
+ 715      7400
+ 716              	.LASF30:
+ 717 023b 6D61696E 		.ascii	"main.c\000"
+ 717      2E6300
+ 718              	.LASF15:
+ 719 0242 63686172 		.ascii	"char\000"
+ 719      00
+ 720              	.LASF2:
+ 721 0247 73686F72 		.ascii	"short int\000"
+ 721      7420696E 
+ 721      7400
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\ccVN0A0I.s 			page 16
+
+
+ 722              	.LASF11:
+ 723 0251 75696E74 		.ascii	"uint8\000"
+ 723      3800
+ 724              	.LASF4:
+ 725 0257 6C6F6E67 		.ascii	"long int\000"
+ 725      20696E74 
+ 725      00
+ 726              	.LASF16:
+ 727 0260 6C6F6E67 		.ascii	"long double\000"
+ 727      20646F75 
+ 727      626C6500 
+ 728              	.LASF0:
+ 729 026c 7369676E 		.ascii	"signed char\000"
+ 729      65642063 
+ 729      68617200 
+ 730              	.LASF20:
+ 731 0278 636F6D70 		.ascii	"compare\000"
+ 731      61726500 
+ 732              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

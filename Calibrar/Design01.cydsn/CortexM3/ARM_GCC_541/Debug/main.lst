@@ -1,0 +1,988 @@
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.aumento,"ax",%progbits
+  20              		.align	2
+  21              		.global	aumento
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	aumento, %function
+  25              	aumento:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** uint32 comparar=400;
+  14:main.c        **** uint32 angulo=0;
+  15:main.c        **** 
+  16:main.c        **** CY_ISR(aumento){
+  28              		.loc 1 16 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  17:main.c        ****     lcd_ClearDisplay();
+  36              		.loc 1 17 0
+  37 0002 0120     		movs	r0, #1
+  38 0004 FFF7FEFF 		bl	lcd_WriteControl
+  39              	.LVL0:
+  18:main.c        ****     comparar=comparar+50;
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 2
+
+
+  40              		.loc 1 18 0
+  41 0008 034B     		ldr	r3, .L3
+  42 000a 1868     		ldr	r0, [r3]
+  43 000c 3230     		adds	r0, r0, #50
+  44 000e 1860     		str	r0, [r3]
+  19:main.c        ****     PWM_WriteCompare(comparar);
+  45              		.loc 1 19 0
+  46 0010 80B2     		uxth	r0, r0
+  47 0012 FFF7FEFF 		bl	PWM_WriteCompare
+  48              	.LVL1:
+  49 0016 08BD     		pop	{r3, pc}
+  50              	.L4:
+  51              		.align	2
+  52              	.L3:
+  53 0018 00000000 		.word	.LANCHOR0
+  54              		.cfi_endproc
+  55              	.LFE63:
+  56              		.size	aumento, .-aumento
+  57              		.section	.text.disminuye,"ax",%progbits
+  58              		.align	2
+  59              		.global	disminuye
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	disminuye, %function
+  63              	disminuye:
+  64              	.LFB64:
+  20:main.c        **** }
+  21:main.c        **** 
+  22:main.c        **** CY_ISR(disminuye){
+  65              		.loc 1 22 0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69 0000 08B5     		push	{r3, lr}
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 3, -8
+  72              		.cfi_offset 14, -4
+  23:main.c        ****     lcd_ClearDisplay();
+  73              		.loc 1 23 0
+  74 0002 0120     		movs	r0, #1
+  75 0004 FFF7FEFF 		bl	lcd_WriteControl
+  76              	.LVL2:
+  24:main.c        ****     comparar=comparar-50;
+  77              		.loc 1 24 0
+  78 0008 034B     		ldr	r3, .L7
+  79 000a 1868     		ldr	r0, [r3]
+  80 000c 3238     		subs	r0, r0, #50
+  81 000e 1860     		str	r0, [r3]
+  25:main.c        ****     PWM_WriteCompare(comparar);
+  82              		.loc 1 25 0
+  83 0010 80B2     		uxth	r0, r0
+  84 0012 FFF7FEFF 		bl	PWM_WriteCompare
+  85              	.LVL3:
+  86 0016 08BD     		pop	{r3, pc}
+  87              	.L8:
+  88              		.align	2
+  89              	.L7:
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 3
+
+
+  90 0018 00000000 		.word	.LANCHOR0
+  91              		.cfi_endproc
+  92              	.LFE64:
+  93              		.size	disminuye, .-disminuye
+  94              		.section	.text.main,"ax",%progbits
+  95              		.align	2
+  96              		.global	main
+  97              		.thumb
+  98              		.thumb_func
+  99              		.type	main, %function
+ 100              	main:
+ 101              	.LFB65:
+  26:main.c        **** }
+  27:main.c        **** 
+  28:main.c        **** int main(void)
+  29:main.c        **** {
+ 102              		.loc 1 29 0
+ 103              		.cfi_startproc
+ 104              		@ Volatile: function does not return.
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 08B5     		push	{r3, lr}
+ 108              		.cfi_def_cfa_offset 8
+ 109              		.cfi_offset 3, -8
+ 110              		.cfi_offset 14, -4
+  30:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 111              		.loc 1 30 0
+ 112              		.syntax unified
+ 113              	@ 30 "main.c" 1
+ 114 0002 62B6     		CPSIE   i
+ 115              	@ 0 "" 2
+  31:main.c        **** 
+  32:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  33:main.c        ****     PWM_Start();
+ 116              		.loc 1 33 0
+ 117              		.thumb
+ 118              		.syntax unified
+ 119 0004 FFF7FEFF 		bl	PWM_Start
+ 120              	.LVL4:
+  34:main.c        ****     aum_StartEx(aumento);
+ 121              		.loc 1 34 0
+ 122 0008 1148     		ldr	r0, .L12
+ 123 000a FFF7FEFF 		bl	aum_StartEx
+ 124              	.LVL5:
+  35:main.c        ****     dis_StartEx(disminuye);
+ 125              		.loc 1 35 0
+ 126 000e 1148     		ldr	r0, .L12+4
+ 127 0010 FFF7FEFF 		bl	dis_StartEx
+ 128              	.LVL6:
+  36:main.c        ****     lcd_Start();
+ 129              		.loc 1 36 0
+ 130 0014 FFF7FEFF 		bl	lcd_Start
+ 131              	.LVL7:
+ 132              	.L10:
+  37:main.c        ****     
+  38:main.c        ****     for(;;)
+  39:main.c        ****     {
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 4
+
+
+  40:main.c        ****         /* Place your application code here. */
+  41:main.c        ****         angulo=((comparar-400)*9/100);
+ 133              		.loc 1 41 0 discriminator 1
+ 134 0018 0F4D     		ldr	r5, .L12+8
+ 135 001a 2B68     		ldr	r3, [r5]
+ 136 001c 03EBC303 		add	r3, r3, r3, lsl #3
+ 137 0020 A3F56163 		sub	r3, r3, #3600
+ 138 0024 0D4A     		ldr	r2, .L12+12
+ 139 0026 A2FB0323 		umull	r2, r3, r2, r3
+ 140 002a 5B09     		lsrs	r3, r3, #5
+ 141 002c 0C4C     		ldr	r4, .L12+16
+ 142 002e 2360     		str	r3, [r4]
+  42:main.c        ****         lcd_Position(0,0);
+ 143              		.loc 1 42 0 discriminator 1
+ 144 0030 0021     		movs	r1, #0
+ 145 0032 0846     		mov	r0, r1
+ 146 0034 FFF7FEFF 		bl	lcd_Position
+ 147              	.LVL8:
+  43:main.c        ****         lcd_PrintNumber(comparar);
+ 148              		.loc 1 43 0 discriminator 1
+ 149 0038 2888     		ldrh	r0, [r5]
+ 150 003a FFF7FEFF 		bl	lcd_PrintU32Number
+ 151              	.LVL9:
+  44:main.c        ****         lcd_Position(01,0);
+ 152              		.loc 1 44 0 discriminator 1
+ 153 003e 0021     		movs	r1, #0
+ 154 0040 0120     		movs	r0, #1
+ 155 0042 FFF7FEFF 		bl	lcd_Position
+ 156              	.LVL10:
+  45:main.c        ****         lcd_PrintNumber(angulo);
+ 157              		.loc 1 45 0 discriminator 1
+ 158 0046 2088     		ldrh	r0, [r4]
+ 159 0048 FFF7FEFF 		bl	lcd_PrintU32Number
+ 160              	.LVL11:
+ 161 004c E4E7     		b	.L10
+ 162              	.L13:
+ 163 004e 00BF     		.align	2
+ 164              	.L12:
+ 165 0050 00000000 		.word	aumento
+ 166 0054 00000000 		.word	disminuye
+ 167 0058 00000000 		.word	.LANCHOR0
+ 168 005c 1F85EB51 		.word	1374389535
+ 169 0060 00000000 		.word	.LANCHOR1
+ 170              		.cfi_endproc
+ 171              	.LFE65:
+ 172              		.size	main, .-main
+ 173              		.global	angulo
+ 174              		.global	comparar
+ 175              		.data
+ 176              		.align	2
+ 177              		.set	.LANCHOR0,. + 0
+ 178              		.type	comparar, %object
+ 179              		.size	comparar, 4
+ 180              	comparar:
+ 181 0000 90010000 		.word	400
+ 182              		.bss
+ 183              		.align	2
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 5
+
+
+ 184              		.set	.LANCHOR1,. + 0
+ 185              		.type	angulo, %object
+ 186              		.size	angulo, 4
+ 187              	angulo:
+ 188 0000 00000000 		.space	4
+ 189              		.text
+ 190              	.Letext0:
+ 191              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 192              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 193              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 194              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 195              		.file 6 "Generated_Source\\PSoC5/lcd.h"
+ 196              		.file 7 "Generated_Source\\PSoC5/PWM.h"
+ 197              		.file 8 "Generated_Source\\PSoC5/aum.h"
+ 198              		.file 9 "Generated_Source\\PSoC5/dis.h"
+ 199              		.section	.debug_info,"",%progbits
+ 200              	.Ldebug_info0:
+ 201 0000 44020000 		.4byte	0x244
+ 202 0004 0400     		.2byte	0x4
+ 203 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 204 000a 04       		.byte	0x4
+ 205 000b 01       		.uleb128 0x1
+ 206 000c 8B000000 		.4byte	.LASF31
+ 207 0010 0C       		.byte	0xc
+ 208 0011 EF010000 		.4byte	.LASF32
+ 209 0015 00000000 		.4byte	.LASF33
+ 210 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 211 001d 00000000 		.4byte	0
+ 212 0021 00000000 		.4byte	.Ldebug_line0
+ 213 0025 02       		.uleb128 0x2
+ 214 0026 01       		.byte	0x1
+ 215 0027 06       		.byte	0x6
+ 216 0028 5C020000 		.4byte	.LASF0
+ 217 002c 02       		.uleb128 0x2
+ 218 002d 01       		.byte	0x1
+ 219 002e 08       		.byte	0x8
+ 220 002f 7D000000 		.4byte	.LASF1
+ 221 0033 02       		.uleb128 0x2
+ 222 0034 02       		.byte	0x2
+ 223 0035 05       		.byte	0x5
+ 224 0036 FB010000 		.4byte	.LASF2
+ 225 003a 02       		.uleb128 0x2
+ 226 003b 02       		.byte	0x2
+ 227 003c 07       		.byte	0x7
+ 228 003d 41010000 		.4byte	.LASF3
+ 229 0041 03       		.uleb128 0x3
+ 230 0042 6D000000 		.4byte	.LASF9
+ 231 0046 02       		.byte	0x2
+ 232 0047 3F       		.byte	0x3f
+ 233 0048 4C000000 		.4byte	0x4c
+ 234 004c 02       		.uleb128 0x2
+ 235 004d 04       		.byte	0x4
+ 236 004e 05       		.byte	0x5
+ 237 004f 2E020000 		.4byte	.LASF4
+ 238 0053 02       		.uleb128 0x2
+ 239 0054 04       		.byte	0x4
+ 240 0055 07       		.byte	0x7
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 6
+
+
+ 241 0056 2F010000 		.4byte	.LASF5
+ 242 005a 02       		.uleb128 0x2
+ 243 005b 08       		.byte	0x8
+ 244 005c 05       		.byte	0x5
+ 245 005d E1010000 		.4byte	.LASF6
+ 246 0061 02       		.uleb128 0x2
+ 247 0062 08       		.byte	0x8
+ 248 0063 07       		.byte	0x7
+ 249 0064 B9010000 		.4byte	.LASF7
+ 250 0068 04       		.uleb128 0x4
+ 251 0069 04       		.byte	0x4
+ 252 006a 05       		.byte	0x5
+ 253 006b 696E7400 		.ascii	"int\000"
+ 254 006f 02       		.uleb128 0x2
+ 255 0070 04       		.byte	0x4
+ 256 0071 07       		.byte	0x7
+ 257 0072 A3010000 		.4byte	.LASF8
+ 258 0076 03       		.uleb128 0x3
+ 259 0077 D0010000 		.4byte	.LASF10
+ 260 007b 03       		.byte	0x3
+ 261 007c 2C       		.byte	0x2c
+ 262 007d 41000000 		.4byte	0x41
+ 263 0081 05       		.uleb128 0x5
+ 264 0082 90010000 		.4byte	.LASF11
+ 265 0086 04       		.byte	0x4
+ 266 0087 EA01     		.2byte	0x1ea
+ 267 0089 3A000000 		.4byte	0x3a
+ 268 008d 05       		.uleb128 0x5
+ 269 008e 97010000 		.4byte	.LASF12
+ 270 0092 04       		.byte	0x4
+ 271 0093 EB01     		.2byte	0x1eb
+ 272 0095 53000000 		.4byte	0x53
+ 273 0099 02       		.uleb128 0x2
+ 274 009a 04       		.byte	0x4
+ 275 009b 04       		.byte	0x4
+ 276 009c 77000000 		.4byte	.LASF13
+ 277 00a0 02       		.uleb128 0x2
+ 278 00a1 08       		.byte	0x8
+ 279 00a2 04       		.byte	0x4
+ 280 00a3 6B010000 		.4byte	.LASF14
+ 281 00a7 02       		.uleb128 0x2
+ 282 00a8 01       		.byte	0x1
+ 283 00a9 08       		.byte	0x8
+ 284 00aa F6010000 		.4byte	.LASF15
+ 285 00ae 02       		.uleb128 0x2
+ 286 00af 08       		.byte	0x8
+ 287 00b0 04       		.byte	0x4
+ 288 00b1 48020000 		.4byte	.LASF16
+ 289 00b5 02       		.uleb128 0x2
+ 290 00b6 04       		.byte	0x4
+ 291 00b7 07       		.byte	0x7
+ 292 00b8 D8010000 		.4byte	.LASF17
+ 293 00bc 06       		.uleb128 0x6
+ 294 00bd 54020000 		.4byte	.LASF18
+ 295 00c1 01       		.byte	0x1
+ 296 00c2 10       		.byte	0x10
+ 297 00c3 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 7
+
+
+ 298 00c7 1C000000 		.4byte	.LFE63-.LFB63
+ 299 00cb 01       		.uleb128 0x1
+ 300 00cc 9C       		.byte	0x9c
+ 301 00cd EE000000 		.4byte	0xee
+ 302 00d1 07       		.uleb128 0x7
+ 303 00d2 08000000 		.4byte	.LVL0
+ 304 00d6 EF010000 		.4byte	0x1ef
+ 305 00da E4000000 		.4byte	0xe4
+ 306 00de 08       		.uleb128 0x8
+ 307 00df 01       		.uleb128 0x1
+ 308 00e0 50       		.byte	0x50
+ 309 00e1 01       		.uleb128 0x1
+ 310 00e2 31       		.byte	0x31
+ 311 00e3 00       		.byte	0
+ 312 00e4 09       		.uleb128 0x9
+ 313 00e5 16000000 		.4byte	.LVL1
+ 314 00e9 FA010000 		.4byte	0x1fa
+ 315 00ed 00       		.byte	0
+ 316 00ee 06       		.uleb128 0x6
+ 317 00ef 61010000 		.4byte	.LASF19
+ 318 00f3 01       		.byte	0x1
+ 319 00f4 16       		.byte	0x16
+ 320 00f5 00000000 		.4byte	.LFB64
+ 321 00f9 1C000000 		.4byte	.LFE64-.LFB64
+ 322 00fd 01       		.uleb128 0x1
+ 323 00fe 9C       		.byte	0x9c
+ 324 00ff 20010000 		.4byte	0x120
+ 325 0103 07       		.uleb128 0x7
+ 326 0104 08000000 		.4byte	.LVL2
+ 327 0108 EF010000 		.4byte	0x1ef
+ 328 010c 16010000 		.4byte	0x116
+ 329 0110 08       		.uleb128 0x8
+ 330 0111 01       		.uleb128 0x1
+ 331 0112 50       		.byte	0x50
+ 332 0113 01       		.uleb128 0x1
+ 333 0114 31       		.byte	0x31
+ 334 0115 00       		.byte	0
+ 335 0116 09       		.uleb128 0x9
+ 336 0117 16000000 		.4byte	.LVL3
+ 337 011b FA010000 		.4byte	0x1fa
+ 338 011f 00       		.byte	0
+ 339 0120 0A       		.uleb128 0xa
+ 340 0121 9E010000 		.4byte	.LASF34
+ 341 0125 01       		.byte	0x1
+ 342 0126 1C       		.byte	0x1c
+ 343 0127 68000000 		.4byte	0x68
+ 344 012b 00000000 		.4byte	.LFB65
+ 345 012f 64000000 		.4byte	.LFE65-.LFB65
+ 346 0133 01       		.uleb128 0x1
+ 347 0134 9C       		.byte	0x9c
+ 348 0135 BC010000 		.4byte	0x1bc
+ 349 0139 09       		.uleb128 0x9
+ 350 013a 08000000 		.4byte	.LVL4
+ 351 013e 05020000 		.4byte	0x205
+ 352 0142 07       		.uleb128 0x7
+ 353 0143 0E000000 		.4byte	.LVL5
+ 354 0147 10020000 		.4byte	0x210
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 8
+
+
+ 355 014b 59010000 		.4byte	0x159
+ 356 014f 08       		.uleb128 0x8
+ 357 0150 01       		.uleb128 0x1
+ 358 0151 50       		.byte	0x50
+ 359 0152 05       		.uleb128 0x5
+ 360 0153 03       		.byte	0x3
+ 361 0154 00000000 		.4byte	aumento
+ 362 0158 00       		.byte	0
+ 363 0159 07       		.uleb128 0x7
+ 364 015a 14000000 		.4byte	.LVL6
+ 365 015e 1B020000 		.4byte	0x21b
+ 366 0162 70010000 		.4byte	0x170
+ 367 0166 08       		.uleb128 0x8
+ 368 0167 01       		.uleb128 0x1
+ 369 0168 50       		.byte	0x50
+ 370 0169 05       		.uleb128 0x5
+ 371 016a 03       		.byte	0x3
+ 372 016b 00000000 		.4byte	disminuye
+ 373 016f 00       		.byte	0
+ 374 0170 09       		.uleb128 0x9
+ 375 0171 18000000 		.4byte	.LVL7
+ 376 0175 26020000 		.4byte	0x226
+ 377 0179 07       		.uleb128 0x7
+ 378 017a 38000000 		.4byte	.LVL8
+ 379 017e 31020000 		.4byte	0x231
+ 380 0182 91010000 		.4byte	0x191
+ 381 0186 08       		.uleb128 0x8
+ 382 0187 01       		.uleb128 0x1
+ 383 0188 50       		.byte	0x50
+ 384 0189 01       		.uleb128 0x1
+ 385 018a 30       		.byte	0x30
+ 386 018b 08       		.uleb128 0x8
+ 387 018c 01       		.uleb128 0x1
+ 388 018d 51       		.byte	0x51
+ 389 018e 01       		.uleb128 0x1
+ 390 018f 30       		.byte	0x30
+ 391 0190 00       		.byte	0
+ 392 0191 09       		.uleb128 0x9
+ 393 0192 3E000000 		.4byte	.LVL9
+ 394 0196 3C020000 		.4byte	0x23c
+ 395 019a 07       		.uleb128 0x7
+ 396 019b 46000000 		.4byte	.LVL10
+ 397 019f 31020000 		.4byte	0x231
+ 398 01a3 B2010000 		.4byte	0x1b2
+ 399 01a7 08       		.uleb128 0x8
+ 400 01a8 01       		.uleb128 0x1
+ 401 01a9 50       		.byte	0x50
+ 402 01aa 01       		.uleb128 0x1
+ 403 01ab 31       		.byte	0x31
+ 404 01ac 08       		.uleb128 0x8
+ 405 01ad 01       		.uleb128 0x1
+ 406 01ae 51       		.byte	0x51
+ 407 01af 01       		.uleb128 0x1
+ 408 01b0 30       		.byte	0x30
+ 409 01b1 00       		.byte	0
+ 410 01b2 09       		.uleb128 0x9
+ 411 01b3 4C000000 		.4byte	.LVL11
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 9
+
+
+ 412 01b7 3C020000 		.4byte	0x23c
+ 413 01bb 00       		.byte	0
+ 414 01bc 0B       		.uleb128 0xb
+ 415 01bd 54010000 		.4byte	.LASF20
+ 416 01c1 05       		.byte	0x5
+ 417 01c2 1207     		.2byte	0x712
+ 418 01c4 C8010000 		.4byte	0x1c8
+ 419 01c8 0C       		.uleb128 0xc
+ 420 01c9 76000000 		.4byte	0x76
+ 421 01cd 0D       		.uleb128 0xd
+ 422 01ce B0010000 		.4byte	.LASF21
+ 423 01d2 01       		.byte	0x1
+ 424 01d3 0D       		.byte	0xd
+ 425 01d4 8D000000 		.4byte	0x8d
+ 426 01d8 05       		.uleb128 0x5
+ 427 01d9 03       		.byte	0x3
+ 428 01da 00000000 		.4byte	comparar
+ 429 01de 0D       		.uleb128 0xd
+ 430 01df 68020000 		.4byte	.LASF22
+ 431 01e3 01       		.byte	0x1
+ 432 01e4 0E       		.byte	0xe
+ 433 01e5 8D000000 		.4byte	0x8d
+ 434 01e9 05       		.uleb128 0x5
+ 435 01ea 03       		.byte	0x3
+ 436 01eb 00000000 		.4byte	angulo
+ 437 01ef 0E       		.uleb128 0xe
+ 438 01f0 37020000 		.4byte	.LASF23
+ 439 01f4 37020000 		.4byte	.LASF23
+ 440 01f8 06       		.byte	0x6
+ 441 01f9 3A       		.byte	0x3a
+ 442 01fa 0E       		.uleb128 0xe
+ 443 01fb 72010000 		.4byte	.LASF24
+ 444 01ff 72010000 		.4byte	.LASF24
+ 445 0203 07       		.byte	0x7
+ 446 0204 C3       		.byte	0xc3
+ 447 0205 0E       		.uleb128 0xe
+ 448 0206 18020000 		.4byte	.LASF25
+ 449 020a 18020000 		.4byte	.LASF25
+ 450 020e 07       		.byte	0x7
+ 451 020f 92       		.byte	0x92
+ 452 0210 0E       		.uleb128 0xe
+ 453 0211 19010000 		.4byte	.LASF26
+ 454 0215 19010000 		.4byte	.LASF26
+ 455 0219 08       		.byte	0x8
+ 456 021a 18       		.byte	0x18
+ 457 021b 0E       		.uleb128 0xe
+ 458 021c 22020000 		.4byte	.LASF27
+ 459 0220 22020000 		.4byte	.LASF27
+ 460 0224 09       		.byte	0x9
+ 461 0225 18       		.byte	0x18
+ 462 0226 0E       		.uleb128 0xe
+ 463 0227 25010000 		.4byte	.LASF28
+ 464 022b 25010000 		.4byte	.LASF28
+ 465 022f 06       		.byte	0x6
+ 466 0230 38       		.byte	0x38
+ 467 0231 0E       		.uleb128 0xe
+ 468 0232 83010000 		.4byte	.LASF29
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 10
+
+
+ 469 0236 83010000 		.4byte	.LASF29
+ 470 023a 06       		.byte	0x6
+ 471 023b 3D       		.byte	0x3d
+ 472 023c 0E       		.uleb128 0xe
+ 473 023d 05020000 		.4byte	.LASF30
+ 474 0241 05020000 		.4byte	.LASF30
+ 475 0245 06       		.byte	0x6
+ 476 0246 61       		.byte	0x61
+ 477 0247 00       		.byte	0
+ 478              		.section	.debug_abbrev,"",%progbits
+ 479              	.Ldebug_abbrev0:
+ 480 0000 01       		.uleb128 0x1
+ 481 0001 11       		.uleb128 0x11
+ 482 0002 01       		.byte	0x1
+ 483 0003 25       		.uleb128 0x25
+ 484 0004 0E       		.uleb128 0xe
+ 485 0005 13       		.uleb128 0x13
+ 486 0006 0B       		.uleb128 0xb
+ 487 0007 03       		.uleb128 0x3
+ 488 0008 0E       		.uleb128 0xe
+ 489 0009 1B       		.uleb128 0x1b
+ 490 000a 0E       		.uleb128 0xe
+ 491 000b 55       		.uleb128 0x55
+ 492 000c 17       		.uleb128 0x17
+ 493 000d 11       		.uleb128 0x11
+ 494 000e 01       		.uleb128 0x1
+ 495 000f 10       		.uleb128 0x10
+ 496 0010 17       		.uleb128 0x17
+ 497 0011 00       		.byte	0
+ 498 0012 00       		.byte	0
+ 499 0013 02       		.uleb128 0x2
+ 500 0014 24       		.uleb128 0x24
+ 501 0015 00       		.byte	0
+ 502 0016 0B       		.uleb128 0xb
+ 503 0017 0B       		.uleb128 0xb
+ 504 0018 3E       		.uleb128 0x3e
+ 505 0019 0B       		.uleb128 0xb
+ 506 001a 03       		.uleb128 0x3
+ 507 001b 0E       		.uleb128 0xe
+ 508 001c 00       		.byte	0
+ 509 001d 00       		.byte	0
+ 510 001e 03       		.uleb128 0x3
+ 511 001f 16       		.uleb128 0x16
+ 512 0020 00       		.byte	0
+ 513 0021 03       		.uleb128 0x3
+ 514 0022 0E       		.uleb128 0xe
+ 515 0023 3A       		.uleb128 0x3a
+ 516 0024 0B       		.uleb128 0xb
+ 517 0025 3B       		.uleb128 0x3b
+ 518 0026 0B       		.uleb128 0xb
+ 519 0027 49       		.uleb128 0x49
+ 520 0028 13       		.uleb128 0x13
+ 521 0029 00       		.byte	0
+ 522 002a 00       		.byte	0
+ 523 002b 04       		.uleb128 0x4
+ 524 002c 24       		.uleb128 0x24
+ 525 002d 00       		.byte	0
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 11
+
+
+ 526 002e 0B       		.uleb128 0xb
+ 527 002f 0B       		.uleb128 0xb
+ 528 0030 3E       		.uleb128 0x3e
+ 529 0031 0B       		.uleb128 0xb
+ 530 0032 03       		.uleb128 0x3
+ 531 0033 08       		.uleb128 0x8
+ 532 0034 00       		.byte	0
+ 533 0035 00       		.byte	0
+ 534 0036 05       		.uleb128 0x5
+ 535 0037 16       		.uleb128 0x16
+ 536 0038 00       		.byte	0
+ 537 0039 03       		.uleb128 0x3
+ 538 003a 0E       		.uleb128 0xe
+ 539 003b 3A       		.uleb128 0x3a
+ 540 003c 0B       		.uleb128 0xb
+ 541 003d 3B       		.uleb128 0x3b
+ 542 003e 05       		.uleb128 0x5
+ 543 003f 49       		.uleb128 0x49
+ 544 0040 13       		.uleb128 0x13
+ 545 0041 00       		.byte	0
+ 546 0042 00       		.byte	0
+ 547 0043 06       		.uleb128 0x6
+ 548 0044 2E       		.uleb128 0x2e
+ 549 0045 01       		.byte	0x1
+ 550 0046 3F       		.uleb128 0x3f
+ 551 0047 19       		.uleb128 0x19
+ 552 0048 03       		.uleb128 0x3
+ 553 0049 0E       		.uleb128 0xe
+ 554 004a 3A       		.uleb128 0x3a
+ 555 004b 0B       		.uleb128 0xb
+ 556 004c 3B       		.uleb128 0x3b
+ 557 004d 0B       		.uleb128 0xb
+ 558 004e 27       		.uleb128 0x27
+ 559 004f 19       		.uleb128 0x19
+ 560 0050 11       		.uleb128 0x11
+ 561 0051 01       		.uleb128 0x1
+ 562 0052 12       		.uleb128 0x12
+ 563 0053 06       		.uleb128 0x6
+ 564 0054 40       		.uleb128 0x40
+ 565 0055 18       		.uleb128 0x18
+ 566 0056 9742     		.uleb128 0x2117
+ 567 0058 19       		.uleb128 0x19
+ 568 0059 01       		.uleb128 0x1
+ 569 005a 13       		.uleb128 0x13
+ 570 005b 00       		.byte	0
+ 571 005c 00       		.byte	0
+ 572 005d 07       		.uleb128 0x7
+ 573 005e 898201   		.uleb128 0x4109
+ 574 0061 01       		.byte	0x1
+ 575 0062 11       		.uleb128 0x11
+ 576 0063 01       		.uleb128 0x1
+ 577 0064 31       		.uleb128 0x31
+ 578 0065 13       		.uleb128 0x13
+ 579 0066 01       		.uleb128 0x1
+ 580 0067 13       		.uleb128 0x13
+ 581 0068 00       		.byte	0
+ 582 0069 00       		.byte	0
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 12
+
+
+ 583 006a 08       		.uleb128 0x8
+ 584 006b 8A8201   		.uleb128 0x410a
+ 585 006e 00       		.byte	0
+ 586 006f 02       		.uleb128 0x2
+ 587 0070 18       		.uleb128 0x18
+ 588 0071 9142     		.uleb128 0x2111
+ 589 0073 18       		.uleb128 0x18
+ 590 0074 00       		.byte	0
+ 591 0075 00       		.byte	0
+ 592 0076 09       		.uleb128 0x9
+ 593 0077 898201   		.uleb128 0x4109
+ 594 007a 00       		.byte	0
+ 595 007b 11       		.uleb128 0x11
+ 596 007c 01       		.uleb128 0x1
+ 597 007d 31       		.uleb128 0x31
+ 598 007e 13       		.uleb128 0x13
+ 599 007f 00       		.byte	0
+ 600 0080 00       		.byte	0
+ 601 0081 0A       		.uleb128 0xa
+ 602 0082 2E       		.uleb128 0x2e
+ 603 0083 01       		.byte	0x1
+ 604 0084 3F       		.uleb128 0x3f
+ 605 0085 19       		.uleb128 0x19
+ 606 0086 03       		.uleb128 0x3
+ 607 0087 0E       		.uleb128 0xe
+ 608 0088 3A       		.uleb128 0x3a
+ 609 0089 0B       		.uleb128 0xb
+ 610 008a 3B       		.uleb128 0x3b
+ 611 008b 0B       		.uleb128 0xb
+ 612 008c 27       		.uleb128 0x27
+ 613 008d 19       		.uleb128 0x19
+ 614 008e 49       		.uleb128 0x49
+ 615 008f 13       		.uleb128 0x13
+ 616 0090 8701     		.uleb128 0x87
+ 617 0092 19       		.uleb128 0x19
+ 618 0093 11       		.uleb128 0x11
+ 619 0094 01       		.uleb128 0x1
+ 620 0095 12       		.uleb128 0x12
+ 621 0096 06       		.uleb128 0x6
+ 622 0097 40       		.uleb128 0x40
+ 623 0098 18       		.uleb128 0x18
+ 624 0099 9742     		.uleb128 0x2117
+ 625 009b 19       		.uleb128 0x19
+ 626 009c 01       		.uleb128 0x1
+ 627 009d 13       		.uleb128 0x13
+ 628 009e 00       		.byte	0
+ 629 009f 00       		.byte	0
+ 630 00a0 0B       		.uleb128 0xb
+ 631 00a1 34       		.uleb128 0x34
+ 632 00a2 00       		.byte	0
+ 633 00a3 03       		.uleb128 0x3
+ 634 00a4 0E       		.uleb128 0xe
+ 635 00a5 3A       		.uleb128 0x3a
+ 636 00a6 0B       		.uleb128 0xb
+ 637 00a7 3B       		.uleb128 0x3b
+ 638 00a8 05       		.uleb128 0x5
+ 639 00a9 49       		.uleb128 0x49
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 13
+
+
+ 640 00aa 13       		.uleb128 0x13
+ 641 00ab 3F       		.uleb128 0x3f
+ 642 00ac 19       		.uleb128 0x19
+ 643 00ad 3C       		.uleb128 0x3c
+ 644 00ae 19       		.uleb128 0x19
+ 645 00af 00       		.byte	0
+ 646 00b0 00       		.byte	0
+ 647 00b1 0C       		.uleb128 0xc
+ 648 00b2 35       		.uleb128 0x35
+ 649 00b3 00       		.byte	0
+ 650 00b4 49       		.uleb128 0x49
+ 651 00b5 13       		.uleb128 0x13
+ 652 00b6 00       		.byte	0
+ 653 00b7 00       		.byte	0
+ 654 00b8 0D       		.uleb128 0xd
+ 655 00b9 34       		.uleb128 0x34
+ 656 00ba 00       		.byte	0
+ 657 00bb 03       		.uleb128 0x3
+ 658 00bc 0E       		.uleb128 0xe
+ 659 00bd 3A       		.uleb128 0x3a
+ 660 00be 0B       		.uleb128 0xb
+ 661 00bf 3B       		.uleb128 0x3b
+ 662 00c0 0B       		.uleb128 0xb
+ 663 00c1 49       		.uleb128 0x49
+ 664 00c2 13       		.uleb128 0x13
+ 665 00c3 3F       		.uleb128 0x3f
+ 666 00c4 19       		.uleb128 0x19
+ 667 00c5 02       		.uleb128 0x2
+ 668 00c6 18       		.uleb128 0x18
+ 669 00c7 00       		.byte	0
+ 670 00c8 00       		.byte	0
+ 671 00c9 0E       		.uleb128 0xe
+ 672 00ca 2E       		.uleb128 0x2e
+ 673 00cb 00       		.byte	0
+ 674 00cc 3F       		.uleb128 0x3f
+ 675 00cd 19       		.uleb128 0x19
+ 676 00ce 3C       		.uleb128 0x3c
+ 677 00cf 19       		.uleb128 0x19
+ 678 00d0 6E       		.uleb128 0x6e
+ 679 00d1 0E       		.uleb128 0xe
+ 680 00d2 03       		.uleb128 0x3
+ 681 00d3 0E       		.uleb128 0xe
+ 682 00d4 3A       		.uleb128 0x3a
+ 683 00d5 0B       		.uleb128 0xb
+ 684 00d6 3B       		.uleb128 0x3b
+ 685 00d7 0B       		.uleb128 0xb
+ 686 00d8 00       		.byte	0
+ 687 00d9 00       		.byte	0
+ 688 00da 00       		.byte	0
+ 689              		.section	.debug_aranges,"",%progbits
+ 690 0000 2C000000 		.4byte	0x2c
+ 691 0004 0200     		.2byte	0x2
+ 692 0006 00000000 		.4byte	.Ldebug_info0
+ 693 000a 04       		.byte	0x4
+ 694 000b 00       		.byte	0
+ 695 000c 0000     		.2byte	0
+ 696 000e 0000     		.2byte	0
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 14
+
+
+ 697 0010 00000000 		.4byte	.LFB63
+ 698 0014 1C000000 		.4byte	.LFE63-.LFB63
+ 699 0018 00000000 		.4byte	.LFB64
+ 700 001c 1C000000 		.4byte	.LFE64-.LFB64
+ 701 0020 00000000 		.4byte	.LFB65
+ 702 0024 64000000 		.4byte	.LFE65-.LFB65
+ 703 0028 00000000 		.4byte	0
+ 704 002c 00000000 		.4byte	0
+ 705              		.section	.debug_ranges,"",%progbits
+ 706              	.Ldebug_ranges0:
+ 707 0000 00000000 		.4byte	.LFB63
+ 708 0004 1C000000 		.4byte	.LFE63
+ 709 0008 00000000 		.4byte	.LFB64
+ 710 000c 1C000000 		.4byte	.LFE64
+ 711 0010 00000000 		.4byte	.LFB65
+ 712 0014 64000000 		.4byte	.LFE65
+ 713 0018 00000000 		.4byte	0
+ 714 001c 00000000 		.4byte	0
+ 715              		.section	.debug_line,"",%progbits
+ 716              	.Ldebug_line0:
+ 717 0000 C7010000 		.section	.debug_str,"MS",%progbits,1
+ 717      02007001 
+ 717      00000201 
+ 717      FB0E0D00 
+ 717      01010101 
+ 718              	.LASF33:
+ 719 0000 433A5C55 		.ascii	"C:\\Users\\Tatiana Cordoba\\OneDrive - Universidad "
+ 719      73657273 
+ 719      5C546174 
+ 719      69616E61 
+ 719      20436F72 
+ 720 0030 64652041 		.ascii	"de Antioquia\\Documentos\\PSoC Creator\\Calibrar\\D"
+ 720      6E74696F 
+ 720      71756961 
+ 720      5C446F63 
+ 720      756D656E 
+ 721 005f 65736967 		.ascii	"esign01.cydsn\000"
+ 721      6E30312E 
+ 721      63796473 
+ 721      6E00
+ 722              	.LASF9:
+ 723 006d 5F5F696E 		.ascii	"__int32_t\000"
+ 723      7433325F 
+ 723      7400
+ 724              	.LASF13:
+ 725 0077 666C6F61 		.ascii	"float\000"
+ 725      7400
+ 726              	.LASF1:
+ 727 007d 756E7369 		.ascii	"unsigned char\000"
+ 727      676E6564 
+ 727      20636861 
+ 727      7200
+ 728              	.LASF31:
+ 729 008b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 729      43313120 
+ 729      352E342E 
+ 729      31203230 
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 15
+
+
+ 729      31363036 
+ 730 00be 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 730      20726576 
+ 730      6973696F 
+ 730      6E203233 
+ 730      37373135 
+ 731 00f1 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 731      66756E63 
+ 731      74696F6E 
+ 731      2D736563 
+ 731      74696F6E 
+ 732              	.LASF26:
+ 733 0119 61756D5F 		.ascii	"aum_StartEx\000"
+ 733      53746172 
+ 733      74457800 
+ 734              	.LASF28:
+ 735 0125 6C63645F 		.ascii	"lcd_Start\000"
+ 735      53746172 
+ 735      7400
+ 736              	.LASF5:
+ 737 012f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 737      20756E73 
+ 737      69676E65 
+ 737      6420696E 
+ 737      7400
+ 738              	.LASF3:
+ 739 0141 73686F72 		.ascii	"short unsigned int\000"
+ 739      7420756E 
+ 739      7369676E 
+ 739      65642069 
+ 739      6E7400
+ 740              	.LASF20:
+ 741 0154 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 741      52784275 
+ 741      66666572 
+ 741      00
+ 742              	.LASF19:
+ 743 0161 6469736D 		.ascii	"disminuye\000"
+ 743      696E7579 
+ 743      6500
+ 744              	.LASF14:
+ 745 016b 646F7562 		.ascii	"double\000"
+ 745      6C6500
+ 746              	.LASF24:
+ 747 0172 50574D5F 		.ascii	"PWM_WriteCompare\000"
+ 747      57726974 
+ 747      65436F6D 
+ 747      70617265 
+ 747      00
+ 748              	.LASF29:
+ 749 0183 6C63645F 		.ascii	"lcd_Position\000"
+ 749      506F7369 
+ 749      74696F6E 
+ 749      00
+ 750              	.LASF11:
+ 751 0190 75696E74 		.ascii	"uint16\000"
+ 751      313600
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 16
+
+
+ 752              	.LASF12:
+ 753 0197 75696E74 		.ascii	"uint32\000"
+ 753      333200
+ 754              	.LASF34:
+ 755 019e 6D61696E 		.ascii	"main\000"
+ 755      00
+ 756              	.LASF8:
+ 757 01a3 756E7369 		.ascii	"unsigned int\000"
+ 757      676E6564 
+ 757      20696E74 
+ 757      00
+ 758              	.LASF21:
+ 759 01b0 636F6D70 		.ascii	"comparar\000"
+ 759      61726172 
+ 759      00
+ 760              	.LASF7:
+ 761 01b9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 761      206C6F6E 
+ 761      6720756E 
+ 761      7369676E 
+ 761      65642069 
+ 762              	.LASF10:
+ 763 01d0 696E7433 		.ascii	"int32_t\000"
+ 763      325F7400 
+ 764              	.LASF17:
+ 765 01d8 73697A65 		.ascii	"sizetype\000"
+ 765      74797065 
+ 765      00
+ 766              	.LASF6:
+ 767 01e1 6C6F6E67 		.ascii	"long long int\000"
+ 767      206C6F6E 
+ 767      6720696E 
+ 767      7400
+ 768              	.LASF32:
+ 769 01ef 6D61696E 		.ascii	"main.c\000"
+ 769      2E6300
+ 770              	.LASF15:
+ 771 01f6 63686172 		.ascii	"char\000"
+ 771      00
+ 772              	.LASF2:
+ 773 01fb 73686F72 		.ascii	"short int\000"
+ 773      7420696E 
+ 773      7400
+ 774              	.LASF30:
+ 775 0205 6C63645F 		.ascii	"lcd_PrintU32Number\000"
+ 775      5072696E 
+ 775      74553332 
+ 775      4E756D62 
+ 775      657200
+ 776              	.LASF25:
+ 777 0218 50574D5F 		.ascii	"PWM_Start\000"
+ 777      53746172 
+ 777      7400
+ 778              	.LASF27:
+ 779 0222 6469735F 		.ascii	"dis_StartEx\000"
+ 779      53746172 
+ 779      74457800 
+ARM GAS  C:\Users\TATIAN~1\AppData\Local\Temp\cc3p5YTX.s 			page 17
+
+
+ 780              	.LASF4:
+ 781 022e 6C6F6E67 		.ascii	"long int\000"
+ 781      20696E74 
+ 781      00
+ 782              	.LASF23:
+ 783 0237 6C63645F 		.ascii	"lcd_WriteControl\000"
+ 783      57726974 
+ 783      65436F6E 
+ 783      74726F6C 
+ 783      00
+ 784              	.LASF16:
+ 785 0248 6C6F6E67 		.ascii	"long double\000"
+ 785      20646F75 
+ 785      626C6500 
+ 786              	.LASF18:
+ 787 0254 61756D65 		.ascii	"aumento\000"
+ 787      6E746F00 
+ 788              	.LASF0:
+ 789 025c 7369676E 		.ascii	"signed char\000"
+ 789      65642063 
+ 789      68617200 
+ 790              	.LASF22:
+ 791 0268 616E6775 		.ascii	"angulo\000"
+ 791      6C6F00
+ 792              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

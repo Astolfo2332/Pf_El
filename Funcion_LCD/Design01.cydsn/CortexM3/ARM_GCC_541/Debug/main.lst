@@ -1,0 +1,2010 @@
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.contar,"ax",%progbits
+  20              		.align	2
+  21              		.global	contar
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	contar, %function
+  25              	contar:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** 
+   2:main.c        **** #include "project.h"
+   3:main.c        **** #include <stdio.h>
+   4:main.c        **** #include <stdlib.h>
+   5:main.c        **** uint8_t lectura=0;
+   6:main.c        **** uint8_t bandera=0;
+   7:main.c        **** int fl=50;
+   8:main.c        **** int tem=26;
+   9:main.c        **** #include "project.h"
+  10:main.c        **** uint8 seg=0;
+  11:main.c        **** uint8 h=0;
+  12:main.c        **** uint8 min=0;
+  13:main.c        **** uint16 mili=0;
+  14:main.c        **** uint8 timer=0;
+  15:main.c        **** uint16 c=0;
+  16:main.c        **** char time[4]="0000";
+  17:main.c        **** CY_ISR_PROTO(contar);
+  18:main.c        **** CY_ISR(contar){
+  28              		.loc 1 18 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  19:main.c        ****     timer=1;
+  33              		.loc 1 19 0
+  34 0000 0122     		movs	r2, #1
+  35 0002 014B     		ldr	r3, .L2
+  36 0004 1A70     		strb	r2, [r3]
+  37 0006 7047     		bx	lr
+  38              	.L3:
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 2
+
+
+  39              		.align	2
+  40              	.L2:
+  41 0008 00000000 		.word	.LANCHOR0
+  42              		.cfi_endproc
+  43              	.LFE64:
+  44              		.size	contar, .-contar
+  45              		.section	.text.dato,"ax",%progbits
+  46              		.align	2
+  47              		.global	dato
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	dato, %function
+  51              	dato:
+  52              	.LFB65:
+  20:main.c        **** }
+  21:main.c        **** CY_ISR(dato){
+  53              		.loc 1 21 0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 08B5     		push	{r3, lr}
+  58              		.cfi_def_cfa_offset 8
+  59              		.cfi_offset 3, -8
+  60              		.cfi_offset 14, -4
+  22:main.c        ****     lectura=UART_GetChar();
+  61              		.loc 1 22 0
+  62 0002 FFF7FEFF 		bl	UART_GetChar
+  63              	.LVL0:
+  64 0006 024B     		ldr	r3, .L6
+  65 0008 5870     		strb	r0, [r3, #1]
+  23:main.c        ****     bandera=1;
+  66              		.loc 1 23 0
+  67 000a 0122     		movs	r2, #1
+  68 000c 9A70     		strb	r2, [r3, #2]
+  69 000e 08BD     		pop	{r3, pc}
+  70              	.L7:
+  71              		.align	2
+  72              	.L6:
+  73 0010 00000000 		.word	.LANCHOR0
+  74              		.cfi_endproc
+  75              	.LFE65:
+  76              		.size	dato, .-dato
+  77              		.section	.text.ApagarLCD,"ax",%progbits
+  78              		.align	2
+  79              		.global	ApagarLCD
+  80              		.thumb
+  81              		.thumb_func
+  82              		.type	ApagarLCD, %function
+  83              	ApagarLCD:
+  84              	.LFB66:
+  24:main.c        **** }
+  25:main.c        **** void ApagarLCD(){
+  85              		.loc 1 25 0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 3
+
+
+  90              		.cfi_def_cfa_offset 8
+  91              		.cfi_offset 3, -8
+  92              		.cfi_offset 14, -4
+  26:main.c        ****     LCD_Stop();
+  93              		.loc 1 26 0
+  94 0002 FFF7FEFF 		bl	LCD_Stop
+  95              	.LVL1:
+  96 0006 08BD     		pop	{r3, pc}
+  97              		.cfi_endproc
+  98              	.LFE66:
+  99              		.size	ApagarLCD, .-ApagarLCD
+ 100              		.section	.text.EncenderLCD,"ax",%progbits
+ 101              		.align	2
+ 102              		.global	EncenderLCD
+ 103              		.thumb
+ 104              		.thumb_func
+ 105              		.type	EncenderLCD, %function
+ 106              	EncenderLCD:
+ 107              	.LFB67:
+  27:main.c        **** }
+  28:main.c        **** 
+  29:main.c        **** void EncenderLCD(int fl,int tem,int h,int min, int sec){
+ 108              		.loc 1 29 0
+ 109              		.cfi_startproc
+ 110              		@ args = 4, pretend = 0, frame = 160
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112              	.LVL2:
+ 113 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 114              		.cfi_def_cfa_offset 20
+ 115              		.cfi_offset 4, -20
+ 116              		.cfi_offset 5, -16
+ 117              		.cfi_offset 6, -12
+ 118              		.cfi_offset 7, -8
+ 119              		.cfi_offset 14, -4
+ 120 0002 ABB0     		sub	sp, sp, #172
+ 121              		.cfi_def_cfa_offset 192
+ 122 0004 0646     		mov	r6, r0
+ 123 0006 0F46     		mov	r7, r1
+ 124 0008 1446     		mov	r4, r2
+ 125 000a 1D46     		mov	r5, r3
+  30:main.c        ****     Linterna_Write(0);
+ 126              		.loc 1 30 0
+ 127 000c 0020     		movs	r0, #0
+ 128              	.LVL3:
+ 129 000e FFF7FEFF 		bl	Linterna_Write
+ 130              	.LVL4:
+  31:main.c        ****     LCD_DisplayOn();
+ 131              		.loc 1 31 0
+ 132 0012 0C20     		movs	r0, #12
+ 133 0014 FFF7FEFF 		bl	LCD_WriteControl
+ 134              	.LVL5:
+  32:main.c        ****     LCD_ClearDisplay();
+ 135              		.loc 1 32 0
+ 136 0018 0120     		movs	r0, #1
+ 137 001a FFF7FEFF 		bl	LCD_WriteControl
+ 138              	.LVL6:
+  33:main.c        ****     char temp[50];
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 4
+
+
+  34:main.c        ****     char fluj[50];
+  35:main.c        ****     char tiemp[50];
+  36:main.c        ****     LCD_Position(0,0);
+ 139              		.loc 1 36 0
+ 140 001e 0021     		movs	r1, #0
+ 141 0020 0846     		mov	r0, r1
+ 142 0022 FFF7FEFF 		bl	LCD_Position
+ 143              	.LVL7:
+  37:main.c        ****     sprintf(temp,"Temperatura:    %2d",tem);
+ 144              		.loc 1 37 0
+ 145 0026 3A46     		mov	r2, r7
+ 146 0028 1149     		ldr	r1, .L12
+ 147 002a 1DA8     		add	r0, sp, #116
+ 148 002c FFF7FEFF 		bl	sprintf
+ 149              	.LVL8:
+  38:main.c        ****     LCD_PrintString(temp);
+ 150              		.loc 1 38 0
+ 151 0030 1DA8     		add	r0, sp, #116
+ 152 0032 FFF7FEFF 		bl	LCD_PrintString
+ 153              	.LVL9:
+  39:main.c        ****     LCD_Position(1,0);
+ 154              		.loc 1 39 0
+ 155 0036 0021     		movs	r1, #0
+ 156 0038 0120     		movs	r0, #1
+ 157 003a FFF7FEFF 		bl	LCD_Position
+ 158              	.LVL10:
+  40:main.c        ****     sprintf(fluj,"Flujo:           %2d%%",fl);
+ 159              		.loc 1 40 0
+ 160 003e 3246     		mov	r2, r6
+ 161 0040 0C49     		ldr	r1, .L12+4
+ 162 0042 10A8     		add	r0, sp, #64
+ 163 0044 FFF7FEFF 		bl	sprintf
+ 164              	.LVL11:
+  41:main.c        ****     LCD_PrintString(fluj);
+ 165              		.loc 1 41 0
+ 166 0048 10A8     		add	r0, sp, #64
+ 167 004a FFF7FEFF 		bl	LCD_PrintString
+ 168              	.LVL12:
+  42:main.c        ****     LCD_Position(3,0);
+ 169              		.loc 1 42 0
+ 170 004e 0021     		movs	r1, #0
+ 171 0050 0320     		movs	r0, #3
+ 172 0052 FFF7FEFF 		bl	LCD_Position
+ 173              	.LVL13:
+  43:main.c        ****     sprintf(tiemp,"Tiempo:     %02d:%02d:%02d",h,min,sec);
+ 174              		.loc 1 43 0
+ 175 0056 309B     		ldr	r3, [sp, #192]
+ 176 0058 0093     		str	r3, [sp]
+ 177 005a 2B46     		mov	r3, r5
+ 178 005c 2246     		mov	r2, r4
+ 179 005e 0649     		ldr	r1, .L12+8
+ 180 0060 03A8     		add	r0, sp, #12
+ 181 0062 FFF7FEFF 		bl	sprintf
+ 182              	.LVL14:
+  44:main.c        ****     LCD_PrintString(tiemp);
+ 183              		.loc 1 44 0
+ 184 0066 03A8     		add	r0, sp, #12
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 5
+
+
+ 185 0068 FFF7FEFF 		bl	LCD_PrintString
+ 186              	.LVL15:
+  45:main.c        **** }
+ 187              		.loc 1 45 0
+ 188 006c 2BB0     		add	sp, sp, #172
+ 189              		.cfi_def_cfa_offset 20
+ 190              		@ sp needed
+ 191 006e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 192              	.LVL16:
+ 193              	.L13:
+ 194              		.align	2
+ 195              	.L12:
+ 196 0070 00000000 		.word	.LC0
+ 197 0074 14000000 		.word	.LC1
+ 198 0078 2C000000 		.word	.LC2
+ 199              		.cfi_endproc
+ 200              	.LFE67:
+ 201              		.size	EncenderLCD, .-EncenderLCD
+ 202              		.section	.text.main,"ax",%progbits
+ 203              		.align	2
+ 204              		.global	main
+ 205              		.thumb
+ 206              		.thumb_func
+ 207              		.type	main, %function
+ 208              	main:
+ 209              	.LFB68:
+  46:main.c        **** int main(void)
+  47:main.c        **** {
+ 210              		.loc 1 47 0
+ 211              		.cfi_startproc
+ 212              		@ Volatile: function does not return.
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215 0000 00B5     		push	{lr}
+ 216              		.cfi_def_cfa_offset 4
+ 217              		.cfi_offset 14, -4
+ 218 0002 83B0     		sub	sp, sp, #12
+ 219              		.cfi_def_cfa_offset 16
+  48:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 220              		.loc 1 48 0
+ 221              		.syntax unified
+ 222              	@ 48 "main.c" 1
+ 223 0004 62B6     		CPSIE   i
+ 224              	@ 0 "" 2
+  49:main.c        ****     LCD_Start();
+ 225              		.loc 1 49 0
+ 226              		.thumb
+ 227              		.syntax unified
+ 228 0006 FFF7FEFF 		bl	LCD_Start
+ 229              	.LVL17:
+  50:main.c        ****     UART_Start();
+ 230              		.loc 1 50 0
+ 231 000a FFF7FEFF 		bl	UART_Start
+ 232              	.LVL18:
+  51:main.c        ****     isr_1_StartEx(dato);
+ 233              		.loc 1 51 0
+ 234 000e 3548     		ldr	r0, .L23
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 6
+
+
+ 235 0010 FFF7FEFF 		bl	isr_1_StartEx
+ 236              	.LVL19:
+  52:main.c        ****     Counter_1_Start();
+ 237              		.loc 1 52 0
+ 238 0014 FFF7FEFF 		bl	Counter_1_Start
+ 239              	.LVL20:
+  53:main.c        ****     isr_2_StartEx(contar);
+ 240              		.loc 1 53 0
+ 241 0018 3348     		ldr	r0, .L23+4
+ 242 001a FFF7FEFF 		bl	isr_2_StartEx
+ 243              	.LVL21:
+ 244              	.L15:
+  54:main.c        ****     for(;;)
+  55:main.c        ****     {  
+  56:main.c        ****         if (bandera){
+ 245              		.loc 1 56 0
+ 246 001e 334B     		ldr	r3, .L23+8
+ 247 0020 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 248 0022 002B     		cmp	r3, #0
+ 249 0024 FBD0     		beq	.L15
+  57:main.c        ****             if (lectura=='a'){ 
+ 250              		.loc 1 57 0
+ 251 0026 314B     		ldr	r3, .L23+8
+ 252 0028 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 253 002a 612B     		cmp	r3, #97
+ 254 002c 2BD1     		bne	.L16
+  58:main.c        ****                 if (timer){
+ 255              		.loc 1 58 0
+ 256 002e 2F4B     		ldr	r3, .L23+8
+ 257 0030 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 258 0032 43B3     		cbz	r3, .L16
+  59:main.c        ****                     timer=0;
+ 259              		.loc 1 59 0
+ 260 0034 2D4A     		ldr	r2, .L23+8
+ 261 0036 0023     		movs	r3, #0
+ 262 0038 1370     		strb	r3, [r2]
+  60:main.c        ****                     mili++;
+ 263              		.loc 1 60 0
+ 264 003a 9388     		ldrh	r3, [r2, #4]
+ 265 003c 0133     		adds	r3, r3, #1
+ 266 003e 9BB2     		uxth	r3, r3
+ 267 0040 9380     		strh	r3, [r2, #4]	@ movhi
+  61:main.c        ****                     if (mili==1000){
+ 268              		.loc 1 61 0
+ 269 0042 B3F57A7F 		cmp	r3, #1000
+ 270 0046 1ED1     		bne	.L16
+  62:main.c        ****                         mili=0;                 
+ 271              		.loc 1 62 0
+ 272 0048 1446     		mov	r4, r2
+ 273 004a 0023     		movs	r3, #0
+ 274 004c 9380     		strh	r3, [r2, #4]	@ movhi
+  63:main.c        ****                         EncenderLCD(fl,tem,h,min,seg);  
+ 275              		.loc 1 63 0
+ 276 004e 9379     		ldrb	r3, [r2, #6]	@ zero_extendqisi2
+ 277 0050 D279     		ldrb	r2, [r2, #7]	@ zero_extendqisi2
+ 278 0052 2748     		ldr	r0, .L23+12
+ 279 0054 0168     		ldr	r1, [r0]
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 7
+
+
+ 280 0056 4068     		ldr	r0, [r0, #4]
+ 281 0058 257A     		ldrb	r5, [r4, #8]	@ zero_extendqisi2
+ 282 005a 0095     		str	r5, [sp]
+ 283 005c FFF7FEFF 		bl	EncenderLCD
+ 284              	.LVL22:
+  64:main.c        ****                         seg++;
+ 285              		.loc 1 64 0
+ 286 0060 237A     		ldrb	r3, [r4, #8]	@ zero_extendqisi2
+ 287 0062 0133     		adds	r3, r3, #1
+ 288 0064 DBB2     		uxtb	r3, r3
+ 289 0066 2372     		strb	r3, [r4, #8]
+  65:main.c        ****                         if (seg==60){
+ 290              		.loc 1 65 0
+ 291 0068 3C2B     		cmp	r3, #60
+ 292 006a 0CD1     		bne	.L16
+  66:main.c        ****                             seg=0;
+ 293              		.loc 1 66 0
+ 294 006c 0023     		movs	r3, #0
+ 295 006e 2372     		strb	r3, [r4, #8]
+  67:main.c        ****                             min++;
+ 296              		.loc 1 67 0
+ 297 0070 A379     		ldrb	r3, [r4, #6]	@ zero_extendqisi2
+ 298 0072 0133     		adds	r3, r3, #1
+ 299 0074 DBB2     		uxtb	r3, r3
+ 300 0076 A371     		strb	r3, [r4, #6]
+  68:main.c        ****                             if (min==60){
+ 301              		.loc 1 68 0
+ 302 0078 3C2B     		cmp	r3, #60
+ 303 007a 04D1     		bne	.L16
+  69:main.c        ****                                 min=0;
+ 304              		.loc 1 69 0
+ 305 007c 0022     		movs	r2, #0
+ 306 007e A271     		strb	r2, [r4, #6]
+  70:main.c        ****                                 h++;
+ 307              		.loc 1 70 0
+ 308 0080 E279     		ldrb	r2, [r4, #7]	@ zero_extendqisi2
+ 309 0082 0132     		adds	r2, r2, #1
+ 310 0084 E271     		strb	r2, [r4, #7]
+ 311              	.L16:
+  71:main.c        ****                             }
+  72:main.c        ****                             
+  73:main.c        ****                             }
+  74:main.c        ****                         }                   
+  75:main.c        ****                   }
+  76:main.c        ****                     }
+  77:main.c        ****             if (lectura=='b'){
+ 312              		.loc 1 77 0
+ 313 0086 194B     		ldr	r3, .L23+8
+ 314 0088 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 315 008a 622B     		cmp	r3, #98
+ 316 008c C7D1     		bne	.L15
+  78:main.c        ****                 //bandera=0;
+  79:main.c        ****                 mili=0;
+ 317              		.loc 1 79 0
+ 318 008e 174B     		ldr	r3, .L23+8
+ 319 0090 0022     		movs	r2, #0
+ 320 0092 9A80     		strh	r2, [r3, #4]	@ movhi
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 8
+
+
+  80:main.c        ****                 seg=0;
+ 321              		.loc 1 80 0
+ 322 0094 1A72     		strb	r2, [r3, #8]
+  81:main.c        ****                 min=0;
+ 323              		.loc 1 81 0
+ 324 0096 9A71     		strb	r2, [r3, #6]
+  82:main.c        ****                 h=0;
+ 325              		.loc 1 82 0
+ 326 0098 DA71     		strb	r2, [r3, #7]
+  83:main.c        ****                 if (timer){
+ 327              		.loc 1 83 0
+ 328 009a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 329 009c 002B     		cmp	r3, #0
+ 330 009e BED0     		beq	.L15
+  84:main.c        ****                     timer=0;
+ 331              		.loc 1 84 0
+ 332 00a0 124A     		ldr	r2, .L23+8
+ 333 00a2 0023     		movs	r3, #0
+ 334 00a4 1370     		strb	r3, [r2]
+  85:main.c        ****                     c++;
+ 335              		.loc 1 85 0
+ 336 00a6 5389     		ldrh	r3, [r2, #10]
+ 337 00a8 0133     		adds	r3, r3, #1
+ 338 00aa 9BB2     		uxth	r3, r3
+ 339 00ac 5381     		strh	r3, [r2, #10]	@ movhi
+  86:main.c        ****                     if (c==1000){
+ 340              		.loc 1 86 0
+ 341 00ae B3F57A7F 		cmp	r3, #1000
+ 342 00b2 0BD1     		bne	.L19
+  87:main.c        ****                         Linterna_Write(!Linterna_Read());
+ 343              		.loc 1 87 0
+ 344 00b4 FFF7FEFF 		bl	Linterna_Read
+ 345              	.LVL23:
+ 346 00b8 B0FA80F0 		clz	r0, r0
+ 347 00bc 4009     		lsrs	r0, r0, #5
+ 348 00be FFF7FEFF 		bl	Linterna_Write
+ 349              	.LVL24:
+  88:main.c        ****                         ApagarLCD();
+ 350              		.loc 1 88 0
+ 351 00c2 FFF7FEFF 		bl	ApagarLCD
+ 352              	.LVL25:
+  89:main.c        ****                         c=0;
+ 353              		.loc 1 89 0
+ 354 00c6 0022     		movs	r2, #0
+ 355 00c8 084B     		ldr	r3, .L23+8
+ 356 00ca 5A81     		strh	r2, [r3, #10]	@ movhi
+ 357              	.L19:
+  90:main.c        ****                     }
+  91:main.c        ****                     if (c==500){
+ 358              		.loc 1 91 0
+ 359 00cc 074B     		ldr	r3, .L23+8
+ 360 00ce 5B89     		ldrh	r3, [r3, #10]
+ 361 00d0 B3F5FA7F 		cmp	r3, #500
+ 362 00d4 A3D1     		bne	.L15
+  92:main.c        ****                        LCD_ClearDisplay();
+ 363              		.loc 1 92 0
+ 364 00d6 0120     		movs	r0, #1
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 9
+
+
+ 365 00d8 FFF7FEFF 		bl	LCD_WriteControl
+ 366              	.LVL26:
+  93:main.c        ****                        LCD_PrintString("Dispositivo apagado");
+ 367              		.loc 1 93 0
+ 368 00dc 0548     		ldr	r0, .L23+16
+ 369 00de FFF7FEFF 		bl	LCD_PrintString
+ 370              	.LVL27:
+ 371 00e2 9CE7     		b	.L15
+ 372              	.L24:
+ 373              		.align	2
+ 374              	.L23:
+ 375 00e4 00000000 		.word	dato
+ 376 00e8 00000000 		.word	contar
+ 377 00ec 00000000 		.word	.LANCHOR0
+ 378 00f0 00000000 		.word	.LANCHOR1
+ 379 00f4 48000000 		.word	.LC3
+ 380              		.cfi_endproc
+ 381              	.LFE68:
+ 382              		.size	main, .-main
+ 383              		.global	time
+ 384              		.global	c
+ 385              		.global	timer
+ 386              		.global	mili
+ 387              		.global	min
+ 388              		.global	h
+ 389              		.global	seg
+ 390              		.global	tem
+ 391              		.global	fl
+ 392              		.global	bandera
+ 393              		.global	lectura
+ 394              		.data
+ 395              		.align	2
+ 396              		.set	.LANCHOR1,. + 0
+ 397              		.type	tem, %object
+ 398              		.size	tem, 4
+ 399              	tem:
+ 400 0000 1A000000 		.word	26
+ 401              		.type	fl, %object
+ 402              		.size	fl, 4
+ 403              	fl:
+ 404 0004 32000000 		.word	50
+ 405              		.type	time, %object
+ 406              		.size	time, 4
+ 407              	time:
+ 408 0008 30303030 		.ascii	"0000"
+ 409              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 410              		.align	2
+ 411              	.LC0:
+ 412 0000 54656D70 		.ascii	"Temperatura:    %2d\000"
+ 412      65726174 
+ 412      7572613A 
+ 412      20202020 
+ 412      25326400 
+ 413              	.LC1:
+ 414 0014 466C756A 		.ascii	"Flujo:           %2d%%\000"
+ 414      6F3A2020 
+ 414      20202020 
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 10
+
+
+ 414      20202020 
+ 414      20253264 
+ 415 002b 00       		.space	1
+ 416              	.LC2:
+ 417 002c 5469656D 		.ascii	"Tiempo:     %02d:%02d:%02d\000"
+ 417      706F3A20 
+ 417      20202020 
+ 417      25303264 
+ 417      3A253032 
+ 418 0047 00       		.space	1
+ 419              	.LC3:
+ 420 0048 44697370 		.ascii	"Dispositivo apagado\000"
+ 420      6F736974 
+ 420      69766F20 
+ 420      61706167 
+ 420      61646F00 
+ 421              		.bss
+ 422              		.align	1
+ 423              		.set	.LANCHOR0,. + 0
+ 424              		.type	timer, %object
+ 425              		.size	timer, 1
+ 426              	timer:
+ 427 0000 00       		.space	1
+ 428              		.type	lectura, %object
+ 429              		.size	lectura, 1
+ 430              	lectura:
+ 431 0001 00       		.space	1
+ 432              		.type	bandera, %object
+ 433              		.size	bandera, 1
+ 434              	bandera:
+ 435 0002 00       		.space	1
+ 436 0003 00       		.space	1
+ 437              		.type	mili, %object
+ 438              		.size	mili, 2
+ 439              	mili:
+ 440 0004 0000     		.space	2
+ 441              		.type	min, %object
+ 442              		.size	min, 1
+ 443              	min:
+ 444 0006 00       		.space	1
+ 445              		.type	h, %object
+ 446              		.size	h, 1
+ 447              	h:
+ 448 0007 00       		.space	1
+ 449              		.type	seg, %object
+ 450              		.size	seg, 1
+ 451              	seg:
+ 452 0008 00       		.space	1
+ 453 0009 00       		.space	1
+ 454              		.type	c, %object
+ 455              		.size	c, 2
+ 456              	c:
+ 457 000a 0000     		.space	2
+ 458              		.text
+ 459              	.Letext0:
+ 460              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 461              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 11
+
+
+ 462              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 463              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 464              		.file 6 "Generated_Source\\PSoC5/UART.h"
+ 465              		.file 7 "Generated_Source\\PSoC5/LCD.h"
+ 466              		.file 8 "Generated_Source\\PSoC5/Linterna.h"
+ 467              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 468              		.file 10 "Generated_Source\\PSoC5/isr_1.h"
+ 469              		.file 11 "Generated_Source\\PSoC5/Counter_1.h"
+ 470              		.file 12 "Generated_Source\\PSoC5/isr_2.h"
+ 471              		.section	.debug_info,"",%progbits
+ 472              	.Ldebug_info0:
+ 473 0000 0E050000 		.4byte	0x50e
+ 474 0004 0400     		.2byte	0x4
+ 475 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 476 000a 04       		.byte	0x4
+ 477 000b 01       		.uleb128 0x1
+ 478 000c 79000000 		.4byte	.LASF44
+ 479 0010 0C       		.byte	0xc
+ 480 0011 5D020000 		.4byte	.LASF45
+ 481 0015 12020000 		.4byte	.LASF46
+ 482 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 483 001d 00000000 		.4byte	0
+ 484 0021 00000000 		.4byte	.Ldebug_line0
+ 485 0025 02       		.uleb128 0x2
+ 486 0026 01       		.byte	0x1
+ 487 0027 06       		.byte	0x6
+ 488 0028 E2010000 		.4byte	.LASF0
+ 489 002c 03       		.uleb128 0x3
+ 490 002d 00000000 		.4byte	.LASF4
+ 491 0031 02       		.byte	0x2
+ 492 0032 1D       		.byte	0x1d
+ 493 0033 37000000 		.4byte	0x37
+ 494 0037 02       		.uleb128 0x2
+ 495 0038 01       		.byte	0x1
+ 496 0039 08       		.byte	0x8
+ 497 003a 6B000000 		.4byte	.LASF1
+ 498 003e 02       		.uleb128 0x2
+ 499 003f 02       		.byte	0x2
+ 500 0040 05       		.byte	0x5
+ 501 0041 72010000 		.4byte	.LASF2
+ 502 0045 02       		.uleb128 0x2
+ 503 0046 02       		.byte	0x2
+ 504 0047 07       		.byte	0x7
+ 505 0048 32010000 		.4byte	.LASF3
+ 506 004c 03       		.uleb128 0x3
+ 507 004d 37000000 		.4byte	.LASF5
+ 508 0051 02       		.byte	0x2
+ 509 0052 3F       		.byte	0x3f
+ 510 0053 57000000 		.4byte	0x57
+ 511 0057 02       		.uleb128 0x2
+ 512 0058 04       		.byte	0x4
+ 513 0059 05       		.byte	0x5
+ 514 005a 7A020000 		.4byte	.LASF6
+ 515 005e 02       		.uleb128 0x2
+ 516 005f 04       		.byte	0x4
+ 517 0060 07       		.byte	0x7
+ 518 0061 1B010000 		.4byte	.LASF7
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 12
+
+
+ 519 0065 02       		.uleb128 0x2
+ 520 0066 08       		.byte	0x8
+ 521 0067 05       		.byte	0x5
+ 522 0068 04020000 		.4byte	.LASF8
+ 523 006c 02       		.uleb128 0x2
+ 524 006d 08       		.byte	0x8
+ 525 006e 07       		.byte	0x7
+ 526 006f A5010000 		.4byte	.LASF9
+ 527 0073 04       		.uleb128 0x4
+ 528 0074 04       		.byte	0x4
+ 529 0075 05       		.byte	0x5
+ 530 0076 696E7400 		.ascii	"int\000"
+ 531 007a 02       		.uleb128 0x2
+ 532 007b 04       		.byte	0x4
+ 533 007c 07       		.byte	0x7
+ 534 007d 98010000 		.4byte	.LASF10
+ 535 0081 03       		.uleb128 0x3
+ 536 0082 48000000 		.4byte	.LASF11
+ 537 0086 03       		.byte	0x3
+ 538 0087 18       		.byte	0x18
+ 539 0088 2C000000 		.4byte	0x2c
+ 540 008c 03       		.uleb128 0x3
+ 541 008d F3010000 		.4byte	.LASF12
+ 542 0091 03       		.byte	0x3
+ 543 0092 2C       		.byte	0x2c
+ 544 0093 4C000000 		.4byte	0x4c
+ 545 0097 05       		.uleb128 0x5
+ 546 0098 74020000 		.4byte	.LASF13
+ 547 009c 04       		.byte	0x4
+ 548 009d E801     		.2byte	0x1e8
+ 549 009f 37000000 		.4byte	0x37
+ 550 00a3 05       		.uleb128 0x5
+ 551 00a4 8C010000 		.4byte	.LASF14
+ 552 00a8 04       		.byte	0x4
+ 553 00a9 E901     		.2byte	0x1e9
+ 554 00ab 45000000 		.4byte	0x45
+ 555 00af 02       		.uleb128 0x2
+ 556 00b0 04       		.byte	0x4
+ 557 00b1 04       		.byte	0x4
+ 558 00b2 5B000000 		.4byte	.LASF15
+ 559 00b6 02       		.uleb128 0x2
+ 560 00b7 08       		.byte	0x8
+ 561 00b8 04       		.byte	0x4
+ 562 00b9 6B010000 		.4byte	.LASF16
+ 563 00bd 02       		.uleb128 0x2
+ 564 00be 01       		.byte	0x1
+ 565 00bf 08       		.byte	0x8
+ 566 00c0 64020000 		.4byte	.LASF17
+ 567 00c4 02       		.uleb128 0x2
+ 568 00c5 08       		.byte	0x8
+ 569 00c6 04       		.byte	0x4
+ 570 00c7 93020000 		.4byte	.LASF18
+ 571 00cb 02       		.uleb128 0x2
+ 572 00cc 04       		.byte	0x4
+ 573 00cd 07       		.byte	0x7
+ 574 00ce FB010000 		.4byte	.LASF19
+ 575 00d2 06       		.uleb128 0x6
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 13
+
+
+ 576 00d3 41000000 		.4byte	.LASF47
+ 577 00d7 01       		.byte	0x1
+ 578 00d8 12       		.byte	0x12
+ 579 00d9 00000000 		.4byte	.LFB64
+ 580 00dd 0C000000 		.4byte	.LFE64-.LFB64
+ 581 00e1 01       		.uleb128 0x1
+ 582 00e2 9C       		.byte	0x9c
+ 583 00e3 07       		.uleb128 0x7
+ 584 00e4 51010000 		.4byte	.LASF20
+ 585 00e8 01       		.byte	0x1
+ 586 00e9 15       		.byte	0x15
+ 587 00ea 00000000 		.4byte	.LFB65
+ 588 00ee 14000000 		.4byte	.LFE65-.LFB65
+ 589 00f2 01       		.uleb128 0x1
+ 590 00f3 9C       		.byte	0x9c
+ 591 00f4 02010000 		.4byte	0x102
+ 592 00f8 08       		.uleb128 0x8
+ 593 00f9 06000000 		.4byte	.LVL0
+ 594 00fd 82040000 		.4byte	0x482
+ 595 0101 00       		.byte	0
+ 596 0102 09       		.uleb128 0x9
+ 597 0103 D8010000 		.4byte	.LASF48
+ 598 0107 01       		.byte	0x1
+ 599 0108 19       		.byte	0x19
+ 600 0109 00000000 		.4byte	.LFB66
+ 601 010d 08000000 		.4byte	.LFE66-.LFB66
+ 602 0111 01       		.uleb128 0x1
+ 603 0112 9C       		.byte	0x9c
+ 604 0113 21010000 		.4byte	0x121
+ 605 0117 08       		.uleb128 0x8
+ 606 0118 06000000 		.4byte	.LVL1
+ 607 011c 8D040000 		.4byte	0x48d
+ 608 0120 00       		.byte	0
+ 609 0121 07       		.uleb128 0x7
+ 610 0122 45010000 		.4byte	.LASF21
+ 611 0126 01       		.byte	0x1
+ 612 0127 1D       		.byte	0x1d
+ 613 0128 00000000 		.4byte	.LFB67
+ 614 012c 7C000000 		.4byte	.LFE67-.LFB67
+ 615 0130 01       		.uleb128 0x1
+ 616 0131 9C       		.byte	0x9c
+ 617 0132 E2020000 		.4byte	0x2e2
+ 618 0136 0A       		.uleb128 0xa
+ 619 0137 666C00   		.ascii	"fl\000"
+ 620 013a 01       		.byte	0x1
+ 621 013b 1D       		.byte	0x1d
+ 622 013c 73000000 		.4byte	0x73
+ 623 0140 00000000 		.4byte	.LLST0
+ 624 0144 0A       		.uleb128 0xa
+ 625 0145 74656D00 		.ascii	"tem\000"
+ 626 0149 01       		.byte	0x1
+ 627 014a 1D       		.byte	0x1d
+ 628 014b 73000000 		.4byte	0x73
+ 629 014f 2C000000 		.4byte	.LLST1
+ 630 0153 0A       		.uleb128 0xa
+ 631 0154 6800     		.ascii	"h\000"
+ 632 0156 01       		.byte	0x1
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 14
+
+
+ 633 0157 1D       		.byte	0x1d
+ 634 0158 73000000 		.4byte	0x73
+ 635 015c 58000000 		.4byte	.LLST2
+ 636 0160 0A       		.uleb128 0xa
+ 637 0161 6D696E00 		.ascii	"min\000"
+ 638 0165 01       		.byte	0x1
+ 639 0166 1D       		.byte	0x1d
+ 640 0167 73000000 		.4byte	0x73
+ 641 016b 84000000 		.4byte	.LLST3
+ 642 016f 0A       		.uleb128 0xa
+ 643 0170 73656300 		.ascii	"sec\000"
+ 644 0174 01       		.byte	0x1
+ 645 0175 1D       		.byte	0x1d
+ 646 0176 73000000 		.4byte	0x73
+ 647 017a B0000000 		.4byte	.LLST4
+ 648 017e 0B       		.uleb128 0xb
+ 649 017f 2D010000 		.4byte	.LASF22
+ 650 0183 01       		.byte	0x1
+ 651 0184 21       		.byte	0x21
+ 652 0185 E2020000 		.4byte	0x2e2
+ 653 0189 03       		.uleb128 0x3
+ 654 018a 91       		.byte	0x91
+ 655 018b B47F     		.sleb128 -76
+ 656 018d 0B       		.uleb128 0xb
+ 657 018e 32000000 		.4byte	.LASF23
+ 658 0192 01       		.byte	0x1
+ 659 0193 22       		.byte	0x22
+ 660 0194 E2020000 		.4byte	0x2e2
+ 661 0198 03       		.uleb128 0x3
+ 662 0199 91       		.byte	0x91
+ 663 019a 807F     		.sleb128 -128
+ 664 019c 0B       		.uleb128 0xb
+ 665 019d 69020000 		.4byte	.LASF24
+ 666 01a1 01       		.byte	0x1
+ 667 01a2 23       		.byte	0x23
+ 668 01a3 E2020000 		.4byte	0x2e2
+ 669 01a7 03       		.uleb128 0x3
+ 670 01a8 91       		.byte	0x91
+ 671 01a9 CC7E     		.sleb128 -180
+ 672 01ab 0C       		.uleb128 0xc
+ 673 01ac 12000000 		.4byte	.LVL4
+ 674 01b0 98040000 		.4byte	0x498
+ 675 01b4 BE010000 		.4byte	0x1be
+ 676 01b8 0D       		.uleb128 0xd
+ 677 01b9 01       		.uleb128 0x1
+ 678 01ba 50       		.byte	0x50
+ 679 01bb 01       		.uleb128 0x1
+ 680 01bc 30       		.byte	0x30
+ 681 01bd 00       		.byte	0
+ 682 01be 0C       		.uleb128 0xc
+ 683 01bf 18000000 		.4byte	.LVL5
+ 684 01c3 A3040000 		.4byte	0x4a3
+ 685 01c7 D1010000 		.4byte	0x1d1
+ 686 01cb 0D       		.uleb128 0xd
+ 687 01cc 01       		.uleb128 0x1
+ 688 01cd 50       		.byte	0x50
+ 689 01ce 01       		.uleb128 0x1
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 15
+
+
+ 690 01cf 3C       		.byte	0x3c
+ 691 01d0 00       		.byte	0
+ 692 01d1 0C       		.uleb128 0xc
+ 693 01d2 1E000000 		.4byte	.LVL6
+ 694 01d6 A3040000 		.4byte	0x4a3
+ 695 01da E4010000 		.4byte	0x1e4
+ 696 01de 0D       		.uleb128 0xd
+ 697 01df 01       		.uleb128 0x1
+ 698 01e0 50       		.byte	0x50
+ 699 01e1 01       		.uleb128 0x1
+ 700 01e2 31       		.byte	0x31
+ 701 01e3 00       		.byte	0
+ 702 01e4 0C       		.uleb128 0xc
+ 703 01e5 26000000 		.4byte	.LVL7
+ 704 01e9 AE040000 		.4byte	0x4ae
+ 705 01ed FC010000 		.4byte	0x1fc
+ 706 01f1 0D       		.uleb128 0xd
+ 707 01f2 01       		.uleb128 0x1
+ 708 01f3 50       		.byte	0x50
+ 709 01f4 01       		.uleb128 0x1
+ 710 01f5 30       		.byte	0x30
+ 711 01f6 0D       		.uleb128 0xd
+ 712 01f7 01       		.uleb128 0x1
+ 713 01f8 51       		.byte	0x51
+ 714 01f9 01       		.uleb128 0x1
+ 715 01fa 30       		.byte	0x30
+ 716 01fb 00       		.byte	0
+ 717 01fc 0C       		.uleb128 0xc
+ 718 01fd 30000000 		.4byte	.LVL8
+ 719 0201 B9040000 		.4byte	0x4b9
+ 720 0205 20020000 		.4byte	0x220
+ 721 0209 0D       		.uleb128 0xd
+ 722 020a 01       		.uleb128 0x1
+ 723 020b 50       		.byte	0x50
+ 724 020c 03       		.uleb128 0x3
+ 725 020d 91       		.byte	0x91
+ 726 020e B47F     		.sleb128 -76
+ 727 0210 0D       		.uleb128 0xd
+ 728 0211 01       		.uleb128 0x1
+ 729 0212 51       		.byte	0x51
+ 730 0213 05       		.uleb128 0x5
+ 731 0214 03       		.byte	0x3
+ 732 0215 00000000 		.4byte	.LC0
+ 733 0219 0D       		.uleb128 0xd
+ 734 021a 01       		.uleb128 0x1
+ 735 021b 52       		.byte	0x52
+ 736 021c 02       		.uleb128 0x2
+ 737 021d 77       		.byte	0x77
+ 738 021e 00       		.sleb128 0
+ 739 021f 00       		.byte	0
+ 740 0220 0C       		.uleb128 0xc
+ 741 0221 36000000 		.4byte	.LVL9
+ 742 0225 C4040000 		.4byte	0x4c4
+ 743 0229 35020000 		.4byte	0x235
+ 744 022d 0D       		.uleb128 0xd
+ 745 022e 01       		.uleb128 0x1
+ 746 022f 50       		.byte	0x50
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 16
+
+
+ 747 0230 03       		.uleb128 0x3
+ 748 0231 91       		.byte	0x91
+ 749 0232 B47F     		.sleb128 -76
+ 750 0234 00       		.byte	0
+ 751 0235 0C       		.uleb128 0xc
+ 752 0236 3E000000 		.4byte	.LVL10
+ 753 023a AE040000 		.4byte	0x4ae
+ 754 023e 4D020000 		.4byte	0x24d
+ 755 0242 0D       		.uleb128 0xd
+ 756 0243 01       		.uleb128 0x1
+ 757 0244 50       		.byte	0x50
+ 758 0245 01       		.uleb128 0x1
+ 759 0246 31       		.byte	0x31
+ 760 0247 0D       		.uleb128 0xd
+ 761 0248 01       		.uleb128 0x1
+ 762 0249 51       		.byte	0x51
+ 763 024a 01       		.uleb128 0x1
+ 764 024b 30       		.byte	0x30
+ 765 024c 00       		.byte	0
+ 766 024d 0C       		.uleb128 0xc
+ 767 024e 48000000 		.4byte	.LVL11
+ 768 0252 B9040000 		.4byte	0x4b9
+ 769 0256 71020000 		.4byte	0x271
+ 770 025a 0D       		.uleb128 0xd
+ 771 025b 01       		.uleb128 0x1
+ 772 025c 50       		.byte	0x50
+ 773 025d 03       		.uleb128 0x3
+ 774 025e 91       		.byte	0x91
+ 775 025f 807F     		.sleb128 -128
+ 776 0261 0D       		.uleb128 0xd
+ 777 0262 01       		.uleb128 0x1
+ 778 0263 51       		.byte	0x51
+ 779 0264 05       		.uleb128 0x5
+ 780 0265 03       		.byte	0x3
+ 781 0266 14000000 		.4byte	.LC1
+ 782 026a 0D       		.uleb128 0xd
+ 783 026b 01       		.uleb128 0x1
+ 784 026c 52       		.byte	0x52
+ 785 026d 02       		.uleb128 0x2
+ 786 026e 76       		.byte	0x76
+ 787 026f 00       		.sleb128 0
+ 788 0270 00       		.byte	0
+ 789 0271 0C       		.uleb128 0xc
+ 790 0272 4E000000 		.4byte	.LVL12
+ 791 0276 C4040000 		.4byte	0x4c4
+ 792 027a 86020000 		.4byte	0x286
+ 793 027e 0D       		.uleb128 0xd
+ 794 027f 01       		.uleb128 0x1
+ 795 0280 50       		.byte	0x50
+ 796 0281 03       		.uleb128 0x3
+ 797 0282 91       		.byte	0x91
+ 798 0283 807F     		.sleb128 -128
+ 799 0285 00       		.byte	0
+ 800 0286 0C       		.uleb128 0xc
+ 801 0287 56000000 		.4byte	.LVL13
+ 802 028b AE040000 		.4byte	0x4ae
+ 803 028f 9E020000 		.4byte	0x29e
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 17
+
+
+ 804 0293 0D       		.uleb128 0xd
+ 805 0294 01       		.uleb128 0x1
+ 806 0295 50       		.byte	0x50
+ 807 0296 01       		.uleb128 0x1
+ 808 0297 33       		.byte	0x33
+ 809 0298 0D       		.uleb128 0xd
+ 810 0299 01       		.uleb128 0x1
+ 811 029a 51       		.byte	0x51
+ 812 029b 01       		.uleb128 0x1
+ 813 029c 30       		.byte	0x30
+ 814 029d 00       		.byte	0
+ 815 029e 0C       		.uleb128 0xc
+ 816 029f 66000000 		.4byte	.LVL14
+ 817 02a3 B9040000 		.4byte	0x4b9
+ 818 02a7 D0020000 		.4byte	0x2d0
+ 819 02ab 0D       		.uleb128 0xd
+ 820 02ac 01       		.uleb128 0x1
+ 821 02ad 50       		.byte	0x50
+ 822 02ae 03       		.uleb128 0x3
+ 823 02af 91       		.byte	0x91
+ 824 02b0 CC7E     		.sleb128 -180
+ 825 02b2 0D       		.uleb128 0xd
+ 826 02b3 01       		.uleb128 0x1
+ 827 02b4 51       		.byte	0x51
+ 828 02b5 05       		.uleb128 0x5
+ 829 02b6 03       		.byte	0x3
+ 830 02b7 2C000000 		.4byte	.LC2
+ 831 02bb 0D       		.uleb128 0xd
+ 832 02bc 01       		.uleb128 0x1
+ 833 02bd 52       		.byte	0x52
+ 834 02be 02       		.uleb128 0x2
+ 835 02bf 74       		.byte	0x74
+ 836 02c0 00       		.sleb128 0
+ 837 02c1 0D       		.uleb128 0xd
+ 838 02c2 01       		.uleb128 0x1
+ 839 02c3 53       		.byte	0x53
+ 840 02c4 02       		.uleb128 0x2
+ 841 02c5 75       		.byte	0x75
+ 842 02c6 00       		.sleb128 0
+ 843 02c7 0D       		.uleb128 0xd
+ 844 02c8 02       		.uleb128 0x2
+ 845 02c9 7D       		.byte	0x7d
+ 846 02ca 00       		.sleb128 0
+ 847 02cb 03       		.uleb128 0x3
+ 848 02cc 91       		.byte	0x91
+ 849 02cd 00       		.sleb128 0
+ 850 02ce 06       		.byte	0x6
+ 851 02cf 00       		.byte	0
+ 852 02d0 0E       		.uleb128 0xe
+ 853 02d1 6C000000 		.4byte	.LVL15
+ 854 02d5 C4040000 		.4byte	0x4c4
+ 855 02d9 0D       		.uleb128 0xd
+ 856 02da 01       		.uleb128 0x1
+ 857 02db 50       		.byte	0x50
+ 858 02dc 03       		.uleb128 0x3
+ 859 02dd 91       		.byte	0x91
+ 860 02de CC7E     		.sleb128 -180
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 18
+
+
+ 861 02e0 00       		.byte	0
+ 862 02e1 00       		.byte	0
+ 863 02e2 0F       		.uleb128 0xf
+ 864 02e3 BD000000 		.4byte	0xbd
+ 865 02e7 F2020000 		.4byte	0x2f2
+ 866 02eb 10       		.uleb128 0x10
+ 867 02ec CB000000 		.4byte	0xcb
+ 868 02f0 31       		.byte	0x31
+ 869 02f1 00       		.byte	0
+ 870 02f2 11       		.uleb128 0x11
+ 871 02f3 93010000 		.4byte	.LASF49
+ 872 02f7 01       		.byte	0x1
+ 873 02f8 2E       		.byte	0x2e
+ 874 02f9 73000000 		.4byte	0x73
+ 875 02fd 00000000 		.4byte	.LFB68
+ 876 0301 F8000000 		.4byte	.LFE68-.LFB68
+ 877 0305 01       		.uleb128 0x1
+ 878 0306 9C       		.byte	0x9c
+ 879 0307 AB030000 		.4byte	0x3ab
+ 880 030b 08       		.uleb128 0x8
+ 881 030c 0A000000 		.4byte	.LVL17
+ 882 0310 CF040000 		.4byte	0x4cf
+ 883 0314 08       		.uleb128 0x8
+ 884 0315 0E000000 		.4byte	.LVL18
+ 885 0319 DA040000 		.4byte	0x4da
+ 886 031d 0C       		.uleb128 0xc
+ 887 031e 14000000 		.4byte	.LVL19
+ 888 0322 E5040000 		.4byte	0x4e5
+ 889 0326 34030000 		.4byte	0x334
+ 890 032a 0D       		.uleb128 0xd
+ 891 032b 01       		.uleb128 0x1
+ 892 032c 50       		.byte	0x50
+ 893 032d 05       		.uleb128 0x5
+ 894 032e 03       		.byte	0x3
+ 895 032f 00000000 		.4byte	dato
+ 896 0333 00       		.byte	0
+ 897 0334 08       		.uleb128 0x8
+ 898 0335 18000000 		.4byte	.LVL20
+ 899 0339 F0040000 		.4byte	0x4f0
+ 900 033d 0C       		.uleb128 0xc
+ 901 033e 1E000000 		.4byte	.LVL21
+ 902 0342 FB040000 		.4byte	0x4fb
+ 903 0346 54030000 		.4byte	0x354
+ 904 034a 0D       		.uleb128 0xd
+ 905 034b 01       		.uleb128 0x1
+ 906 034c 50       		.byte	0x50
+ 907 034d 05       		.uleb128 0x5
+ 908 034e 03       		.byte	0x3
+ 909 034f 00000000 		.4byte	contar
+ 910 0353 00       		.byte	0
+ 911 0354 0C       		.uleb128 0xc
+ 912 0355 60000000 		.4byte	.LVL22
+ 913 0359 21010000 		.4byte	0x121
+ 914 035d 69030000 		.4byte	0x369
+ 915 0361 0D       		.uleb128 0xd
+ 916 0362 02       		.uleb128 0x2
+ 917 0363 7D       		.byte	0x7d
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 19
+
+
+ 918 0364 00       		.sleb128 0
+ 919 0365 02       		.uleb128 0x2
+ 920 0366 75       		.byte	0x75
+ 921 0367 00       		.sleb128 0
+ 922 0368 00       		.byte	0
+ 923 0369 08       		.uleb128 0x8
+ 924 036a B8000000 		.4byte	.LVL23
+ 925 036e 06050000 		.4byte	0x506
+ 926 0372 08       		.uleb128 0x8
+ 927 0373 C2000000 		.4byte	.LVL24
+ 928 0377 98040000 		.4byte	0x498
+ 929 037b 08       		.uleb128 0x8
+ 930 037c C6000000 		.4byte	.LVL25
+ 931 0380 02010000 		.4byte	0x102
+ 932 0384 0C       		.uleb128 0xc
+ 933 0385 DC000000 		.4byte	.LVL26
+ 934 0389 A3040000 		.4byte	0x4a3
+ 935 038d 97030000 		.4byte	0x397
+ 936 0391 0D       		.uleb128 0xd
+ 937 0392 01       		.uleb128 0x1
+ 938 0393 50       		.byte	0x50
+ 939 0394 01       		.uleb128 0x1
+ 940 0395 31       		.byte	0x31
+ 941 0396 00       		.byte	0
+ 942 0397 0E       		.uleb128 0xe
+ 943 0398 E2000000 		.4byte	.LVL27
+ 944 039c C4040000 		.4byte	0x4c4
+ 945 03a0 0D       		.uleb128 0xd
+ 946 03a1 01       		.uleb128 0x1
+ 947 03a2 50       		.byte	0x50
+ 948 03a3 05       		.uleb128 0x5
+ 949 03a4 03       		.byte	0x3
+ 950 03a5 48000000 		.4byte	.LC3
+ 951 03a9 00       		.byte	0
+ 952 03aa 00       		.byte	0
+ 953 03ab 12       		.uleb128 0x12
+ 954 03ac 56010000 		.4byte	.LASF25
+ 955 03b0 05       		.byte	0x5
+ 956 03b1 1207     		.2byte	0x712
+ 957 03b3 B7030000 		.4byte	0x3b7
+ 958 03b7 13       		.uleb128 0x13
+ 959 03b8 8C000000 		.4byte	0x8c
+ 960 03bc 14       		.uleb128 0x14
+ 961 03bd 9F020000 		.4byte	.LASF26
+ 962 03c1 01       		.byte	0x1
+ 963 03c2 05       		.byte	0x5
+ 964 03c3 81000000 		.4byte	0x81
+ 965 03c7 05       		.uleb128 0x5
+ 966 03c8 03       		.byte	0x3
+ 967 03c9 00000000 		.4byte	lectura
+ 968 03cd 14       		.uleb128 0x14
+ 969 03ce 63010000 		.4byte	.LASF27
+ 970 03d2 01       		.byte	0x1
+ 971 03d3 06       		.byte	0x6
+ 972 03d4 81000000 		.4byte	0x81
+ 973 03d8 05       		.uleb128 0x5
+ 974 03d9 03       		.byte	0x3
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 20
+
+
+ 975 03da 00000000 		.4byte	bandera
+ 976 03de 15       		.uleb128 0x15
+ 977 03df 666C00   		.ascii	"fl\000"
+ 978 03e2 01       		.byte	0x1
+ 979 03e3 07       		.byte	0x7
+ 980 03e4 73000000 		.4byte	0x73
+ 981 03e8 05       		.uleb128 0x5
+ 982 03e9 03       		.byte	0x3
+ 983 03ea 00000000 		.4byte	fl
+ 984 03ee 15       		.uleb128 0x15
+ 985 03ef 74656D00 		.ascii	"tem\000"
+ 986 03f3 01       		.byte	0x1
+ 987 03f4 08       		.byte	0x8
+ 988 03f5 73000000 		.4byte	0x73
+ 989 03f9 05       		.uleb128 0x5
+ 990 03fa 03       		.byte	0x3
+ 991 03fb 00000000 		.4byte	tem
+ 992 03ff 15       		.uleb128 0x15
+ 993 0400 73656700 		.ascii	"seg\000"
+ 994 0404 01       		.byte	0x1
+ 995 0405 0A       		.byte	0xa
+ 996 0406 97000000 		.4byte	0x97
+ 997 040a 05       		.uleb128 0x5
+ 998 040b 03       		.byte	0x3
+ 999 040c 00000000 		.4byte	seg
+ 1000 0410 15       		.uleb128 0x15
+ 1001 0411 6800     		.ascii	"h\000"
+ 1002 0413 01       		.byte	0x1
+ 1003 0414 0B       		.byte	0xb
+ 1004 0415 97000000 		.4byte	0x97
+ 1005 0419 05       		.uleb128 0x5
+ 1006 041a 03       		.byte	0x3
+ 1007 041b 00000000 		.4byte	h
+ 1008 041f 15       		.uleb128 0x15
+ 1009 0420 6D696E00 		.ascii	"min\000"
+ 1010 0424 01       		.byte	0x1
+ 1011 0425 0C       		.byte	0xc
+ 1012 0426 97000000 		.4byte	0x97
+ 1013 042a 05       		.uleb128 0x5
+ 1014 042b 03       		.byte	0x3
+ 1015 042c 00000000 		.4byte	min
+ 1016 0430 14       		.uleb128 0x14
+ 1017 0431 6F020000 		.4byte	.LASF28
+ 1018 0435 01       		.byte	0x1
+ 1019 0436 0D       		.byte	0xd
+ 1020 0437 A3000000 		.4byte	0xa3
+ 1021 043b 05       		.uleb128 0x5
+ 1022 043c 03       		.byte	0x3
+ 1023 043d 00000000 		.4byte	mili
+ 1024 0441 14       		.uleb128 0x14
+ 1025 0442 15010000 		.4byte	.LASF29
+ 1026 0446 01       		.byte	0x1
+ 1027 0447 0E       		.byte	0xe
+ 1028 0448 97000000 		.4byte	0x97
+ 1029 044c 05       		.uleb128 0x5
+ 1030 044d 03       		.byte	0x3
+ 1031 044e 00000000 		.4byte	timer
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 21
+
+
+ 1032 0452 15       		.uleb128 0x15
+ 1033 0453 6300     		.ascii	"c\000"
+ 1034 0455 01       		.byte	0x1
+ 1035 0456 0F       		.byte	0xf
+ 1036 0457 A3000000 		.4byte	0xa3
+ 1037 045b 05       		.uleb128 0x5
+ 1038 045c 03       		.byte	0x3
+ 1039 045d 00000000 		.4byte	c
+ 1040 0461 0F       		.uleb128 0xf
+ 1041 0462 BD000000 		.4byte	0xbd
+ 1042 0466 71040000 		.4byte	0x471
+ 1043 046a 10       		.uleb128 0x10
+ 1044 046b CB000000 		.4byte	0xcb
+ 1045 046f 03       		.byte	0x3
+ 1046 0470 00       		.byte	0
+ 1047 0471 14       		.uleb128 0x14
+ 1048 0472 EE010000 		.4byte	.LASF30
+ 1049 0476 01       		.byte	0x1
+ 1050 0477 10       		.byte	0x10
+ 1051 0478 61040000 		.4byte	0x461
+ 1052 047c 05       		.uleb128 0x5
+ 1053 047d 03       		.byte	0x3
+ 1054 047e 00000000 		.4byte	time
+ 1055 0482 16       		.uleb128 0x16
+ 1056 0483 A7020000 		.4byte	.LASF31
+ 1057 0487 A7020000 		.4byte	.LASF31
+ 1058 048b 06       		.byte	0x6
+ 1059 048c 71       		.byte	0x71
+ 1060 048d 16       		.uleb128 0x16
+ 1061 048e 29000000 		.4byte	.LASF32
+ 1062 0492 29000000 		.4byte	.LASF32
+ 1063 0496 07       		.byte	0x7
+ 1064 0497 39       		.byte	0x39
+ 1065 0498 16       		.uleb128 0x16
+ 1066 0499 BC010000 		.4byte	.LASF33
+ 1067 049d BC010000 		.4byte	.LASF33
+ 1068 04a1 08       		.byte	0x8
+ 1069 04a2 26       		.byte	0x26
+ 1070 04a3 16       		.uleb128 0x16
+ 1071 04a4 18000000 		.4byte	.LASF34
+ 1072 04a8 18000000 		.4byte	.LASF34
+ 1073 04ac 07       		.byte	0x7
+ 1074 04ad 3A       		.byte	0x3a
+ 1075 04ae 16       		.uleb128 0x16
+ 1076 04af CB010000 		.4byte	.LASF35
+ 1077 04b3 CB010000 		.4byte	.LASF35
+ 1078 04b7 07       		.byte	0x7
+ 1079 04b8 3D       		.byte	0x3d
+ 1080 04b9 16       		.uleb128 0x16
+ 1081 04ba C2020000 		.4byte	.LASF36
+ 1082 04be C2020000 		.4byte	.LASF36
+ 1083 04c2 09       		.byte	0x9
+ 1084 04c3 E7       		.byte	0xe7
+ 1085 04c4 16       		.uleb128 0x16
+ 1086 04c5 7C010000 		.4byte	.LASF37
+ 1087 04c9 7C010000 		.4byte	.LASF37
+ 1088 04cd 07       		.byte	0x7
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 22
+
+
+ 1089 04ce 3C       		.byte	0x3c
+ 1090 04cf 16       		.uleb128 0x16
+ 1091 04d0 61000000 		.4byte	.LASF38
+ 1092 04d4 61000000 		.4byte	.LASF38
+ 1093 04d8 07       		.byte	0x7
+ 1094 04d9 38       		.byte	0x38
+ 1095 04da 16       		.uleb128 0x16
+ 1096 04db 50000000 		.4byte	.LASF39
+ 1097 04df 50000000 		.4byte	.LASF39
+ 1098 04e3 06       		.byte	0x6
+ 1099 04e4 54       		.byte	0x54
+ 1100 04e5 16       		.uleb128 0x16
+ 1101 04e6 B4020000 		.4byte	.LASF40
+ 1102 04ea B4020000 		.4byte	.LASF40
+ 1103 04ee 0A       		.byte	0xa
+ 1104 04ef 18       		.byte	0x18
+ 1105 04f0 16       		.uleb128 0x16
+ 1106 04f1 83020000 		.4byte	.LASF41
+ 1107 04f5 83020000 		.4byte	.LASF41
+ 1108 04f9 0B       		.byte	0xb
+ 1109 04fa 4F       		.byte	0x4f
+ 1110 04fb 16       		.uleb128 0x16
+ 1111 04fc 07010000 		.4byte	.LASF42
+ 1112 0500 07010000 		.4byte	.LASF42
+ 1113 0504 0C       		.byte	0xc
+ 1114 0505 18       		.byte	0x18
+ 1115 0506 16       		.uleb128 0x16
+ 1116 0507 0A000000 		.4byte	.LASF43
+ 1117 050b 0A000000 		.4byte	.LASF43
+ 1118 050f 08       		.byte	0x8
+ 1119 0510 29       		.byte	0x29
+ 1120 0511 00       		.byte	0
+ 1121              		.section	.debug_abbrev,"",%progbits
+ 1122              	.Ldebug_abbrev0:
+ 1123 0000 01       		.uleb128 0x1
+ 1124 0001 11       		.uleb128 0x11
+ 1125 0002 01       		.byte	0x1
+ 1126 0003 25       		.uleb128 0x25
+ 1127 0004 0E       		.uleb128 0xe
+ 1128 0005 13       		.uleb128 0x13
+ 1129 0006 0B       		.uleb128 0xb
+ 1130 0007 03       		.uleb128 0x3
+ 1131 0008 0E       		.uleb128 0xe
+ 1132 0009 1B       		.uleb128 0x1b
+ 1133 000a 0E       		.uleb128 0xe
+ 1134 000b 55       		.uleb128 0x55
+ 1135 000c 17       		.uleb128 0x17
+ 1136 000d 11       		.uleb128 0x11
+ 1137 000e 01       		.uleb128 0x1
+ 1138 000f 10       		.uleb128 0x10
+ 1139 0010 17       		.uleb128 0x17
+ 1140 0011 00       		.byte	0
+ 1141 0012 00       		.byte	0
+ 1142 0013 02       		.uleb128 0x2
+ 1143 0014 24       		.uleb128 0x24
+ 1144 0015 00       		.byte	0
+ 1145 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 23
+
+
+ 1146 0017 0B       		.uleb128 0xb
+ 1147 0018 3E       		.uleb128 0x3e
+ 1148 0019 0B       		.uleb128 0xb
+ 1149 001a 03       		.uleb128 0x3
+ 1150 001b 0E       		.uleb128 0xe
+ 1151 001c 00       		.byte	0
+ 1152 001d 00       		.byte	0
+ 1153 001e 03       		.uleb128 0x3
+ 1154 001f 16       		.uleb128 0x16
+ 1155 0020 00       		.byte	0
+ 1156 0021 03       		.uleb128 0x3
+ 1157 0022 0E       		.uleb128 0xe
+ 1158 0023 3A       		.uleb128 0x3a
+ 1159 0024 0B       		.uleb128 0xb
+ 1160 0025 3B       		.uleb128 0x3b
+ 1161 0026 0B       		.uleb128 0xb
+ 1162 0027 49       		.uleb128 0x49
+ 1163 0028 13       		.uleb128 0x13
+ 1164 0029 00       		.byte	0
+ 1165 002a 00       		.byte	0
+ 1166 002b 04       		.uleb128 0x4
+ 1167 002c 24       		.uleb128 0x24
+ 1168 002d 00       		.byte	0
+ 1169 002e 0B       		.uleb128 0xb
+ 1170 002f 0B       		.uleb128 0xb
+ 1171 0030 3E       		.uleb128 0x3e
+ 1172 0031 0B       		.uleb128 0xb
+ 1173 0032 03       		.uleb128 0x3
+ 1174 0033 08       		.uleb128 0x8
+ 1175 0034 00       		.byte	0
+ 1176 0035 00       		.byte	0
+ 1177 0036 05       		.uleb128 0x5
+ 1178 0037 16       		.uleb128 0x16
+ 1179 0038 00       		.byte	0
+ 1180 0039 03       		.uleb128 0x3
+ 1181 003a 0E       		.uleb128 0xe
+ 1182 003b 3A       		.uleb128 0x3a
+ 1183 003c 0B       		.uleb128 0xb
+ 1184 003d 3B       		.uleb128 0x3b
+ 1185 003e 05       		.uleb128 0x5
+ 1186 003f 49       		.uleb128 0x49
+ 1187 0040 13       		.uleb128 0x13
+ 1188 0041 00       		.byte	0
+ 1189 0042 00       		.byte	0
+ 1190 0043 06       		.uleb128 0x6
+ 1191 0044 2E       		.uleb128 0x2e
+ 1192 0045 00       		.byte	0
+ 1193 0046 3F       		.uleb128 0x3f
+ 1194 0047 19       		.uleb128 0x19
+ 1195 0048 03       		.uleb128 0x3
+ 1196 0049 0E       		.uleb128 0xe
+ 1197 004a 3A       		.uleb128 0x3a
+ 1198 004b 0B       		.uleb128 0xb
+ 1199 004c 3B       		.uleb128 0x3b
+ 1200 004d 0B       		.uleb128 0xb
+ 1201 004e 27       		.uleb128 0x27
+ 1202 004f 19       		.uleb128 0x19
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 24
+
+
+ 1203 0050 11       		.uleb128 0x11
+ 1204 0051 01       		.uleb128 0x1
+ 1205 0052 12       		.uleb128 0x12
+ 1206 0053 06       		.uleb128 0x6
+ 1207 0054 40       		.uleb128 0x40
+ 1208 0055 18       		.uleb128 0x18
+ 1209 0056 9742     		.uleb128 0x2117
+ 1210 0058 19       		.uleb128 0x19
+ 1211 0059 00       		.byte	0
+ 1212 005a 00       		.byte	0
+ 1213 005b 07       		.uleb128 0x7
+ 1214 005c 2E       		.uleb128 0x2e
+ 1215 005d 01       		.byte	0x1
+ 1216 005e 3F       		.uleb128 0x3f
+ 1217 005f 19       		.uleb128 0x19
+ 1218 0060 03       		.uleb128 0x3
+ 1219 0061 0E       		.uleb128 0xe
+ 1220 0062 3A       		.uleb128 0x3a
+ 1221 0063 0B       		.uleb128 0xb
+ 1222 0064 3B       		.uleb128 0x3b
+ 1223 0065 0B       		.uleb128 0xb
+ 1224 0066 27       		.uleb128 0x27
+ 1225 0067 19       		.uleb128 0x19
+ 1226 0068 11       		.uleb128 0x11
+ 1227 0069 01       		.uleb128 0x1
+ 1228 006a 12       		.uleb128 0x12
+ 1229 006b 06       		.uleb128 0x6
+ 1230 006c 40       		.uleb128 0x40
+ 1231 006d 18       		.uleb128 0x18
+ 1232 006e 9742     		.uleb128 0x2117
+ 1233 0070 19       		.uleb128 0x19
+ 1234 0071 01       		.uleb128 0x1
+ 1235 0072 13       		.uleb128 0x13
+ 1236 0073 00       		.byte	0
+ 1237 0074 00       		.byte	0
+ 1238 0075 08       		.uleb128 0x8
+ 1239 0076 898201   		.uleb128 0x4109
+ 1240 0079 00       		.byte	0
+ 1241 007a 11       		.uleb128 0x11
+ 1242 007b 01       		.uleb128 0x1
+ 1243 007c 31       		.uleb128 0x31
+ 1244 007d 13       		.uleb128 0x13
+ 1245 007e 00       		.byte	0
+ 1246 007f 00       		.byte	0
+ 1247 0080 09       		.uleb128 0x9
+ 1248 0081 2E       		.uleb128 0x2e
+ 1249 0082 01       		.byte	0x1
+ 1250 0083 3F       		.uleb128 0x3f
+ 1251 0084 19       		.uleb128 0x19
+ 1252 0085 03       		.uleb128 0x3
+ 1253 0086 0E       		.uleb128 0xe
+ 1254 0087 3A       		.uleb128 0x3a
+ 1255 0088 0B       		.uleb128 0xb
+ 1256 0089 3B       		.uleb128 0x3b
+ 1257 008a 0B       		.uleb128 0xb
+ 1258 008b 11       		.uleb128 0x11
+ 1259 008c 01       		.uleb128 0x1
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 25
+
+
+ 1260 008d 12       		.uleb128 0x12
+ 1261 008e 06       		.uleb128 0x6
+ 1262 008f 40       		.uleb128 0x40
+ 1263 0090 18       		.uleb128 0x18
+ 1264 0091 9742     		.uleb128 0x2117
+ 1265 0093 19       		.uleb128 0x19
+ 1266 0094 01       		.uleb128 0x1
+ 1267 0095 13       		.uleb128 0x13
+ 1268 0096 00       		.byte	0
+ 1269 0097 00       		.byte	0
+ 1270 0098 0A       		.uleb128 0xa
+ 1271 0099 05       		.uleb128 0x5
+ 1272 009a 00       		.byte	0
+ 1273 009b 03       		.uleb128 0x3
+ 1274 009c 08       		.uleb128 0x8
+ 1275 009d 3A       		.uleb128 0x3a
+ 1276 009e 0B       		.uleb128 0xb
+ 1277 009f 3B       		.uleb128 0x3b
+ 1278 00a0 0B       		.uleb128 0xb
+ 1279 00a1 49       		.uleb128 0x49
+ 1280 00a2 13       		.uleb128 0x13
+ 1281 00a3 02       		.uleb128 0x2
+ 1282 00a4 17       		.uleb128 0x17
+ 1283 00a5 00       		.byte	0
+ 1284 00a6 00       		.byte	0
+ 1285 00a7 0B       		.uleb128 0xb
+ 1286 00a8 34       		.uleb128 0x34
+ 1287 00a9 00       		.byte	0
+ 1288 00aa 03       		.uleb128 0x3
+ 1289 00ab 0E       		.uleb128 0xe
+ 1290 00ac 3A       		.uleb128 0x3a
+ 1291 00ad 0B       		.uleb128 0xb
+ 1292 00ae 3B       		.uleb128 0x3b
+ 1293 00af 0B       		.uleb128 0xb
+ 1294 00b0 49       		.uleb128 0x49
+ 1295 00b1 13       		.uleb128 0x13
+ 1296 00b2 02       		.uleb128 0x2
+ 1297 00b3 18       		.uleb128 0x18
+ 1298 00b4 00       		.byte	0
+ 1299 00b5 00       		.byte	0
+ 1300 00b6 0C       		.uleb128 0xc
+ 1301 00b7 898201   		.uleb128 0x4109
+ 1302 00ba 01       		.byte	0x1
+ 1303 00bb 11       		.uleb128 0x11
+ 1304 00bc 01       		.uleb128 0x1
+ 1305 00bd 31       		.uleb128 0x31
+ 1306 00be 13       		.uleb128 0x13
+ 1307 00bf 01       		.uleb128 0x1
+ 1308 00c0 13       		.uleb128 0x13
+ 1309 00c1 00       		.byte	0
+ 1310 00c2 00       		.byte	0
+ 1311 00c3 0D       		.uleb128 0xd
+ 1312 00c4 8A8201   		.uleb128 0x410a
+ 1313 00c7 00       		.byte	0
+ 1314 00c8 02       		.uleb128 0x2
+ 1315 00c9 18       		.uleb128 0x18
+ 1316 00ca 9142     		.uleb128 0x2111
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 26
+
+
+ 1317 00cc 18       		.uleb128 0x18
+ 1318 00cd 00       		.byte	0
+ 1319 00ce 00       		.byte	0
+ 1320 00cf 0E       		.uleb128 0xe
+ 1321 00d0 898201   		.uleb128 0x4109
+ 1322 00d3 01       		.byte	0x1
+ 1323 00d4 11       		.uleb128 0x11
+ 1324 00d5 01       		.uleb128 0x1
+ 1325 00d6 31       		.uleb128 0x31
+ 1326 00d7 13       		.uleb128 0x13
+ 1327 00d8 00       		.byte	0
+ 1328 00d9 00       		.byte	0
+ 1329 00da 0F       		.uleb128 0xf
+ 1330 00db 01       		.uleb128 0x1
+ 1331 00dc 01       		.byte	0x1
+ 1332 00dd 49       		.uleb128 0x49
+ 1333 00de 13       		.uleb128 0x13
+ 1334 00df 01       		.uleb128 0x1
+ 1335 00e0 13       		.uleb128 0x13
+ 1336 00e1 00       		.byte	0
+ 1337 00e2 00       		.byte	0
+ 1338 00e3 10       		.uleb128 0x10
+ 1339 00e4 21       		.uleb128 0x21
+ 1340 00e5 00       		.byte	0
+ 1341 00e6 49       		.uleb128 0x49
+ 1342 00e7 13       		.uleb128 0x13
+ 1343 00e8 2F       		.uleb128 0x2f
+ 1344 00e9 0B       		.uleb128 0xb
+ 1345 00ea 00       		.byte	0
+ 1346 00eb 00       		.byte	0
+ 1347 00ec 11       		.uleb128 0x11
+ 1348 00ed 2E       		.uleb128 0x2e
+ 1349 00ee 01       		.byte	0x1
+ 1350 00ef 3F       		.uleb128 0x3f
+ 1351 00f0 19       		.uleb128 0x19
+ 1352 00f1 03       		.uleb128 0x3
+ 1353 00f2 0E       		.uleb128 0xe
+ 1354 00f3 3A       		.uleb128 0x3a
+ 1355 00f4 0B       		.uleb128 0xb
+ 1356 00f5 3B       		.uleb128 0x3b
+ 1357 00f6 0B       		.uleb128 0xb
+ 1358 00f7 27       		.uleb128 0x27
+ 1359 00f8 19       		.uleb128 0x19
+ 1360 00f9 49       		.uleb128 0x49
+ 1361 00fa 13       		.uleb128 0x13
+ 1362 00fb 8701     		.uleb128 0x87
+ 1363 00fd 19       		.uleb128 0x19
+ 1364 00fe 11       		.uleb128 0x11
+ 1365 00ff 01       		.uleb128 0x1
+ 1366 0100 12       		.uleb128 0x12
+ 1367 0101 06       		.uleb128 0x6
+ 1368 0102 40       		.uleb128 0x40
+ 1369 0103 18       		.uleb128 0x18
+ 1370 0104 9742     		.uleb128 0x2117
+ 1371 0106 19       		.uleb128 0x19
+ 1372 0107 01       		.uleb128 0x1
+ 1373 0108 13       		.uleb128 0x13
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 27
+
+
+ 1374 0109 00       		.byte	0
+ 1375 010a 00       		.byte	0
+ 1376 010b 12       		.uleb128 0x12
+ 1377 010c 34       		.uleb128 0x34
+ 1378 010d 00       		.byte	0
+ 1379 010e 03       		.uleb128 0x3
+ 1380 010f 0E       		.uleb128 0xe
+ 1381 0110 3A       		.uleb128 0x3a
+ 1382 0111 0B       		.uleb128 0xb
+ 1383 0112 3B       		.uleb128 0x3b
+ 1384 0113 05       		.uleb128 0x5
+ 1385 0114 49       		.uleb128 0x49
+ 1386 0115 13       		.uleb128 0x13
+ 1387 0116 3F       		.uleb128 0x3f
+ 1388 0117 19       		.uleb128 0x19
+ 1389 0118 3C       		.uleb128 0x3c
+ 1390 0119 19       		.uleb128 0x19
+ 1391 011a 00       		.byte	0
+ 1392 011b 00       		.byte	0
+ 1393 011c 13       		.uleb128 0x13
+ 1394 011d 35       		.uleb128 0x35
+ 1395 011e 00       		.byte	0
+ 1396 011f 49       		.uleb128 0x49
+ 1397 0120 13       		.uleb128 0x13
+ 1398 0121 00       		.byte	0
+ 1399 0122 00       		.byte	0
+ 1400 0123 14       		.uleb128 0x14
+ 1401 0124 34       		.uleb128 0x34
+ 1402 0125 00       		.byte	0
+ 1403 0126 03       		.uleb128 0x3
+ 1404 0127 0E       		.uleb128 0xe
+ 1405 0128 3A       		.uleb128 0x3a
+ 1406 0129 0B       		.uleb128 0xb
+ 1407 012a 3B       		.uleb128 0x3b
+ 1408 012b 0B       		.uleb128 0xb
+ 1409 012c 49       		.uleb128 0x49
+ 1410 012d 13       		.uleb128 0x13
+ 1411 012e 3F       		.uleb128 0x3f
+ 1412 012f 19       		.uleb128 0x19
+ 1413 0130 02       		.uleb128 0x2
+ 1414 0131 18       		.uleb128 0x18
+ 1415 0132 00       		.byte	0
+ 1416 0133 00       		.byte	0
+ 1417 0134 15       		.uleb128 0x15
+ 1418 0135 34       		.uleb128 0x34
+ 1419 0136 00       		.byte	0
+ 1420 0137 03       		.uleb128 0x3
+ 1421 0138 08       		.uleb128 0x8
+ 1422 0139 3A       		.uleb128 0x3a
+ 1423 013a 0B       		.uleb128 0xb
+ 1424 013b 3B       		.uleb128 0x3b
+ 1425 013c 0B       		.uleb128 0xb
+ 1426 013d 49       		.uleb128 0x49
+ 1427 013e 13       		.uleb128 0x13
+ 1428 013f 3F       		.uleb128 0x3f
+ 1429 0140 19       		.uleb128 0x19
+ 1430 0141 02       		.uleb128 0x2
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 28
+
+
+ 1431 0142 18       		.uleb128 0x18
+ 1432 0143 00       		.byte	0
+ 1433 0144 00       		.byte	0
+ 1434 0145 16       		.uleb128 0x16
+ 1435 0146 2E       		.uleb128 0x2e
+ 1436 0147 00       		.byte	0
+ 1437 0148 3F       		.uleb128 0x3f
+ 1438 0149 19       		.uleb128 0x19
+ 1439 014a 3C       		.uleb128 0x3c
+ 1440 014b 19       		.uleb128 0x19
+ 1441 014c 6E       		.uleb128 0x6e
+ 1442 014d 0E       		.uleb128 0xe
+ 1443 014e 03       		.uleb128 0x3
+ 1444 014f 0E       		.uleb128 0xe
+ 1445 0150 3A       		.uleb128 0x3a
+ 1446 0151 0B       		.uleb128 0xb
+ 1447 0152 3B       		.uleb128 0x3b
+ 1448 0153 0B       		.uleb128 0xb
+ 1449 0154 00       		.byte	0
+ 1450 0155 00       		.byte	0
+ 1451 0156 00       		.byte	0
+ 1452              		.section	.debug_loc,"",%progbits
+ 1453              	.Ldebug_loc0:
+ 1454              	.LLST0:
+ 1455 0000 00000000 		.4byte	.LVL2
+ 1456 0004 0E000000 		.4byte	.LVL3
+ 1457 0008 0100     		.2byte	0x1
+ 1458 000a 50       		.byte	0x50
+ 1459 000b 0E000000 		.4byte	.LVL3
+ 1460 000f 70000000 		.4byte	.LVL16
+ 1461 0013 0100     		.2byte	0x1
+ 1462 0015 56       		.byte	0x56
+ 1463 0016 70000000 		.4byte	.LVL16
+ 1464 001a 7C000000 		.4byte	.LFE67
+ 1465 001e 0400     		.2byte	0x4
+ 1466 0020 F3       		.byte	0xf3
+ 1467 0021 01       		.uleb128 0x1
+ 1468 0022 50       		.byte	0x50
+ 1469 0023 9F       		.byte	0x9f
+ 1470 0024 00000000 		.4byte	0
+ 1471 0028 00000000 		.4byte	0
+ 1472              	.LLST1:
+ 1473 002c 00000000 		.4byte	.LVL2
+ 1474 0030 11000000 		.4byte	.LVL4-1
+ 1475 0034 0100     		.2byte	0x1
+ 1476 0036 51       		.byte	0x51
+ 1477 0037 11000000 		.4byte	.LVL4-1
+ 1478 003b 70000000 		.4byte	.LVL16
+ 1479 003f 0100     		.2byte	0x1
+ 1480 0041 57       		.byte	0x57
+ 1481 0042 70000000 		.4byte	.LVL16
+ 1482 0046 7C000000 		.4byte	.LFE67
+ 1483 004a 0400     		.2byte	0x4
+ 1484 004c F3       		.byte	0xf3
+ 1485 004d 01       		.uleb128 0x1
+ 1486 004e 51       		.byte	0x51
+ 1487 004f 9F       		.byte	0x9f
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 29
+
+
+ 1488 0050 00000000 		.4byte	0
+ 1489 0054 00000000 		.4byte	0
+ 1490              	.LLST2:
+ 1491 0058 00000000 		.4byte	.LVL2
+ 1492 005c 11000000 		.4byte	.LVL4-1
+ 1493 0060 0100     		.2byte	0x1
+ 1494 0062 52       		.byte	0x52
+ 1495 0063 11000000 		.4byte	.LVL4-1
+ 1496 0067 70000000 		.4byte	.LVL16
+ 1497 006b 0100     		.2byte	0x1
+ 1498 006d 54       		.byte	0x54
+ 1499 006e 70000000 		.4byte	.LVL16
+ 1500 0072 7C000000 		.4byte	.LFE67
+ 1501 0076 0400     		.2byte	0x4
+ 1502 0078 F3       		.byte	0xf3
+ 1503 0079 01       		.uleb128 0x1
+ 1504 007a 52       		.byte	0x52
+ 1505 007b 9F       		.byte	0x9f
+ 1506 007c 00000000 		.4byte	0
+ 1507 0080 00000000 		.4byte	0
+ 1508              	.LLST3:
+ 1509 0084 00000000 		.4byte	.LVL2
+ 1510 0088 11000000 		.4byte	.LVL4-1
+ 1511 008c 0100     		.2byte	0x1
+ 1512 008e 53       		.byte	0x53
+ 1513 008f 11000000 		.4byte	.LVL4-1
+ 1514 0093 70000000 		.4byte	.LVL16
+ 1515 0097 0100     		.2byte	0x1
+ 1516 0099 55       		.byte	0x55
+ 1517 009a 70000000 		.4byte	.LVL16
+ 1518 009e 7C000000 		.4byte	.LFE67
+ 1519 00a2 0400     		.2byte	0x4
+ 1520 00a4 F3       		.byte	0xf3
+ 1521 00a5 01       		.uleb128 0x1
+ 1522 00a6 53       		.byte	0x53
+ 1523 00a7 9F       		.byte	0x9f
+ 1524 00a8 00000000 		.4byte	0
+ 1525 00ac 00000000 		.4byte	0
+ 1526              	.LLST4:
+ 1527 00b0 00000000 		.4byte	.LVL2
+ 1528 00b4 70000000 		.4byte	.LVL16
+ 1529 00b8 0200     		.2byte	0x2
+ 1530 00ba 91       		.byte	0x91
+ 1531 00bb 00       		.sleb128 0
+ 1532 00bc 70000000 		.4byte	.LVL16
+ 1533 00c0 7C000000 		.4byte	.LFE67
+ 1534 00c4 0200     		.2byte	0x2
+ 1535 00c6 7D       		.byte	0x7d
+ 1536 00c7 00       		.sleb128 0
+ 1537 00c8 00000000 		.4byte	0
+ 1538 00cc 00000000 		.4byte	0
+ 1539              		.section	.debug_aranges,"",%progbits
+ 1540 0000 3C000000 		.4byte	0x3c
+ 1541 0004 0200     		.2byte	0x2
+ 1542 0006 00000000 		.4byte	.Ldebug_info0
+ 1543 000a 04       		.byte	0x4
+ 1544 000b 00       		.byte	0
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 30
+
+
+ 1545 000c 0000     		.2byte	0
+ 1546 000e 0000     		.2byte	0
+ 1547 0010 00000000 		.4byte	.LFB64
+ 1548 0014 0C000000 		.4byte	.LFE64-.LFB64
+ 1549 0018 00000000 		.4byte	.LFB65
+ 1550 001c 14000000 		.4byte	.LFE65-.LFB65
+ 1551 0020 00000000 		.4byte	.LFB66
+ 1552 0024 08000000 		.4byte	.LFE66-.LFB66
+ 1553 0028 00000000 		.4byte	.LFB67
+ 1554 002c 7C000000 		.4byte	.LFE67-.LFB67
+ 1555 0030 00000000 		.4byte	.LFB68
+ 1556 0034 F8000000 		.4byte	.LFE68-.LFB68
+ 1557 0038 00000000 		.4byte	0
+ 1558 003c 00000000 		.4byte	0
+ 1559              		.section	.debug_ranges,"",%progbits
+ 1560              	.Ldebug_ranges0:
+ 1561 0000 00000000 		.4byte	.LFB64
+ 1562 0004 0C000000 		.4byte	.LFE64
+ 1563 0008 00000000 		.4byte	.LFB65
+ 1564 000c 14000000 		.4byte	.LFE65
+ 1565 0010 00000000 		.4byte	.LFB66
+ 1566 0014 08000000 		.4byte	.LFE66
+ 1567 0018 00000000 		.4byte	.LFB67
+ 1568 001c 7C000000 		.4byte	.LFE67
+ 1569 0020 00000000 		.4byte	.LFB68
+ 1570 0024 F8000000 		.4byte	.LFE68
+ 1571 0028 00000000 		.4byte	0
+ 1572 002c 00000000 		.4byte	0
+ 1573              		.section	.debug_line,"",%progbits
+ 1574              	.Ldebug_line0:
+ 1575 0000 8B020000 		.section	.debug_str,"MS",%progbits,1
+ 1575      02000502 
+ 1575      00000201 
+ 1575      FB0E0D00 
+ 1575      01010101 
+ 1576              	.LASF4:
+ 1577 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1577      6E74385F 
+ 1577      7400
+ 1578              	.LASF43:
+ 1579 000a 4C696E74 		.ascii	"Linterna_Read\000"
+ 1579      65726E61 
+ 1579      5F526561 
+ 1579      6400
+ 1580              	.LASF34:
+ 1581 0018 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 1581      57726974 
+ 1581      65436F6E 
+ 1581      74726F6C 
+ 1581      00
+ 1582              	.LASF32:
+ 1583 0029 4C43445F 		.ascii	"LCD_Stop\000"
+ 1583      53746F70 
+ 1583      00
+ 1584              	.LASF23:
+ 1585 0032 666C756A 		.ascii	"fluj\000"
+ 1585      00
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 31
+
+
+ 1586              	.LASF5:
+ 1587 0037 5F5F696E 		.ascii	"__int32_t\000"
+ 1587      7433325F 
+ 1587      7400
+ 1588              	.LASF47:
+ 1589 0041 636F6E74 		.ascii	"contar\000"
+ 1589      617200
+ 1590              	.LASF11:
+ 1591 0048 75696E74 		.ascii	"uint8_t\000"
+ 1591      385F7400 
+ 1592              	.LASF39:
+ 1593 0050 55415254 		.ascii	"UART_Start\000"
+ 1593      5F537461 
+ 1593      727400
+ 1594              	.LASF15:
+ 1595 005b 666C6F61 		.ascii	"float\000"
+ 1595      7400
+ 1596              	.LASF38:
+ 1597 0061 4C43445F 		.ascii	"LCD_Start\000"
+ 1597      53746172 
+ 1597      7400
+ 1598              	.LASF1:
+ 1599 006b 756E7369 		.ascii	"unsigned char\000"
+ 1599      676E6564 
+ 1599      20636861 
+ 1599      7200
+ 1600              	.LASF44:
+ 1601 0079 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1601      43313120 
+ 1601      352E342E 
+ 1601      31203230 
+ 1601      31363036 
+ 1602 00ac 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1602      20726576 
+ 1602      6973696F 
+ 1602      6E203233 
+ 1602      37373135 
+ 1603 00df 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1603      66756E63 
+ 1603      74696F6E 
+ 1603      2D736563 
+ 1603      74696F6E 
+ 1604              	.LASF42:
+ 1605 0107 6973725F 		.ascii	"isr_2_StartEx\000"
+ 1605      325F5374 
+ 1605      61727445 
+ 1605      7800
+ 1606              	.LASF29:
+ 1607 0115 74696D65 		.ascii	"timer\000"
+ 1607      7200
+ 1608              	.LASF7:
+ 1609 011b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1609      20756E73 
+ 1609      69676E65 
+ 1609      6420696E 
+ 1609      7400
+ 1610              	.LASF22:
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 32
+
+
+ 1611 012d 74656D70 		.ascii	"temp\000"
+ 1611      00
+ 1612              	.LASF3:
+ 1613 0132 73686F72 		.ascii	"short unsigned int\000"
+ 1613      7420756E 
+ 1613      7369676E 
+ 1613      65642069 
+ 1613      6E7400
+ 1614              	.LASF21:
+ 1615 0145 456E6365 		.ascii	"EncenderLCD\000"
+ 1615      6E646572 
+ 1615      4C434400 
+ 1616              	.LASF20:
+ 1617 0151 6461746F 		.ascii	"dato\000"
+ 1617      00
+ 1618              	.LASF25:
+ 1619 0156 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1619      52784275 
+ 1619      66666572 
+ 1619      00
+ 1620              	.LASF27:
+ 1621 0163 62616E64 		.ascii	"bandera\000"
+ 1621      65726100 
+ 1622              	.LASF16:
+ 1623 016b 646F7562 		.ascii	"double\000"
+ 1623      6C6500
+ 1624              	.LASF2:
+ 1625 0172 73686F72 		.ascii	"short int\000"
+ 1625      7420696E 
+ 1625      7400
+ 1626              	.LASF37:
+ 1627 017c 4C43445F 		.ascii	"LCD_PrintString\000"
+ 1627      5072696E 
+ 1627      74537472 
+ 1627      696E6700 
+ 1628              	.LASF14:
+ 1629 018c 75696E74 		.ascii	"uint16\000"
+ 1629      313600
+ 1630              	.LASF49:
+ 1631 0193 6D61696E 		.ascii	"main\000"
+ 1631      00
+ 1632              	.LASF10:
+ 1633 0198 756E7369 		.ascii	"unsigned int\000"
+ 1633      676E6564 
+ 1633      20696E74 
+ 1633      00
+ 1634              	.LASF9:
+ 1635 01a5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1635      206C6F6E 
+ 1635      6720756E 
+ 1635      7369676E 
+ 1635      65642069 
+ 1636              	.LASF33:
+ 1637 01bc 4C696E74 		.ascii	"Linterna_Write\000"
+ 1637      65726E61 
+ 1637      5F577269 
+ 1637      746500
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 33
+
+
+ 1638              	.LASF35:
+ 1639 01cb 4C43445F 		.ascii	"LCD_Position\000"
+ 1639      506F7369 
+ 1639      74696F6E 
+ 1639      00
+ 1640              	.LASF48:
+ 1641 01d8 41706167 		.ascii	"ApagarLCD\000"
+ 1641      61724C43 
+ 1641      4400
+ 1642              	.LASF0:
+ 1643 01e2 7369676E 		.ascii	"signed char\000"
+ 1643      65642063 
+ 1643      68617200 
+ 1644              	.LASF30:
+ 1645 01ee 74696D65 		.ascii	"time\000"
+ 1645      00
+ 1646              	.LASF12:
+ 1647 01f3 696E7433 		.ascii	"int32_t\000"
+ 1647      325F7400 
+ 1648              	.LASF19:
+ 1649 01fb 73697A65 		.ascii	"sizetype\000"
+ 1649      74797065 
+ 1649      00
+ 1650              	.LASF8:
+ 1651 0204 6C6F6E67 		.ascii	"long long int\000"
+ 1651      206C6F6E 
+ 1651      6720696E 
+ 1651      7400
+ 1652              	.LASF46:
+ 1653 0212 433A5C55 		.ascii	"C:\\Users\\juanm\\OneDrive\\Documentos\\PSoC Creato"
+ 1653      73657273 
+ 1653      5C6A7561 
+ 1653      6E6D5C4F 
+ 1653      6E654472 
+ 1654 0240 725C4675 		.ascii	"r\\Funcion_LCD\\Design01.cydsn\000"
+ 1654      6E63696F 
+ 1654      6E5F4C43 
+ 1654      445C4465 
+ 1654      7369676E 
+ 1655              	.LASF45:
+ 1656 025d 6D61696E 		.ascii	"main.c\000"
+ 1656      2E6300
+ 1657              	.LASF17:
+ 1658 0264 63686172 		.ascii	"char\000"
+ 1658      00
+ 1659              	.LASF24:
+ 1660 0269 7469656D 		.ascii	"tiemp\000"
+ 1660      7000
+ 1661              	.LASF28:
+ 1662 026f 6D696C69 		.ascii	"mili\000"
+ 1662      00
+ 1663              	.LASF13:
+ 1664 0274 75696E74 		.ascii	"uint8\000"
+ 1664      3800
+ 1665              	.LASF6:
+ 1666 027a 6C6F6E67 		.ascii	"long int\000"
+ 1666      20696E74 
+ARM GAS  C:\Users\juanm\AppData\Local\Temp\ccYjDMMi.s 			page 34
+
+
+ 1666      00
+ 1667              	.LASF41:
+ 1668 0283 436F756E 		.ascii	"Counter_1_Start\000"
+ 1668      7465725F 
+ 1668      315F5374 
+ 1668      61727400 
+ 1669              	.LASF18:
+ 1670 0293 6C6F6E67 		.ascii	"long double\000"
+ 1670      20646F75 
+ 1670      626C6500 
+ 1671              	.LASF26:
+ 1672 029f 6C656374 		.ascii	"lectura\000"
+ 1672      75726100 
+ 1673              	.LASF31:
+ 1674 02a7 55415254 		.ascii	"UART_GetChar\000"
+ 1674      5F476574 
+ 1674      43686172 
+ 1674      00
+ 1675              	.LASF40:
+ 1676 02b4 6973725F 		.ascii	"isr_1_StartEx\000"
+ 1676      315F5374 
+ 1676      61727445 
+ 1676      7800
+ 1677              	.LASF36:
+ 1678 02c2 73707269 		.ascii	"sprintf\000"
+ 1678      6E746600 
+ 1679              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

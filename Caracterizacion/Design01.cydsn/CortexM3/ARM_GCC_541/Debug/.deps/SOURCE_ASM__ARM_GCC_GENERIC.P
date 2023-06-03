@@ -1,0 +1,10 @@
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevicegnu.inc D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+
+D:/Documentos/Universidad/OneDrive\ -\ Universidad\ de\ Antioquia/Trabajos\ u\ 2023-1/Bioinstrumentacion/Labs/Pf/Caracterizacion/Design01.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+

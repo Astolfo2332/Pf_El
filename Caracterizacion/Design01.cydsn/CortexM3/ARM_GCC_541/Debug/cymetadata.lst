@@ -1,0 +1,813 @@
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 304
+  28              	cy_meta_configecc:
+  29 0000 01       		.byte	1
+  30 0001 65       		.byte	101
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 40       		.byte	64
+  34 0005 14       		.byte	20
+  35 0006 01       		.byte	1
+  36 0007 40       		.byte	64
+  37 0008 22       		.byte	34
+  38 0009 15       		.byte	21
+  39 000a 01       		.byte	1
+  40 000b 40       		.byte	64
+  41 000c 02       		.byte	2
+  42 000d 40       		.byte	64
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 01       		.byte	1
+  46 0011 41       		.byte	65
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 01       		.byte	1
+  50 0015 42       		.byte	66
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 01       		.byte	1
+  54 0019 43       		.byte	67
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 01       		.byte	1
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 2
+
+
+  58 001d 48       		.byte	72
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 09       		.byte	9
+  62 0021 49       		.byte	73
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 02       		.byte	2
+  66 0025 50       		.byte	80
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 01       		.byte	1
+  70 0029 51       		.byte	81
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 85       		.byte	-123
+  74 002d 0D       		.byte	13
+  75 002e 2A       		.byte	42
+  76 002f 01       		.byte	1
+  77 0030 30       		.byte	48
+  78 0031 01       		.byte	1
+  79 0032 40       		.byte	64
+  80 0033 30       		.byte	48
+  81 0034 41       		.byte	65
+  82 0035 04       		.byte	4
+  83 0036 49       		.byte	73
+  84 0037 FF       		.byte	-1
+  85 0038 4A       		.byte	74
+  86 0039 FF       		.byte	-1
+  87 003a 4B       		.byte	75
+  88 003b FF       		.byte	-1
+  89 003c 4D       		.byte	77
+  90 003d A0       		.byte	-96
+  91 003e 4F       		.byte	79
+  92 003f 04       		.byte	4
+  93 0040 50       		.byte	80
+  94 0041 18       		.byte	24
+  95 0042 58       		.byte	88
+  96 0043 04       		.byte	4
+  97 0044 5A       		.byte	90
+  98 0045 04       		.byte	4
+  99 0046 5C       		.byte	92
+ 100 0047 01       		.byte	1
+ 101 0048 5F       		.byte	95
+ 102 0049 01       		.byte	1
+ 103 004a 60       		.byte	96
+ 104 004b 40       		.byte	64
+ 105 004c 62       		.byte	98
+ 106 004d C0       		.byte	-64
+ 107 004e 64       		.byte	100
+ 108 004f 40       		.byte	64
+ 109 0050 65       		.byte	101
+ 110 0051 40       		.byte	64
+ 111 0052 66       		.byte	102
+ 112 0053 C0       		.byte	-64
+ 113 0054 68       		.byte	104
+ 114 0055 C0       		.byte	-64
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 3
+
+
+ 115 0056 6A       		.byte	106
+ 116 0057 C0       		.byte	-64
+ 117 0058 6C       		.byte	108
+ 118 0059 C0       		.byte	-64
+ 119 005a 6E       		.byte	110
+ 120 005b C0       		.byte	-64
+ 121 005c 82       		.byte	-126
+ 122 005d 02       		.byte	2
+ 123 005e 83       		.byte	-125
+ 124 005f 01       		.byte	1
+ 125 0060 8A       		.byte	-118
+ 126 0061 06       		.byte	6
+ 127 0062 9E       		.byte	-98
+ 128 0063 0C       		.byte	12
+ 129 0064 AD       		.byte	-83
+ 130 0065 01       		.byte	1
+ 131 0066 AE       		.byte	-82
+ 132 0067 01       		.byte	1
+ 133 0068 B0       		.byte	-80
+ 134 0069 08       		.byte	8
+ 135 006a B2       		.byte	-78
+ 136 006b 01       		.byte	1
+ 137 006c B4       		.byte	-76
+ 138 006d 02       		.byte	2
+ 139 006e B6       		.byte	-74
+ 140 006f 04       		.byte	4
+ 141 0070 B7       		.byte	-73
+ 142 0071 01       		.byte	1
+ 143 0072 BE       		.byte	-66
+ 144 0073 10       		.byte	16
+ 145 0074 C0       		.byte	-64
+ 146 0075 30       		.byte	48
+ 147 0076 C1       		.byte	-63
+ 148 0077 04       		.byte	4
+ 149 0078 C5       		.byte	-59
+ 150 0079 D0       		.byte	-48
+ 151 007a C6       		.byte	-58
+ 152 007b 02       		.byte	2
+ 153 007c C7       		.byte	-57
+ 154 007d 10       		.byte	16
+ 155 007e C8       		.byte	-56
+ 156 007f 26       		.byte	38
+ 157 0080 C9       		.byte	-55
+ 158 0081 FF       		.byte	-1
+ 159 0082 CA       		.byte	-54
+ 160 0083 FF       		.byte	-1
+ 161 0084 CB       		.byte	-53
+ 162 0085 FF       		.byte	-1
+ 163 0086 CD       		.byte	-51
+ 164 0087 AF       		.byte	-81
+ 165 0088 CE       		.byte	-50
+ 166 0089 0F       		.byte	15
+ 167 008a CF       		.byte	-49
+ 168 008b 04       		.byte	4
+ 169 008c D0       		.byte	-48
+ 170 008d 18       		.byte	24
+ 171 008e D2       		.byte	-46
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 4
+
+
+ 172 008f 80       		.byte	-128
+ 173 0090 D4       		.byte	-44
+ 174 0091 05       		.byte	5
+ 175 0092 D8       		.byte	-40
+ 176 0093 04       		.byte	4
+ 177 0094 D9       		.byte	-39
+ 178 0095 04       		.byte	4
+ 179 0096 DA       		.byte	-38
+ 180 0097 04       		.byte	4
+ 181 0098 DB       		.byte	-37
+ 182 0099 04       		.byte	4
+ 183 009a DF       		.byte	-33
+ 184 009b 01       		.byte	1
+ 185 009c E0       		.byte	-32
+ 186 009d 40       		.byte	64
+ 187 009e E2       		.byte	-30
+ 188 009f C0       		.byte	-64
+ 189 00a0 E4       		.byte	-28
+ 190 00a1 40       		.byte	64
+ 191 00a2 E5       		.byte	-27
+ 192 00a3 40       		.byte	64
+ 193 00a4 E6       		.byte	-26
+ 194 00a5 C0       		.byte	-64
+ 195 00a6 E8       		.byte	-24
+ 196 00a7 C0       		.byte	-64
+ 197 00a8 EA       		.byte	-22
+ 198 00a9 C0       		.byte	-64
+ 199 00aa EC       		.byte	-20
+ 200 00ab C0       		.byte	-64
+ 201 00ac EE       		.byte	-18
+ 202 00ad C0       		.byte	-64
+ 203 00ae 04       		.byte	4
+ 204 00af 10       		.byte	16
+ 205 00b0 06       		.byte	6
+ 206 00b1 80       		.byte	-128
+ 207 00b2 0F       		.byte	15
+ 208 00b3 02       		.byte	2
+ 209 00b4 10       		.byte	16
+ 210 00b5 08       		.byte	8
+ 211 00b6 17       		.byte	23
+ 212 00b7 40       		.byte	64
+ 213 00b8 1A       		.byte	26
+ 214 00b9 80       		.byte	-128
+ 215 00ba 1C       		.byte	28
+ 216 00bb 10       		.byte	16
+ 217 00bc 1D       		.byte	29
+ 218 00bd 88       		.byte	-120
+ 219 00be 1E       		.byte	30
+ 220 00bf 08       		.byte	8
+ 221 00c0 1F       		.byte	31
+ 222 00c1 02       		.byte	2
+ 223 00c2 26       		.byte	38
+ 224 00c3 40       		.byte	64
+ 225 00c4 2F       		.byte	47
+ 226 00c5 02       		.byte	2
+ 227 00c6 3F       		.byte	63
+ 228 00c7 02       		.byte	2
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 5
+
+
+ 229 00c8 40       		.byte	64
+ 230 00c9 10       		.byte	16
+ 231 00ca 42       		.byte	66
+ 232 00cb 80       		.byte	-128
+ 233 00cc 45       		.byte	69
+ 234 00cd 08       		.byte	8
+ 235 00ce 46       		.byte	70
+ 236 00cf 80       		.byte	-128
+ 237 00d0 4F       		.byte	79
+ 238 00d1 01       		.byte	1
+ 239 00d2 56       		.byte	86
+ 240 00d3 80       		.byte	-128
+ 241 00d4 57       		.byte	87
+ 242 00d5 01       		.byte	1
+ 243 00d6 5E       		.byte	94
+ 244 00d7 88       		.byte	-120
+ 245 00d8 5F       		.byte	95
+ 246 00d9 01       		.byte	1
+ 247 00da 77       		.byte	119
+ 248 00db 40       		.byte	64
+ 249 00dc 80       		.byte	-128
+ 250 00dd 08       		.byte	8
+ 251 00de 82       		.byte	-126
+ 252 00df 40       		.byte	64
+ 253 00e0 89       		.byte	-119
+ 254 00e1 80       		.byte	-128
+ 255 00e2 C0       		.byte	-64
+ 256 00e3 50       		.byte	80
+ 257 00e4 C2       		.byte	-62
+ 258 00e5 80       		.byte	-128
+ 259 00e6 C4       		.byte	-60
+ 260 00e7 82       		.byte	-126
+ 261 00e8 CA       		.byte	-54
+ 262 00e9 10       		.byte	16
+ 263 00ea CE       		.byte	-50
+ 264 00eb 80       		.byte	-128
+ 265 00ec D0       		.byte	-48
+ 266 00ed C3       		.byte	-61
+ 267 00ee D6       		.byte	-42
+ 268 00ef D0       		.byte	-48
+ 269 00f0 E2       		.byte	-30
+ 270 00f1 20       		.byte	32
+ 271 00f2 33       		.byte	51
+ 272 00f3 40       		.byte	64
+ 273 00f4 CC       		.byte	-52
+ 274 00f5 10       		.byte	16
+ 275 00f6 9F       		.byte	-97
+ 276 00f7 40       		.byte	64
+ 277 00f8 9F       		.byte	-97
+ 278 00f9 40       		.byte	64
+ 279 00fa 9F       		.byte	-97
+ 280 00fb 40       		.byte	64
+ 281 00fc 9F       		.byte	-97
+ 282 00fd 40       		.byte	64
+ 283 00fe 07       		.byte	7
+ 284 00ff 80       		.byte	-128
+ 285 0100 53       		.byte	83
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 6
+
+
+ 286 0101 10       		.byte	16
+ 287 0102 83       		.byte	-125
+ 288 0103 C0       		.byte	-64
+ 289 0104 8B       		.byte	-117
+ 290 0105 10       		.byte	16
+ 291 0106 9F       		.byte	-97
+ 292 0107 40       		.byte	64
+ 293 0108 C0       		.byte	-64
+ 294 0109 20       		.byte	32
+ 295 010a D4       		.byte	-44
+ 296 010b 20       		.byte	32
+ 297 010c E0       		.byte	-32
+ 298 010d 80       		.byte	-128
+ 299 010e E6       		.byte	-26
+ 300 010f 80       		.byte	-128
+ 301 0110 10       		.byte	16
+ 302 0111 03       		.byte	3
+ 303 0112 1A       		.byte	26
+ 304 0113 03       		.byte	3
+ 305 0114 00       		.byte	0
+ 306 0115 03       		.byte	3
+ 307 0116 00       		.byte	0
+ 308 0117 00       		.byte	0
+ 309 0118 00       		.byte	0
+ 310 0119 0B       		.byte	11
+ 311 011a 0B       		.byte	11
+ 312 011b 00       		.byte	0
+ 313 011c 00       		.byte	0
+ 314 011d 00       		.byte	0
+ 315 011e 00       		.byte	0
+ 316 011f 00       		.byte	0
+ 317 0120 00       		.byte	0
+ 318 0121 7F       		.byte	127
+ 319 0122 7F       		.byte	127
+ 320 0123 00       		.byte	0
+ 321 0124 00       		.byte	0
+ 322 0125 00       		.byte	0
+ 323 0126 00       		.byte	0
+ 324 0127 00       		.byte	0
+ 325 0128 02       		.byte	2
+ 326 0129 01       		.byte	1
+ 327 012a 01       		.byte	1
+ 328 012b 00       		.byte	0
+ 329 012c 01       		.byte	1
+ 330 012d 00       		.byte	0
+ 331 012e 00       		.byte	0
+ 332 012f 00       		.byte	0
+ 333              		.section	.cywolatch,"a",%progbits
+ 334              		.align	2
+ 335              		.type	cy_meta_wonvl, %object
+ 336              		.size	cy_meta_wonvl, 4
+ 337              	cy_meta_wonvl:
+ 338 0000 BC       		.byte	-68
+ 339 0001 90       		.byte	-112
+ 340 0002 AC       		.byte	-84
+ 341 0003 AF       		.byte	-81
+ 342              		.section	.cycustnvl,"a",%progbits
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 7
+
+
+ 343              		.align	2
+ 344              		.type	cy_meta_custnvl, %object
+ 345              		.size	cy_meta_custnvl, 4
+ 346              	cy_meta_custnvl:
+ 347 0000 00       		.byte	0
+ 348 0001 00       		.byte	0
+ 349 0002 40       		.byte	64
+ 350 0003 05       		.byte	5
+ 351              		.section	.cymeta,"a",%progbits
+ 352              		.align	2
+ 353              		.type	cy_metadata, %object
+ 354              		.size	cy_metadata, 12
+ 355              	cy_metadata:
+ 356 0000 00       		.byte	0
+ 357 0001 01       		.byte	1
+ 358 0002 2E       		.byte	46
+ 359 0003 16       		.byte	22
+ 360 0004 10       		.byte	16
+ 361 0005 69       		.byte	105
+ 362 0006 00       		.byte	0
+ 363 0007 01       		.byte	1
+ 364 0008 00       		.byte	0
+ 365 0009 00       		.byte	0
+ 366 000a 00       		.byte	0
+ 367 000b 00       		.byte	0
+ 368              		.section	.cyflashprotect,"a",%progbits
+ 369              		.align	2
+ 370              		.type	cy_meta_flashprotect, %object
+ 371              		.size	cy_meta_flashprotect, 256
+ 372              	cy_meta_flashprotect:
+ 373 0000 00000000 		.space	256
+ 373      00000000 
+ 373      00000000 
+ 373      00000000 
+ 373      00000000 
+ 374              		.text
+ 375              	.Letext0:
+ 376              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 377              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 378              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 379              		.section	.debug_info,"",%progbits
+ 380              	.Ldebug_info0:
+ 381 0000 31010000 		.4byte	0x131
+ 382 0004 0400     		.2byte	0x4
+ 383 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 384 000a 04       		.byte	0x4
+ 385 000b 01       		.uleb128 0x1
+ 386 000c 24000000 		.4byte	.LASF17
+ 387 0010 0C       		.byte	0xc
+ 388 0011 08020000 		.4byte	.LASF18
+ 389 0015 25010000 		.4byte	.LASF19
+ 390 0019 00000000 		.4byte	.Ldebug_line0
+ 391 001d 02       		.uleb128 0x2
+ 392 001e 01       		.byte	0x1
+ 393 001f 06       		.byte	0x6
+ 394 0020 FC010000 		.4byte	.LASF0
+ 395 0024 03       		.uleb128 0x3
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 8
+
+
+ 396 0025 00000000 		.4byte	.LASF9
+ 397 0029 01       		.byte	0x1
+ 398 002a 1D       		.byte	0x1d
+ 399 002b 2F000000 		.4byte	0x2f
+ 400 002f 02       		.uleb128 0x2
+ 401 0030 01       		.byte	0x1
+ 402 0031 08       		.byte	0x8
+ 403 0032 16000000 		.4byte	.LASF1
+ 404 0036 02       		.uleb128 0x2
+ 405 0037 02       		.byte	0x2
+ 406 0038 05       		.byte	0x5
+ 407 0039 E9010000 		.4byte	.LASF2
+ 408 003d 02       		.uleb128 0x2
+ 409 003e 02       		.byte	0x2
+ 410 003f 07       		.byte	0x7
+ 411 0040 C4000000 		.4byte	.LASF3
+ 412 0044 02       		.uleb128 0x2
+ 413 0045 04       		.byte	0x4
+ 414 0046 05       		.byte	0x5
+ 415 0047 F3010000 		.4byte	.LASF4
+ 416 004b 02       		.uleb128 0x2
+ 417 004c 04       		.byte	0x4
+ 418 004d 07       		.byte	0x7
+ 419 004e B2000000 		.4byte	.LASF5
+ 420 0052 02       		.uleb128 0x2
+ 421 0053 08       		.byte	0x8
+ 422 0054 05       		.byte	0x5
+ 423 0055 DB010000 		.4byte	.LASF6
+ 424 0059 02       		.uleb128 0x2
+ 425 005a 08       		.byte	0x8
+ 426 005b 07       		.byte	0x7
+ 427 005c 06010000 		.4byte	.LASF7
+ 428 0060 04       		.uleb128 0x4
+ 429 0061 04       		.byte	0x4
+ 430 0062 05       		.byte	0x5
+ 431 0063 696E7400 		.ascii	"int\000"
+ 432 0067 02       		.uleb128 0x2
+ 433 0068 04       		.byte	0x4
+ 434 0069 07       		.byte	0x7
+ 435 006a F9000000 		.4byte	.LASF8
+ 436 006e 03       		.uleb128 0x3
+ 437 006f 1D010000 		.4byte	.LASF10
+ 438 0073 02       		.byte	0x2
+ 439 0074 18       		.byte	0x18
+ 440 0075 24000000 		.4byte	0x24
+ 441 0079 05       		.uleb128 0x5
+ 442 007a 91000000 		.4byte	0x91
+ 443 007e 8A000000 		.4byte	0x8a
+ 444 0082 06       		.uleb128 0x6
+ 445 0083 8A000000 		.4byte	0x8a
+ 446 0087 2F01     		.2byte	0x12f
+ 447 0089 00       		.byte	0
+ 448 008a 02       		.uleb128 0x2
+ 449 008b 04       		.byte	0x4
+ 450 008c 07       		.byte	0x7
+ 451 008d D2010000 		.4byte	.LASF11
+ 452 0091 07       		.uleb128 0x7
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 9
+
+
+ 453 0092 6E000000 		.4byte	0x6e
+ 454 0096 08       		.uleb128 0x8
+ 455 0097 E7000000 		.4byte	.LASF12
+ 456 009b 03       		.byte	0x3
+ 457 009c 1F       		.byte	0x1f
+ 458 009d A7000000 		.4byte	0xa7
+ 459 00a1 05       		.uleb128 0x5
+ 460 00a2 03       		.byte	0x3
+ 461 00a3 00000000 		.4byte	cy_meta_configecc
+ 462 00a7 07       		.uleb128 0x7
+ 463 00a8 79000000 		.4byte	0x79
+ 464 00ac 05       		.uleb128 0x5
+ 465 00ad 91000000 		.4byte	0x91
+ 466 00b1 BC000000 		.4byte	0xbc
+ 467 00b5 09       		.uleb128 0x9
+ 468 00b6 8A000000 		.4byte	0x8a
+ 469 00ba 03       		.byte	0x3
+ 470 00bb 00       		.byte	0
+ 471 00bc 08       		.uleb128 0x8
+ 472 00bd D7000000 		.4byte	.LASF13
+ 473 00c1 03       		.byte	0x3
+ 474 00c2 52       		.byte	0x52
+ 475 00c3 CD000000 		.4byte	0xcd
+ 476 00c7 05       		.uleb128 0x5
+ 477 00c8 03       		.byte	0x3
+ 478 00c9 00000000 		.4byte	cy_meta_custnvl
+ 479 00cd 07       		.uleb128 0x7
+ 480 00ce AC000000 		.4byte	0xac
+ 481 00d2 08       		.uleb128 0x8
+ 482 00d3 C4010000 		.4byte	.LASF14
+ 483 00d7 03       		.byte	0x3
+ 484 00d8 60       		.byte	0x60
+ 485 00d9 E3000000 		.4byte	0xe3
+ 486 00dd 05       		.uleb128 0x5
+ 487 00de 03       		.byte	0x3
+ 488 00df 00000000 		.4byte	cy_meta_wonvl
+ 489 00e3 07       		.uleb128 0x7
+ 490 00e4 AC000000 		.4byte	0xac
+ 491 00e8 05       		.uleb128 0x5
+ 492 00e9 91000000 		.4byte	0x91
+ 493 00ed F8000000 		.4byte	0xf8
+ 494 00f1 09       		.uleb128 0x9
+ 495 00f2 8A000000 		.4byte	0x8a
+ 496 00f6 FF       		.byte	0xff
+ 497 00f7 00       		.byte	0
+ 498 00f8 08       		.uleb128 0x8
+ 499 00f9 AF010000 		.4byte	.LASF15
+ 500 00fd 03       		.byte	0x3
+ 501 00fe 6E       		.byte	0x6e
+ 502 00ff 09010000 		.4byte	0x109
+ 503 0103 05       		.uleb128 0x5
+ 504 0104 03       		.byte	0x3
+ 505 0105 00000000 		.4byte	cy_meta_flashprotect
+ 506 0109 07       		.uleb128 0x7
+ 507 010a E8000000 		.4byte	0xe8
+ 508 010e 05       		.uleb128 0x5
+ 509 010f 91000000 		.4byte	0x91
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 10
+
+
+ 510 0113 1E010000 		.4byte	0x11e
+ 511 0117 09       		.uleb128 0x9
+ 512 0118 8A000000 		.4byte	0x8a
+ 513 011c 0B       		.byte	0xb
+ 514 011d 00       		.byte	0
+ 515 011e 08       		.uleb128 0x8
+ 516 011f 0A000000 		.4byte	.LASF16
+ 517 0123 03       		.byte	0x3
+ 518 0124 9B       		.byte	0x9b
+ 519 0125 2F010000 		.4byte	0x12f
+ 520 0129 05       		.uleb128 0x5
+ 521 012a 03       		.byte	0x3
+ 522 012b 00000000 		.4byte	cy_metadata
+ 523 012f 07       		.uleb128 0x7
+ 524 0130 0E010000 		.4byte	0x10e
+ 525 0134 00       		.byte	0
+ 526              		.section	.debug_abbrev,"",%progbits
+ 527              	.Ldebug_abbrev0:
+ 528 0000 01       		.uleb128 0x1
+ 529 0001 11       		.uleb128 0x11
+ 530 0002 01       		.byte	0x1
+ 531 0003 25       		.uleb128 0x25
+ 532 0004 0E       		.uleb128 0xe
+ 533 0005 13       		.uleb128 0x13
+ 534 0006 0B       		.uleb128 0xb
+ 535 0007 03       		.uleb128 0x3
+ 536 0008 0E       		.uleb128 0xe
+ 537 0009 1B       		.uleb128 0x1b
+ 538 000a 0E       		.uleb128 0xe
+ 539 000b 10       		.uleb128 0x10
+ 540 000c 17       		.uleb128 0x17
+ 541 000d 00       		.byte	0
+ 542 000e 00       		.byte	0
+ 543 000f 02       		.uleb128 0x2
+ 544 0010 24       		.uleb128 0x24
+ 545 0011 00       		.byte	0
+ 546 0012 0B       		.uleb128 0xb
+ 547 0013 0B       		.uleb128 0xb
+ 548 0014 3E       		.uleb128 0x3e
+ 549 0015 0B       		.uleb128 0xb
+ 550 0016 03       		.uleb128 0x3
+ 551 0017 0E       		.uleb128 0xe
+ 552 0018 00       		.byte	0
+ 553 0019 00       		.byte	0
+ 554 001a 03       		.uleb128 0x3
+ 555 001b 16       		.uleb128 0x16
+ 556 001c 00       		.byte	0
+ 557 001d 03       		.uleb128 0x3
+ 558 001e 0E       		.uleb128 0xe
+ 559 001f 3A       		.uleb128 0x3a
+ 560 0020 0B       		.uleb128 0xb
+ 561 0021 3B       		.uleb128 0x3b
+ 562 0022 0B       		.uleb128 0xb
+ 563 0023 49       		.uleb128 0x49
+ 564 0024 13       		.uleb128 0x13
+ 565 0025 00       		.byte	0
+ 566 0026 00       		.byte	0
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 11
+
+
+ 567 0027 04       		.uleb128 0x4
+ 568 0028 24       		.uleb128 0x24
+ 569 0029 00       		.byte	0
+ 570 002a 0B       		.uleb128 0xb
+ 571 002b 0B       		.uleb128 0xb
+ 572 002c 3E       		.uleb128 0x3e
+ 573 002d 0B       		.uleb128 0xb
+ 574 002e 03       		.uleb128 0x3
+ 575 002f 08       		.uleb128 0x8
+ 576 0030 00       		.byte	0
+ 577 0031 00       		.byte	0
+ 578 0032 05       		.uleb128 0x5
+ 579 0033 01       		.uleb128 0x1
+ 580 0034 01       		.byte	0x1
+ 581 0035 49       		.uleb128 0x49
+ 582 0036 13       		.uleb128 0x13
+ 583 0037 01       		.uleb128 0x1
+ 584 0038 13       		.uleb128 0x13
+ 585 0039 00       		.byte	0
+ 586 003a 00       		.byte	0
+ 587 003b 06       		.uleb128 0x6
+ 588 003c 21       		.uleb128 0x21
+ 589 003d 00       		.byte	0
+ 590 003e 49       		.uleb128 0x49
+ 591 003f 13       		.uleb128 0x13
+ 592 0040 2F       		.uleb128 0x2f
+ 593 0041 05       		.uleb128 0x5
+ 594 0042 00       		.byte	0
+ 595 0043 00       		.byte	0
+ 596 0044 07       		.uleb128 0x7
+ 597 0045 26       		.uleb128 0x26
+ 598 0046 00       		.byte	0
+ 599 0047 49       		.uleb128 0x49
+ 600 0048 13       		.uleb128 0x13
+ 601 0049 00       		.byte	0
+ 602 004a 00       		.byte	0
+ 603 004b 08       		.uleb128 0x8
+ 604 004c 34       		.uleb128 0x34
+ 605 004d 00       		.byte	0
+ 606 004e 03       		.uleb128 0x3
+ 607 004f 0E       		.uleb128 0xe
+ 608 0050 3A       		.uleb128 0x3a
+ 609 0051 0B       		.uleb128 0xb
+ 610 0052 3B       		.uleb128 0x3b
+ 611 0053 0B       		.uleb128 0xb
+ 612 0054 49       		.uleb128 0x49
+ 613 0055 13       		.uleb128 0x13
+ 614 0056 3F       		.uleb128 0x3f
+ 615 0057 19       		.uleb128 0x19
+ 616 0058 02       		.uleb128 0x2
+ 617 0059 18       		.uleb128 0x18
+ 618 005a 00       		.byte	0
+ 619 005b 00       		.byte	0
+ 620 005c 09       		.uleb128 0x9
+ 621 005d 21       		.uleb128 0x21
+ 622 005e 00       		.byte	0
+ 623 005f 49       		.uleb128 0x49
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 12
+
+
+ 624 0060 13       		.uleb128 0x13
+ 625 0061 2F       		.uleb128 0x2f
+ 626 0062 0B       		.uleb128 0xb
+ 627 0063 00       		.byte	0
+ 628 0064 00       		.byte	0
+ 629 0065 00       		.byte	0
+ 630              		.section	.debug_aranges,"",%progbits
+ 631 0000 14000000 		.4byte	0x14
+ 632 0004 0200     		.2byte	0x2
+ 633 0006 00000000 		.4byte	.Ldebug_info0
+ 634 000a 04       		.byte	0x4
+ 635 000b 00       		.byte	0
+ 636 000c 0000     		.2byte	0
+ 637 000e 0000     		.2byte	0
+ 638 0010 00000000 		.4byte	0
+ 639 0014 00000000 		.4byte	0
+ 640              		.section	.debug_line,"",%progbits
+ 641              	.Ldebug_line0:
+ 642 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 642      02003701 
+ 642      00000201 
+ 642      FB0E0D00 
+ 642      01010101 
+ 643              	.LASF9:
+ 644 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 644      6E74385F 
+ 644      7400
+ 645              	.LASF16:
+ 646 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 646      65746164 
+ 646      61746100 
+ 647              	.LASF1:
+ 648 0016 756E7369 		.ascii	"unsigned char\000"
+ 648      676E6564 
+ 648      20636861 
+ 648      7200
+ 649              	.LASF17:
+ 650 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 650      43313120 
+ 650      352E342E 
+ 650      31203230 
+ 650      31363036 
+ 651 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 651      20726576 
+ 651      6973696F 
+ 651      6E203233 
+ 651      37373135 
+ 652 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 652      66756E63 
+ 652      74696F6E 
+ 652      2D736563 
+ 652      74696F6E 
+ 653              	.LASF5:
+ 654 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 654      20756E73 
+ 654      69676E65 
+ 654      6420696E 
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 13
+
+
+ 654      7400
+ 655              	.LASF3:
+ 656 00c4 73686F72 		.ascii	"short unsigned int\000"
+ 656      7420756E 
+ 656      7369676E 
+ 656      65642069 
+ 656      6E7400
+ 657              	.LASF13:
+ 658 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 658      6574615F 
+ 658      63757374 
+ 658      6E766C00 
+ 659              	.LASF12:
+ 660 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 660      6574615F 
+ 660      636F6E66 
+ 660      69676563 
+ 660      6300
+ 661              	.LASF8:
+ 662 00f9 756E7369 		.ascii	"unsigned int\000"
+ 662      676E6564 
+ 662      20696E74 
+ 662      00
+ 663              	.LASF7:
+ 664 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 664      206C6F6E 
+ 664      6720756E 
+ 664      7369676E 
+ 664      65642069 
+ 665              	.LASF10:
+ 666 011d 75696E74 		.ascii	"uint8_t\000"
+ 666      385F7400 
+ 667              	.LASF19:
+ 668 0125 443A5C44 		.ascii	"D:\\Documentos\\Universidad\\OneDrive - Universidad"
+ 668      6F63756D 
+ 668      656E746F 
+ 668      735C556E 
+ 668      69766572 
+ 669 0155 20646520 		.ascii	" de Antioquia\\Trabajos u 2023-1\\Bioinstrumentacio"
+ 669      416E7469 
+ 669      6F717569 
+ 669      615C5472 
+ 669      6162616A 
+ 670 0186 6E5C4C61 		.ascii	"n\\Labs\\Pf\\Caracterizacion\\Design01.cydsn\000"
+ 670      62735C50 
+ 670      665C4361 
+ 670      72616374 
+ 670      6572697A 
+ 671              	.LASF15:
+ 672 01af 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 672      6574615F 
+ 672      666C6173 
+ 672      6870726F 
+ 672      74656374 
+ 673              	.LASF14:
+ 674 01c4 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 674      6574615F 
+ARM GAS  C:\Users\MIGUEL\AppData\Local\Temp\cca17aGf.s 			page 14
+
+
+ 674      776F6E76 
+ 674      6C00
+ 675              	.LASF11:
+ 676 01d2 73697A65 		.ascii	"sizetype\000"
+ 676      74797065 
+ 676      00
+ 677              	.LASF6:
+ 678 01db 6C6F6E67 		.ascii	"long long int\000"
+ 678      206C6F6E 
+ 678      6720696E 
+ 678      7400
+ 679              	.LASF2:
+ 680 01e9 73686F72 		.ascii	"short int\000"
+ 680      7420696E 
+ 680      7400
+ 681              	.LASF4:
+ 682 01f3 6C6F6E67 		.ascii	"long int\000"
+ 682      20696E74 
+ 682      00
+ 683              	.LASF0:
+ 684 01fc 7369676E 		.ascii	"signed char\000"
+ 684      65642063 
+ 684      68617200 
+ 685              	.LASF18:
+ 686 0208 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 686      72617465 
+ 686      645F536F 
+ 686      75726365 
+ 686      5C50536F 
+ 687              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
