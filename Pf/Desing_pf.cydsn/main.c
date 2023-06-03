@@ -98,6 +98,13 @@ void reloj(){
                 }
             }
         }
+        if (a_seg10==1){
+            seg10++;
+            if (seg10==10){
+            band_10seg=1;
+            seg10=0;
+            }
+        }
         if (seg==60){
             seg=0;
             min++;
@@ -217,7 +224,10 @@ dism_StartEx(disminu);
                     reloj();
                     break;                 
             }
+            
             if ((band_aumento==1)|(band_dismi==1)){
+                a_seg10=1;
+                seg10=0;
                 if (band_aumento==1&&fl<=100){
                     fl=fl+5;
                     if(fl>100){
@@ -230,14 +240,19 @@ dism_StartEx(disminu);
                         fl=100;
                     }
                 }
+                
                 con_mot();
-                PWM_WriteCompare(compare);
                 print_f();
-                reloj();
                 band_aumento=0;
                 band_dismi=0;
+                
             
             }
+            if (band_10seg==1){
+                a_seg10=0;
+                band_10seg=0;
+                PWM_WriteCompare(compare);   
+                }
             break;
             
         case 'b':
