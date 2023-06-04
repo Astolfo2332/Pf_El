@@ -16,7 +16,6 @@
 uint8_t lectura=0;
 uint8_t bandera=0;
 int fl=0;
-uint8 tem=26;
 uint8 seg=0;
 uint8 h=0;
 uint8 min=0;
@@ -38,7 +37,8 @@ uint8 band_dismi=0;
 uint8 seg10=0;
 uint8 band_10seg=0;
 uint8 a_seg10=0;
-uint8 degree=0;
+int32 vol,en; 
+float32 tem;
 
 CY_ISR_PROTO(contar);
 CY_ISR(contar){
@@ -58,7 +58,7 @@ CY_ISR(disminu){
     band_dismi=1;
 }
 
-void EncenderLCD(int fl,int tem,int h,int min, int sec){
+void EncenderLCD(int fl,float32 tem,int h,int min, int sec){
     LCD_ClearDisplay();
     if (band_7seg==1){
         LED_Driver_WriteString7Seg(" LCD",0);
@@ -67,7 +67,7 @@ void EncenderLCD(int fl,int tem,int h,int min, int sec){
     char fluj[50];
     char tiemp[50];
     LCD_Position(0,0);
-    sprintf(temp,"Temperatura:     %2dC",tem);
+    sprintf(temp,"Temperatura:   %.1fC",tem);
     LCD_PrintString(temp);
     LCD_Position(1,0);
     sprintf(fluj,"Flujo:           %2d%%",fl);
@@ -76,7 +76,14 @@ void EncenderLCD(int fl,int tem,int h,int min, int sec){
     sprintf(tiemp,"Tiempo:     %02d:%02d:%02d",h,min,sec);
     LCD_PrintString(tiemp);
 }
-
+void con(){
+ADC_StartConvert();
+ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
+en=ADC_GetResult32();
+ADC_StopConvert();
+vol=ADC_CountsTo_mVolts(en);
+tem=(vol/10.00)-5.00;
+}
 void reloj(){
     if (timer){
     timer=0;
@@ -85,6 +92,7 @@ void reloj(){
         mili=0;                 
         EncenderLCD(fl,tem,h,min,seg);  
         seg++;
+        con();
         if (a_seg5==1){
             seg5++;
             if (seg5==5){
@@ -172,6 +180,8 @@ LCD_Start();
 PWM_Start();
 aum_StartEx(aumento);
 dism_StartEx(disminu);
+Opamp_Start();
+ADC_Start();
     for(;;)
     {
     if (bandera==1){
@@ -185,6 +195,7 @@ dism_StartEx(disminu);
         }
         switch (lectura_p){
         case 'a':
+            tilt_Write(0);
             switch(lectura){
                 case 'F':
                     a_seg5=0;
@@ -195,9 +206,12 @@ dism_StartEx(disminu);
                     a_seg5=0;
                     band_7seg=0;
                     LCD_Stop();
-                    sprintf(seg_7,"%02d",tem);
+                    sprintf(seg_7,"%f",tem);
                     LED_Driver_WriteString7Seg(seg_7,0);
-                    LED_Driver_PutChar7Seg('o',2);
+                    LED_Driver_SetRC(6,2);
+                    LED_Driver_SetRC(5,2);
+                    LED_Driver_SetRC(1,2);
+                    LED_Driver_SetRC(0,2);                       
                     LED_Driver_Write7SegDigitHex(0xC,3);
                     reloj();
                     break;
@@ -206,9 +220,12 @@ dism_StartEx(disminu);
                     band_7seg=0;
                     LCD_Stop();
                     if(band_5seg==1){          
-                    sprintf(seg_7,"%02d",tem);
+                    sprintf(seg_7,"%f",tem);
                     LED_Driver_WriteString7Seg(seg_7,0);
-                    LED_Driver_PutChar7Seg('o',2);
+                    LED_Driver_SetRC(6,2);
+                    LED_Driver_SetRC(5,2);
+                    LED_Driver_SetRC(1,2);
+                    LED_Driver_SetRC(0,2);
                     LED_Driver_Write7SegDigitHex(0xC,3);
                     reloj();
                     }

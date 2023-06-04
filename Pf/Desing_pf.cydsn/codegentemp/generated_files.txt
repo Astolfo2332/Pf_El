@@ -72,11 +72,14 @@
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\aviso.h" value="HEADER;;;;;aviso" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC.c" value="SOURCE_C;CortexM3;;;;ADC" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC.h" value="HEADER;;;;;ADC" />
-  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_INT.c" value="SOURCE_C;CortexM3;;;;ADC" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_PM.c" value="SOURCE_C;CortexM3;;;;ADC" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_INT.c" value="SOURCE_C;CortexM3;;;;ADC" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\tem_aliases.h" value="HEADER;;;;;tem" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\tem.c" value="SOURCE_C;CortexM3;;;;tem" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\tem.h" value="HEADER;;;;;tem" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\Opamp.c" value="SOURCE_C;CortexM3;;;;Opamp" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\Opamp.h" value="HEADER;;;;;Opamp" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\Opamp_PM.c" value="SOURCE_C;CortexM3;;;;Opamp" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LED_Driver_ClkInternal.c" value="SOURCE_C;CortexM3;;;;LED_Driver_ClkInternal" />
@@ -94,13 +97,14 @@
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="HEADER;;;;;LCD_LCDPort" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD_LCDPort.c" value="SOURCE_C;CortexM3;;;;LCD_LCDPort" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD_LCDPort.h" value="HEADER;;;;;LCD_LCDPort" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_AMux.c" value="SOURCE_C;CortexM3;;;;ADC_AMux" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_AMux.h" value="HEADER;;;;;ADC_AMux" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_Ext_CP_Clk.c" value="SOURCE_C;CortexM3;;;;ADC_Ext_CP_Clk" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_Ext_CP_Clk.h" value="HEADER;;;;;ADC_Ext_CP_Clk" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_IRQ" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_IRQ.h" value="HEADER;;;;;ADC_IRQ" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_theACLK" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_theACLK.h" value="HEADER;;;;;ADC_theACLK" />
-  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_Bypass_aliases.h" value="HEADER;;;;;ADC_Bypass" />
-  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_Bypass.c" value="SOURCE_C;CortexM3;;;;ADC_Bypass" />
-  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\ADC_Bypass.h" value="HEADER;;;;;ADC_Bypass" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />
