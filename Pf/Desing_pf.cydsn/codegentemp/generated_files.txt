@@ -42,6 +42,7 @@
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD.c" value="SOURCE_C;CortexM3;;;;LCD" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD.h" value="HEADER;;;;;LCD" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD_PM.c" value="SOURCE_C;CortexM3;;;;LCD" />
+  <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\LCD_CustChars.c" value="SOURCE_C;CortexM3;;;;LCD" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\data.c" value="SOURCE_C;CortexM3;;;;data" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\data.h" value="HEADER;;;;;data" />
   <file name="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\codegentemp\tilt_aliases.h" value="HEADER;;;;;tilt" />

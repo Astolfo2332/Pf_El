@@ -88,8 +88,12 @@ void EncenderLCD(int fl,float32 tem,int h,int min, int sec){
     char fluj[50];
     char tiemp[50];
     LCD_Position(0,0);
-    sprintf(temp,"Temperatura:   %.1fC",tem);
+    sprintf(temp,"Temperatura:  %.1f",tem);
     LCD_PrintString(temp);
+    LCD_Position(0,18);
+    LCD_PutChar(LCD_CUSTOM_0);
+    LCD_Position(0,19);
+    LCD_PrintString("C");
     LCD_Position(1,0);
     sprintf(fluj,"Flujo:           %2d%%",fl);
     LCD_PrintString(fluj);

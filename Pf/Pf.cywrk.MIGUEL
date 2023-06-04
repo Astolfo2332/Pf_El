@@ -161,6 +161,7 @@
 <v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\dism.lst</v>
 <v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_contador.lst</v>
 <v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_CustChars.lst</v>
 <v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
 <v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver.lst</v>
@@ -196,6 +197,71 @@
 <VisibleNodeIds>
 <v>Pf</v>
 <v>Pf\Desing_pf</v>
+<v>Pf\Desing_pf\CortexM3</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_Bypass.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_theACLK.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\aum.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\aviso.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\bt_aum.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\bt_dis.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_3.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Com.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_1.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_1_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\data.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\dism.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_contador.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_CustChars.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_ClkInternal.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_Com_Driver.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_Com_Driver_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_DMA_Com_dma.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_DMA_Seg_dma.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_Seg_Driver_L.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_Driver_Seg_Driver_L_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\motor.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\Seg.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\tem.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\tilt.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Desing_pf.elf</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Desing_pf.hex</v>
+<v>Pf\Desing_pf\CortexM3\ARM_GCC_541\Debug\Desing_pf.map</v>
+<v>Pf\Desing_pf\Desing_pf.gpdsc</v>
 <v>Pf\Desing_pf\Desing_pf.rpt</v>
 <v>Pf\Desing_pf\Desing_pf_timing.html</v>
 </VisibleNodeIds>
@@ -261,6 +327,7 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Desing_pf.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Desing_pf.cydsn\Desing_pf.cydwr" />
 <name v=".\Desing_pf.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
@@ -269,7 +336,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1985, 1037" SelectedTabbedMdiWindow="f435d4e2-125e-42aa-88ed-7d3073f7cfbb"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5f293ea8-2c66-48aa-bee1-1e7bdb250c05" /><DocumentWindow Key="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\TopDesign\TopDesign.cysch" Guid="0d2c23b7-a29f-406f-b092-ee1be02572cd" /><DocumentWindow Key="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\main.c" Guid="f435d4e2-125e-42aa-88ed-7d3073f7cfbb" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1985, 1037" SelectedTabbedMdiWindow="0d2c23b7-a29f-406f-b092-ee1be02572cd"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5f293ea8-2c66-48aa-bee1-1e7bdb250c05" /><DocumentWindow Key="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\TopDesign\TopDesign.cysch" Guid="0d2c23b7-a29f-406f-b092-ee1be02572cd" /><DocumentWindow Key="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\Desing_pf.cydwr" Guid="1ec2d3e6-016d-4866-baec-85225e81ef58" /><DocumentWindow Key="D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\main.c" Guid="f435d4e2-125e-42aa-88ed-7d3073f7cfbb" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
