@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Jun 4 2023 01:04:54
+#File Generated:     Jun 4 2023 10:59:44
 
 #Purpose:            
 
@@ -44,7 +44,7 @@ Phase 2
 Phase 3
 
 Design Statistics after Packing
-    Number of Combinational MCs 	:	12
+    Number of Combinational MCs 	:	11
     Number of Sequential MCs    	:	22
     Number of DPs               	:	5
     Number of Controls          	:	4
@@ -53,9 +53,9 @@ Design Statistics after Packing
     Number of count7cells       	:	1
 
 Device Utilization Summary after Packing
-    Macrocells                  :	34/192
+    Macrocells                  :	33/192
     UDBS                        :	7/24
-    IOs                         :	30/72
+    IOs                         :	32/72
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -79,11 +79,9 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 17
-Clock: ADC_Ext_CP_Clk       | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_theACLK          | Frequency: N/A       | Target:   3.0 MHz
-Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:   3.0 MHz
+Number of clocks: 14
+Clock: ADC_theACLK          | Frequency: N/A       | Target:  12.0 MHz
+Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_2              | Frequency:  59.7 MHz | Target:   1.0 MHz
@@ -96,7 +94,6 @@ Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: LED_Driver_ClkInternal | Frequency: N/A       | Target:   0.0 MHz
 Clock: LED_Driver_ClkInternal(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: UART_1_IntClock      | Frequency:  53.6 MHz | Target:   0.9 MHz
-Clock: \ADC:DSM\/dec_clock  | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -108,18 +105,18 @@ Phase 7
 D2088: Phase 7, elapsed time : 0.0 (sec)
 
 Final Design Statistics
-    Number of Combinational MCs 	:	12
+    Number of Combinational MCs 	:	11
     Number of Sequential MCs    	:	22
     Number of DPs               	:	5
     Number of Controls          	:	4
     Number of Status            	:	3
     Number of SyncCells         	:	0
     Number of count7cells       	:	1
-    Number of IOs       	:	30
+    Number of IOs       	:	32
 
 Device Utilization Summary
-    Macrocells                  :	34/192
-    IOs                         :	30/72
+    Macrocells                  :	33/192
+    IOs                         :	32/72
 
 
 
@@ -135,11 +132,9 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 17
-Clock: ADC_Ext_CP_Clk       | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_theACLK          | Frequency: N/A       | Target:   3.0 MHz
-Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:   3.0 MHz
+Number of clocks: 14
+Clock: ADC_theACLK          | Frequency: N/A       | Target:  12.0 MHz
+Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_2              | Frequency:  59.7 MHz | Target:   1.0 MHz
@@ -152,7 +147,6 @@ Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: LED_Driver_ClkInternal | Frequency: N/A       | Target:   0.0 MHz
 Clock: LED_Driver_ClkInternal(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: UART_1_IntClock      | Frequency:   1.3 MHz | Target:   0.9 MHz
-Clock: \ADC:DSM\/dec_clock  | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -171,11 +165,9 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 17
-Clock: ADC_Ext_CP_Clk       | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_theACLK          | Frequency: N/A       | Target:   3.0 MHz
-Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:   3.0 MHz
+Number of clocks: 14
+Clock: ADC_theACLK          | Frequency: N/A       | Target:  12.0 MHz
+Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_2              | Frequency:  59.7 MHz | Target:   1.0 MHz
@@ -188,7 +180,6 @@ Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: LED_Driver_ClkInternal | Frequency: N/A       | Target:   0.0 MHz
 Clock: LED_Driver_ClkInternal(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: UART_1_IntClock      | Frequency:   1.3 MHz | Target:   0.9 MHz
-Clock: \ADC:DSM\/dec_clock  | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -200,11 +191,9 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 17
-Clock: ADC_Ext_CP_Clk       | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_theACLK          | Frequency: N/A       | Target:   3.0 MHz
-Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:   3.0 MHz
+Number of clocks: 14
+Clock: ADC_theACLK          | Frequency: N/A       | Target:  12.0 MHz
+Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_2              | Frequency:  59.7 MHz | Target:   1.0 MHz
@@ -217,7 +206,6 @@ Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: LED_Driver_ClkInternal | Frequency: N/A       | Target:   0.0 MHz
 Clock: LED_Driver_ClkInternal(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: UART_1_IntClock      | Frequency:   1.4 MHz | Target:   0.9 MHz
-Clock: \ADC:DSM\/dec_clock  | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -225,18 +213,18 @@ Clock: \ADC:DSM\/dec_clock  | Frequency: N/A       | Target:   0.1 MHz
 D2088: Phase 7, elapsed time : 0.2 (sec)
 
 Final Design Statistics
-    Number of Combinational MCs 	:	12
+    Number of Combinational MCs 	:	11
     Number of Sequential MCs    	:	22
     Number of DPs               	:	5
     Number of Controls          	:	4
     Number of Status            	:	3
     Number of SyncCells         	:	0
     Number of count7cells       	:	1
-    Number of IOs       	:	30
+    Number of IOs       	:	32
 
 Device Utilization Summary
-    Macrocells                  :	34/192
-    IOs                         :	30/72
+    Macrocells                  :	33/192
+    IOs                         :	32/72
 
 
 
@@ -252,14 +240,12 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 17
-Clock: ADC_Ext_CP_Clk       | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
-Clock: ADC_theACLK          | Frequency: N/A       | Target:   3.0 MHz
-Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:   3.0 MHz
+Number of clocks: 14
+Clock: ADC_theACLK          | Frequency: N/A       | Target:  12.0 MHz
+Clock: ADC_theACLK(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1              | Frequency: N/A       | Target:  12.0 MHz
 Clock: Clock_1(fixed-function) | Frequency: N/A       | Target:  12.0 MHz
-Clock: Clock_2              | Frequency:  59.7 MHz | Target:   1.0 MHz
+Clock: Clock_2              | Frequency:  53.0 MHz | Target:   1.0 MHz
 Clock: Clock_3              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency:   1.5 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
@@ -269,7 +255,6 @@ Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: LED_Driver_ClkInternal | Frequency: N/A       | Target:   0.0 MHz
 Clock: LED_Driver_ClkInternal(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: UART_1_IntClock      | Frequency:   1.5 MHz | Target:   0.9 MHz
-Clock: \ADC:DSM\/dec_clock  | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
                      End of Clock Summary

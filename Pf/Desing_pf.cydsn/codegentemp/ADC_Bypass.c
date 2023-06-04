@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: aviso.c  
+* File Name: ADC_Bypass.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "aviso.h"
+#include "ADC_Bypass.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 aviso__PORT == 15 && ((aviso__MASK & 0xC0) != 0))
+	 ADC_Bypass__PORT == 15 && ((ADC_Bypass__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: aviso_Write
+* Function Name: ADC_Bypass_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet aviso_SUT.c usage_aviso_Write
+*  \snippet ADC_Bypass_SUT.c usage_ADC_Bypass_Write
 *******************************************************************************/
-void aviso_Write(uint8 value)
+void ADC_Bypass_Write(uint8 value)
 {
-    uint8 staticBits = (aviso_DR & (uint8)(~aviso_MASK));
-    aviso_DR = staticBits | ((uint8)(value << aviso_SHIFT) & aviso_MASK);
+    uint8 staticBits = (ADC_Bypass_DR & (uint8)(~ADC_Bypass_MASK));
+    ADC_Bypass_DR = staticBits | ((uint8)(value << ADC_Bypass_SHIFT) & ADC_Bypass_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: aviso_SetDriveMode
+* Function Name: ADC_Bypass_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,20 +85,16 @@ void aviso_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet aviso_SUT.c usage_aviso_SetDriveMode
+*  \snippet ADC_Bypass_SUT.c usage_ADC_Bypass_SetDriveMode
 *******************************************************************************/
-void aviso_SetDriveMode(uint8 mode)
+void ADC_Bypass_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(aviso_0, mode);
-	CyPins_SetPinDriveMode(aviso_1, mode);
-	CyPins_SetPinDriveMode(aviso_2, mode);
-	CyPins_SetPinDriveMode(aviso_3, mode);
-	CyPins_SetPinDriveMode(aviso_4, mode);
+	CyPins_SetPinDriveMode(ADC_Bypass_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: aviso_Read
+* Function Name: ADC_Bypass_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -112,16 +108,16 @@ void aviso_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet aviso_SUT.c usage_aviso_Read  
+*  \snippet ADC_Bypass_SUT.c usage_ADC_Bypass_Read  
 *******************************************************************************/
-uint8 aviso_Read(void)
+uint8 ADC_Bypass_Read(void)
 {
-    return (aviso_PS & aviso_MASK) >> aviso_SHIFT;
+    return (ADC_Bypass_PS & ADC_Bypass_MASK) >> ADC_Bypass_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: aviso_ReadDataReg
+* Function Name: ADC_Bypass_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -130,8 +126,8 @@ uint8 aviso_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred aviso_Read() API because the 
-* aviso_ReadDataReg() reads the data register instead of the status 
+* preferred ADC_Bypass_Read() API because the 
+* ADC_Bypass_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -140,19 +136,19 @@ uint8 aviso_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet aviso_SUT.c usage_aviso_ReadDataReg 
+*  \snippet ADC_Bypass_SUT.c usage_ADC_Bypass_ReadDataReg 
 *******************************************************************************/
-uint8 aviso_ReadDataReg(void)
+uint8 ADC_Bypass_ReadDataReg(void)
 {
-    return (aviso_DR & aviso_MASK) >> aviso_SHIFT;
+    return (ADC_Bypass_DR & ADC_Bypass_MASK) >> ADC_Bypass_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(aviso_INTSTAT) 
+#if defined(ADC_Bypass_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: aviso_SetInterruptMode
+    * Function Name: ADC_Bypass_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -165,12 +161,12 @@ uint8 aviso_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use aviso_INTR_ALL to configure the
+    *  component. Or you may use ADC_Bypass_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - aviso_0_INTR       (First pin in the list)
-    *  - aviso_1_INTR       (Second pin in the list)
+    *  - ADC_Bypass_0_INTR       (First pin in the list)
+    *  - ADC_Bypass_1_INTR       (Second pin in the list)
     *  - ...
-    *  - aviso_INTR_ALL     (All pins in Pins component)
+    *  - ADC_Bypass_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -186,35 +182,19 @@ uint8 aviso_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet aviso_SUT.c usage_aviso_SetInterruptMode
+    *  \snippet ADC_Bypass_SUT.c usage_ADC_Bypass_SetInterruptMode
     *******************************************************************************/
-    void aviso_SetInterruptMode(uint16 position, uint16 mode)
+    void ADC_Bypass_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & aviso_0_INTR) != 0u) 
+		if((position & ADC_Bypass_0_INTR) != 0u) 
 		{ 
-			 aviso_0_INTTYPE_REG = (uint8)mode; 
-		} 
-		if((position & aviso_1_INTR) != 0u) 
-		{ 
-			 aviso_1_INTTYPE_REG = (uint8)mode; 
-		} 
-		if((position & aviso_2_INTR) != 0u) 
-		{ 
-			 aviso_2_INTTYPE_REG = (uint8)mode; 
-		} 
-		if((position & aviso_3_INTR) != 0u) 
-		{ 
-			 aviso_3_INTTYPE_REG = (uint8)mode; 
-		} 
-		if((position & aviso_4_INTR) != 0u) 
-		{ 
-			 aviso_4_INTTYPE_REG = (uint8)mode; 
+			 ADC_Bypass_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: aviso_ClearInterrupt
+    * Function Name: ADC_Bypass_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -231,11 +211,11 @@ uint8 aviso_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet aviso_SUT.c usage_aviso_ClearInterrupt
+    *  \snippet ADC_Bypass_SUT.c usage_ADC_Bypass_ClearInterrupt
     *******************************************************************************/
-    uint8 aviso_ClearInterrupt(void)
+    uint8 ADC_Bypass_ClearInterrupt(void)
     {
-        return (aviso_INTSTAT & aviso_MASK) >> aviso_SHIFT;
+        return (ADC_Bypass_INTSTAT & ADC_Bypass_MASK) >> ADC_Bypass_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

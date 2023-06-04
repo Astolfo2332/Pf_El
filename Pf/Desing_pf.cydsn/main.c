@@ -1,11 +1,6 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * Proyecto final Bioinsttrumentación
  *
  * ========================================
 */
@@ -37,8 +32,34 @@ uint8 band_dismi=0;
 uint8 seg10=0;
 uint8 band_10seg=0;
 uint8 a_seg10=0;
-int32 vol,en; 
-float32 tem;
+int16 vol,en; 
+float tem;
+uint8 band_tem=0; 
+uint8 band_aviso=0;
+uint8 ledval[] = {0b00011, 0b00111, 0b01111, 0b11111};
+uint8 ledindx = 0;
+uint8 direc=0;
+
+void sec_leds(){
+aviso_Write(ledval[ledindx]);
+switch(ledindx){
+case 3:
+    direc=1;
+    break;
+case 0:
+    direc=0;
+    break;
+}
+switch(direc){
+case 1:
+    ledindx--;
+    break;
+case 0:
+    ledindx++;
+    break;
+}
+
+}
 
 CY_ISR_PROTO(contar);
 CY_ISR(contar){
@@ -79,7 +100,7 @@ void EncenderLCD(int fl,float32 tem,int h,int min, int sec){
 void con(){
 ADC_StartConvert();
 ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
-en=ADC_GetResult32();
+en=ADC_GetResult16();
 ADC_StopConvert();
 vol=ADC_CountsTo_mVolts(en);
 tem=(vol/10.00)-5.00;
@@ -87,12 +108,15 @@ tem=(vol/10.00)-5.00;
 void reloj(){
     if (timer){
     timer=0;
-    mili++;
+    mili++;       
     if (mili==1000){
-        mili=0;                 
+        if (band_aviso==1){
+        sec_leds();
+        }
+        mili=0;     
+        con();
         EncenderLCD(fl,tem,h,min,seg);  
         seg++;
-        con();
         if (a_seg5==1){
             seg5++;
             if (seg5==5){
@@ -270,9 +294,25 @@ ADC_Start();
                 band_10seg=0;
                 PWM_WriteCompare(compare);   
                 }
+            if ((tem>30.00)|(tem<25.00)){
+                band_aviso=1;
+                if (band_tem==0){
+                UART_1_PutString("Temperatura fuera de rango \n");
+                band_tem=1;
+                }
+            }
+            else{
+                if (band_tem==1){
+                band_tem=0;
+                band_aviso=0;
+                aviso_Write(~0x1F);
+                }
+            }
             break;
             
         case 'b':
+            aviso_Write(~0x1F);
+            band_aviso=0;
             LCD_Start();
             apagado();
             break;

@@ -68,7 +68,7 @@ uint8   aviso_ClearInterrupt(void);
 /* Digital Port Constants */
 #define aviso_MASK               aviso__MASK
 #define aviso_SHIFT              aviso__SHIFT
-#define aviso_WIDTH              4u
+#define aviso_WIDTH              5u
 
 /* Interrupt constants */
 #if defined(aviso__INTSTAT)
@@ -158,6 +158,7 @@ uint8   aviso_ClearInterrupt(void);
 	#define aviso_1_INTTYPE_REG 		(* (reg8 *) aviso__1__INTTYPE)
 	#define aviso_2_INTTYPE_REG 		(* (reg8 *) aviso__2__INTTYPE)
 	#define aviso_3_INTTYPE_REG 		(* (reg8 *) aviso__3__INTTYPE)
+	#define aviso_4_INTTYPE_REG 		(* (reg8 *) aviso__4__INTTYPE)
 #endif /* (aviso__INTSTAT) */
 
 #endif /* CY_PSOC5A... */

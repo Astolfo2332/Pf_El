@@ -37,7 +37,10 @@
 #define aviso_3			(aviso__3__PC)
 #define aviso_3_INTR	((uint16)((uint16)0x0001u << aviso__3__SHIFT))
 
-#define aviso_INTR_ALL	 ((uint16)(aviso_0_INTR| aviso_1_INTR| aviso_2_INTR| aviso_3_INTR))
+#define aviso_4			(aviso__4__PC)
+#define aviso_4_INTR	((uint16)((uint16)0x0001u << aviso__4__SHIFT))
+
+#define aviso_INTR_ALL	 ((uint16)(aviso_0_INTR| aviso_1_INTR| aviso_2_INTR| aviso_3_INTR| aviso_4_INTR))
 
 #endif /* End Pins aviso_ALIASES_H */
 

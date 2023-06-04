@@ -93,6 +93,7 @@ void aviso_SetDriveMode(uint8 mode)
 	CyPins_SetPinDriveMode(aviso_1, mode);
 	CyPins_SetPinDriveMode(aviso_2, mode);
 	CyPins_SetPinDriveMode(aviso_3, mode);
+	CyPins_SetPinDriveMode(aviso_4, mode);
 }
 
 
@@ -204,6 +205,10 @@ uint8 aviso_ReadDataReg(void)
 		if((position & aviso_3_INTR) != 0u) 
 		{ 
 			 aviso_3_INTTYPE_REG = (uint8)mode; 
+		} 
+		if((position & aviso_4_INTR) != 0u) 
+		{ 
+			 aviso_4_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
