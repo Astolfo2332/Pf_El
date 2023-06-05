@@ -82,25 +82,28 @@ CY_ISR(disminu){
 void EncenderLCD(int fl,float32 tem,int h,int min, int sec){
     LCD_ClearDisplay();
     if (band_7seg==1){
+    if (a_seg10==0){
         LED_Driver_WriteString7Seg(" LCD",0);
     }
-    char temp[50];
-    char fluj[50];
-    char tiemp[50];
-    LCD_Position(0,0);
-    sprintf(temp,"Temperatura:  %.1f",tem);
-    LCD_PrintString(temp);
-    LCD_Position(0,18);
-    LCD_PutChar(LCD_CUSTOM_0);
-    LCD_Position(0,19);
-    LCD_PrintString("C");
-    LCD_Position(1,0);
-    sprintf(fluj,"Flujo:           %2d%%",fl);
-    LCD_PrintString(fluj);
-    LCD_Position(3,0);
-    sprintf(tiemp,"Tiempo:     %02d:%02d:%02d",h,min,sec);
-    LCD_PrintString(tiemp);
+        char temp[50];
+        char fluj[50];
+        char tiemp[50];
+        LCD_Position(0,0);
+        sprintf(temp,"Temperatura:  %.1f",tem);
+        LCD_PrintString(temp);
+        LCD_Position(0,18);
+        LCD_PutChar(LCD_CUSTOM_0);
+        LCD_Position(0,19);
+        LCD_PrintString("C");
+        LCD_Position(1,0);
+        sprintf(fluj,"Flujo:          %3d%%",fl);
+        LCD_PrintString(fluj);
+        LCD_Position(3,0);
+        sprintf(tiemp,"Tiempo:     %02d:%02d:%02d",h,min,sec);
+        LCD_PrintString(tiemp);
+    }   
 }
+
 void con(){
 ADC_StartConvert();
 ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
@@ -109,6 +112,8 @@ ADC_StopConvert();
 vol=ADC_CountsTo_mVolts(en);
 tem=(vol/10.00)-5.00;
 }
+void print_f(void);
+
 void reloj(){
     if (timer){
     timer=0;
@@ -136,6 +141,7 @@ void reloj(){
         }
         if (a_seg10==1){
             seg10++;
+            print_f();
             if (seg10==10){
             band_10seg=1;
             seg10=0;
@@ -188,12 +194,22 @@ switch(fl){
 
 }
 void print_f(){
-    
     band_7seg=0;
     LCD_Stop();
     sprintf(seg_7,"F%03d",fl);
     LED_Driver_WriteString7Seg(seg_7,0);
 }
+
+void print_t(){
+    sprintf(seg_7,"%f",tem);
+    LED_Driver_WriteString7Seg(seg_7,0);
+    LED_Driver_SetRC(6,2);
+    LED_Driver_SetRC(5,2);
+    LED_Driver_SetRC(1,2);
+    LED_Driver_SetRC(0,2);                       
+    LED_Driver_Write7SegDigitHex(0xC,3); 
+}
+
 int main(void)
 
 
@@ -227,49 +243,37 @@ ADC_Start();
             switch(lectura){
                 case 'F':
                     a_seg5=0;
-                    print_f();
-                    reloj();
+                    band_7seg=0;
+                    print_f();                    
                     break;
                 case 'T':
                     a_seg5=0;
                     band_7seg=0;
                     LCD_Stop();
-                    sprintf(seg_7,"%f",tem);
-                    LED_Driver_WriteString7Seg(seg_7,0);
-                    LED_Driver_SetRC(6,2);
-                    LED_Driver_SetRC(5,2);
-                    LED_Driver_SetRC(1,2);
-                    LED_Driver_SetRC(0,2);                       
-                    LED_Driver_Write7SegDigitHex(0xC,3);
-                    reloj();
+                    if (a_seg10==0){                    
+                    print_t();
+                    }
                     break;
                 case 'A':
                     a_seg5=1;
                     band_7seg=0;
                     LCD_Stop();
+                    if (a_seg10==0){
                     if(band_5seg==1){          
-                    sprintf(seg_7,"%f",tem);
-                    LED_Driver_WriteString7Seg(seg_7,0);
-                    LED_Driver_SetRC(6,2);
-                    LED_Driver_SetRC(5,2);
-                    LED_Driver_SetRC(1,2);
-                    LED_Driver_SetRC(0,2);
-                    LED_Driver_Write7SegDigitHex(0xC,3);
-                    reloj();
+                        print_t();
                     }
                     else if (band_5seg==0){           
-                    print_f();
-                    reloj();
+                        print_f();                   
                     }
-                
+                    }
+                    break;
                 default:
                     a_seg5=0;
                     LCD_Start();
-                    band_7seg=1;
-                    reloj();
+                    band_7seg=1;           
                     break;                 
             }
-            
+            reloj();
             if ((band_aumento==1)|(band_dismi==1)){
                 a_seg10=1;
                 seg10=0;
@@ -285,15 +289,15 @@ ADC_Start();
                         fl=100;
                     }
                 }
-                
                 con_mot();
-                print_f();
                 band_aumento=0;
                 band_dismi=0;
+                print_f();
                 
             
             }
             if (band_10seg==1){
+                
                 a_seg10=0;
                 band_10seg=0;
                 PWM_WriteCompare(compare);   

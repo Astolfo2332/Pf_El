@@ -1,6 +1,6 @@
-D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\Desing_pf.cyprj|c235e898-9a24-4da1-9365-b2b474b39f15
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c8a08a9f-a978-4562-b589-4bddef8c31fd
-D:\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|f93cb484-027a-40f5-b030-138ec656e21e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|47445292-43e5-4168-9676-4422bd184b6c
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c95fd14d-7219-40b2-85e2-b08aca577289
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|99bbf549-78e5-44bb-8321-656861e61674
+D:\Documentos\Universidad\OneDrive - Universidad de Antioquia\Trabajos u 2023-1\Bioinstrumentacion\Labs\Pf\Pf\Desing_pf.cydsn\Desing_pf.cyprj|39720eb2-4657-4283-a8d2-d277b94ac54b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|19311f72-8f86-41d5-ba6a-c8d769c864b7
+D:\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|3cb26612-df0a-4247-9c0a-9074d381d1b3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|2498547e-ed1c-4365-8519-6a3ac07f3199
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b0244a5b-bf17-4918-ab8e-48a4af79d070
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e3953af6-73b4-41bf-bbd1-0dcd0c246fa7
