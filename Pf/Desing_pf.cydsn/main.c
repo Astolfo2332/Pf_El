@@ -358,7 +358,6 @@ ADC_Start();
     }
     }
     else{ //En este caso es si no se a recibido información en este caso el equipo siempre inicia apagado
-    
     apagado();
     }
 
