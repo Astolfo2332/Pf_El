@@ -39,6 +39,7 @@ uint8 band_aviso=0;
 uint8 ledval[] = {0b00011, 0b00111, 0b01111, 0b11111};
 uint8 ledindx = 0;
 uint8 direc=0;
+uint8 band_men=0; 
 
 void sec_leds(){
 aviso_Write(ledval[ledindx]);
@@ -165,10 +166,15 @@ void apagado(){
     if (timer){
     timer=0;
     c++;
+    band_men++;
+    if (band_men==1){
+    UART_1_PutString("Dispositivo apagado \n");
+    band_men=2;
+    }
+    band_men=2;
     if (c==1000){
         LCD_ClearDisplay();
-        LED_Driver_ClearDisplayAll();
-        UART_1_PutString("Dispositivo apagado \n");
+        LED_Driver_ClearDisplayAll();     
         LCD_Position(0,0);
         LCD_PrintString("Dispositivo apagado");
         tilt_Write(!tilt_Read());
@@ -240,6 +246,7 @@ ADC_Start();
         switch (lectura_p){
         case 'a':
             tilt_Write(0);
+            band_men=0;
             switch(lectura){
                 case 'F':
                     a_seg5=0;
@@ -297,7 +304,6 @@ ADC_Start();
             
             }
             if (band_10seg==1){
-                
                 a_seg10=0;
                 band_10seg=0;
                 PWM_WriteCompare(compare);   
@@ -327,6 +333,7 @@ ADC_Start();
     }
     }
     else{
+    
     apagado();
     }
 
